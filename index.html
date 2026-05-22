@@ -46,6 +46,12 @@
   a { color: var(--sage-dark); text-decoration: underline; text-decoration-color: var(--sage); text-underline-offset: 2px; }
   a:hover { color: var(--sage-dark); text-decoration-color: var(--sage-dark); }
 
+  /* SAFETY WARNING */
+  .safety-warning { display: flex; gap: 16px; align-items: flex-start; background: #fff0f0; border: 3px solid #c0392b; border-radius: var(--radius); padding: 1.25rem 1.4rem; margin: 0 0 1.5rem; }
+  .safety-warning-icon { font-size: 36px; flex-shrink: 0; line-height: 1; }
+  .safety-warning-body strong { display: block; font-size: 16px; font-weight: 700; color: #a00; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 6px; }
+  .safety-warning-body p { font-size: 13.5px; line-height: 1.7; color: #5a0000; margin: 0; }
+
   /* ROUTINE CARD */
   .routine-card-section { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
   .routine-card-section .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.4rem; }
@@ -703,6 +709,14 @@
     <h2>Spa Day 🧖‍♀️</h2>
     <p class="section-desc">How to give your stinky, dirty, dead-to-you clothes a second chance at life.</p>
     <p class="quip">This is not regular laundry. This is a full intervention. Commit to the process.</p>
+
+    <div class="safety-warning">
+      <div class="safety-warning-icon">☠️</div>
+      <div class="safety-warning-body">
+        <strong>NEVER mix liquid chlorine bleach and ammonia. Ever.</strong>
+        <p>Combining these two chemicals produces chloramine gas — a toxic, potentially life-threatening fume. Even small amounts can cause severe respiratory damage. If you use bleach anywhere in your laundry routine, do not use ammonia. If you use ammonia, do not use bleach. These two products must never come into contact with each other, in any concentration, for any reason.</p>
+      </div>
+    </div>
 
     <div class="spa-header">
       <p><strong>What is Spa Day?</strong> A hot soak treatment for clothes that regular washing just isn't cutting — think gym clothes with permanent stink, thrift finds, heavily soiled items, or anything you've given up on. The extended soak lets enzymes and surfactants work deep into the fibers in a way a normal wash cycle simply can't.</p>
