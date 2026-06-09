@@ -3,115 +3,64 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>That Laundry Mom — The Ultimate Laundry Guide</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600&family=Pacifico&family=Lora:ital,wght@0,600;1,500&display=swap" rel="stylesheet"/>
+<title>A Mom's Guide to Laundry</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet"/>
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
-    --cream: #FAF2EA;
-    --warm-white: #FFF6F0;
-    --ink: #271A17;
-    --ink-light: #6B4844;
-    --ink-muted: #A08278;
-    --sage: #7A9C78;
-    --sage-light: #E5F0E4;
-    --sage-dark: #2C6030;
-    --blush: #D4908A;
-    --blush-light: #F8EEEC;
-    --blush-dark: #9B3828;
-    --butter: #C89428;
-    --butter-light: #FAF0D5;
-    --butter-dark: #6A4000;
-    --peach: #C85A42;
-    --peach-light: #FAEAE5;
-    --peach-dark: #9B3820;
-    --lilac: #B0A0D0;
-    --lilac-light: #EBE6F5;
-    --lilac-dark: #4C2E85;
-    --rose: #C25878;
-    --rose-light: #F8E2EC;
-    --rose-dark: #7A1F3A;
+    --cream: #fef4f0;
+    --warm-white: #fff8f5;
+    --ink: #2d2320;
+    --ink-light: #6b5c57;
+    --ink-muted: #a08c86;
+    --sage: #7dab7f;
+    --sage-light: #dff2e1;
+    --sage-dark: #2e6e34;
+    --blush: #f0a99a;
+    --blush-light: #fde6e2;
+    --blush-dark: #c04535;
+    --butter: #f9c74f;
+    --butter-light: #fef4cc;
+    --butter-dark: #7a5500;
+    --peach: #f4845f;
+    --peach-light: #feeae2;
+    --peach-dark: #b84520;
+    --lilac: #c9a8e8;
+    --lilac-light: #f0e8fc;
+    --lilac-dark: #6030a0;
+    --rose: #e9768a;
+    --rose-light: #fde0e6;
+    --rose-dark: #9a1f35;
     --sky: #79bdd4;
     --sky-light: #dff1f9;
     --sky-dark: #1d6480;
     --mint: #6ecfb5;
     --mint-light: #dcf7f0;
     --mint-dark: #1a7a60;
-    --border: #EEDDD4;
-    --border-strong: #D4B8B0;
+    --border: #f0e0d8;
+    --border-strong: #d9c4bb;
     --radius: 14px;
     --radius-sm: 9px;
   }
-  body { font-family: 'Fredoka', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; font-size: 15.5px; font-weight: 400; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; font-size: 15px; }
   a { color: var(--sage-dark); text-decoration: underline; text-decoration-color: var(--sage); text-underline-offset: 2px; }
   a:hover { color: var(--sage-dark); text-decoration-color: var(--sage-dark); }
 
-  /* SAFETY WARNING */
-  .safety-warning { display: flex; gap: 16px; align-items: flex-start; background: #fff0f0; border: 3px solid #c0392b; border-radius: var(--radius); padding: 1.25rem 1.4rem; margin: 0 0 1.5rem; }
-  .safety-warning-icon { font-size: 36px; flex-shrink: 0; line-height: 1; }
-  .safety-warning-body strong { display: block; font-size: 16px; font-weight: 700; color: #a00; text-transform: uppercase; letter-spacing: 0.02em; margin-bottom: 6px; }
-  .safety-warning-body p { font-size: 13.5px; line-height: 1.7; color: #5a0000; margin: 0; }
-
-  /* ROUTINE CARD */
-  .routine-card-section { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
-  .routine-card-section .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.4rem; }
-  .routine-card-section h2 { font-family: 'Lora', serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.4rem; }
-  .routine-card-section .section-desc { color: var(--ink-light); font-size: 14.5px; margin-bottom: 1.5rem; max-width: 600px; line-height: 1.6; }
-  .rc-wrap { background: var(--warm-white); border: 1.5px solid var(--border-strong); border-radius: var(--radius); overflow: hidden; }
-  .rc-header { background: linear-gradient(135deg, #FAE5DA 0%, #F5DCEA 40%, #EAD5F0 100%); padding: 14px 20px 12px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); flex-wrap: wrap; gap: 10px; }
-  .rc-header-left h3 { font-family: 'Lora', serif; font-size: 1.1rem; font-style: italic; font-weight: 700; color: var(--ink); margin: 0 0 2px; }
-  .rc-header-left p { font-size: 11px; color: var(--ink-muted); margin: 0; }
-  .rc-header-right { display: flex; flex-direction: column; gap: 5px; }
-  .rc-field-inline { display: flex; align-items: center; gap: 6px; font-size: 11px; color: var(--ink-light); }
-  .rc-underline { border-bottom: 1px solid var(--border-strong); min-width: 110px; height: 15px; display: inline-block; }
-  .rc-underline-sm { border-bottom: 1px solid var(--border-strong); min-width: 65px; height: 15px; display: inline-block; }
-  .rc-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-  .rc-col { padding: 14px 15px; border-right: 1px solid var(--border); }
-  .rc-col:last-child { border-right: none; }
-  .rc-col-label { font-size: 9px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 8px; }
-  .rc-hint { font-size: 10.5px; color: var(--ink-muted); font-style: italic; margin-bottom: 9px; line-height: 1.4; }
-  .rc-field { display: flex; align-items: center; gap: 6px; margin-bottom: 7px; }
-  .rc-label { font-size: 11px; color: var(--ink-light); white-space: nowrap; flex-shrink: 0; }
-  .rc-line { border-bottom: 1px solid var(--border-strong); flex: 1; height: 15px; }
-  .rc-line-full { border-bottom: 1px solid var(--border-strong); width: 100%; height: 15px; margin-bottom: 7px; }
-  .rc-sub-label { font-size: 9px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-muted); margin: 9px 0 5px; }
-  .rc-pill-row { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 7px; }
-  .rc-pill { font-size: 10px; border: 1px solid var(--border-strong); border-radius: 999px; padding: 3px 8px; color: var(--ink-light); background: var(--cream); display: flex; align-items: center; gap: 4px; white-space: nowrap; }
-  .rc-circle { width: 11px; height: 11px; border-radius: 50%; border: 1px solid var(--ink-muted); flex-shrink: 0; display: inline-block; }
-  .rc-temp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 8px; }
-  .rc-temp-box { border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 7px; font-size: 10.5px; color: var(--ink-light); display: flex; align-items: center; gap: 5px; }
-  .rc-footer { border-top: 1px solid var(--border); display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; }
-  .rc-footer-col { padding: 10px 15px; border-right: 1px solid var(--border); }
-  .rc-footer-col:last-child { border-right: none; }
-  .rc-notes-lines { display: flex; flex-direction: column; gap: 7px; margin-top: 3px; }
-  .rc-notes-line { border-bottom: 1px solid var(--border-strong); height: 13px; width: 100%; }
-  .rc-download-btn { display: inline-flex; align-items: center; gap: 8px; margin-top: 1rem; background: var(--rose-dark); color: var(--cream); border: none; border-radius: 999px; padding: 10px 22px; font-size: 13px; font-weight: 600; font-family: 'Fredoka', sans-serif; cursor: pointer; text-decoration: none; transition: opacity 0.15s; }
-  .rc-download-btn:hover { opacity: 0.85; color: var(--cream); text-decoration: none; }
-  @media print {
-    .rc-download-btn { display: none !important; }
-    .rc-wrap { border: 1px solid #ccc; box-shadow: none; }
-  }
-  @media (max-width: 600px) {
-    .rc-grid { grid-template-columns: 1fr 1fr; }
-    .rc-col { border-bottom: 1px solid var(--border); }
-    .rc-footer { grid-template-columns: 1fr 1fr; }
-    .rc-footer-col { border-bottom: 1px solid var(--border); }
-  }
-
   /* HERO */
   .hero {
-    background: linear-gradient(160deg, #FAE5DA 0%, #F5DCEA 50%, #EAD8F2 100%);
-    color: var(--ink); padding: 4.5rem 2rem 3.5rem; text-align: center; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #fce8e0 0%, #fde8d0 35%, #f8e0ee 70%, #e8e0f8 100%);
+    color: var(--ink); padding: 4rem 2rem 3rem; text-align: center; position: relative; overflow: hidden;
   }
   .hero::before {
     content: ''; position: absolute; inset: 0;
-    background-image: radial-gradient(circle at 12% 60%, rgba(194,88,120,0.12) 0%, transparent 55%),
-                      radial-gradient(circle at 88% 15%, rgba(200,148,40,0.12) 0%, transparent 50%),
-                      radial-gradient(circle at 55% 95%, rgba(200,90,66,0.10) 0%, transparent 45%);
+    background-image: radial-gradient(circle at 10% 60%, rgba(201,168,232,0.3) 0%, transparent 55%),
+                      radial-gradient(circle at 90% 15%, rgba(249,199,79,0.2) 0%, transparent 50%),
+                      radial-gradient(circle at 55% 95%, rgba(240,169,154,0.25) 0%, transparent 45%);
   }
-  .hero-wordmark { font-family: 'Pacifico', cursive; font-size: clamp(2.8rem, 7vw, 4.4rem); color: var(--rose-dark); line-height: 1.15; margin-bottom: 0.6rem; position: relative; }
-  .hero-tagline { font-size: 11px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 1.5rem; position: relative; }
-  .hero-sub { font-size: 15.5px; color: var(--ink-light); max-width: 520px; margin: 0 auto 1.75rem; position: relative; font-style: italic; line-height: 1.7; }
+  .hero-emoji { font-size: 52px; margin-bottom: 1rem; display: block; position: relative; }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; line-height: 1.15; margin-bottom: 1rem; position: relative; }
+  .hero h1 em { font-style: italic; color: var(--rose-dark); }
+  .hero-sub { font-size: 16px; color: var(--ink-light); max-width: 520px; margin: 0 auto 1.5rem; position: relative; font-style: italic; }
   .hero-badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; position: relative; }
   .badge { background: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.8); border-radius: 999px; padding: 6px 16px; font-size: 13px; color: var(--ink); }
   .badge.adhd { background: var(--rose-light); border-color: var(--rose); color: var(--rose-dark); font-weight: 600; }
@@ -122,7 +71,7 @@
   /* SECTIONS */
   .section { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--border); }
   .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted); margin-bottom: 0.4rem; }
-  .section h2 { font-family: 'Lora', serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.4rem; }
+  .section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; line-height: 1.2; margin-bottom: 0.4rem; }
   .section-desc { color: var(--ink-light); font-size: 14.5px; margin-bottom: 1.5rem; max-width: 600px; line-height: 1.6; }
 
   /* QUIP */
@@ -174,6 +123,43 @@
   /* INFO BOX */
   .info-box { background: var(--lilac-light); border: 2px solid var(--lilac); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 14px; font-weight: 500; line-height: 1.7; color: var(--lilac-dark); margin-bottom: 1.25rem; }
 
+  /* PH SCALE */
+  .ph-scale-wrap { margin-bottom: 1.25rem; }
+  .ph-bar { height: 18px; border-radius: 999px; background: linear-gradient(to right, #e24b4a, #f0997b, #fac775, #9fe1cb, #6ecfb5, #79bdd4, #7b9fd4); margin-bottom: 6px; position: relative; }
+  .ph-marker { position: absolute; top: -6px; width: 3px; height: 30px; background: var(--ink); border-radius: 2px; }
+  .ph-marker-label { position: absolute; top: 28px; transform: translateX(-50%); font-size: 10px; font-weight: 700; color: var(--ink); white-space: nowrap; }
+  .ph-ticks { display: flex; justify-content: space-between; font-size: 10px; color: var(--ink-muted); margin-top: 8px; }
+  .ph-zones { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 1.25rem; }
+  .ph-zone { border-radius: var(--radius); padding: 0.85rem 1rem; font-size: 13px; }
+  .ph-zone-acid { background: #fde8e2; border: 1px solid #f0997b; }
+  .ph-zone-neutral { background: var(--butter-light); border: 1px solid var(--butter); }
+  .ph-zone-alkaline { background: var(--sky-light); border: 1px solid var(--sky); }
+  .ph-zone h4 { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+  .ph-zone-acid h4 { color: var(--blush-dark); }
+  .ph-zone-neutral h4 { color: var(--butter-dark); }
+  .ph-zone-alkaline h4 { color: var(--sky-dark); }
+  .ph-zone p { font-size: 12.5px; line-height: 1.5; color: var(--ink-light); }
+  .ph-zone strong { color: var(--ink); font-weight: 600; }
+  .ph-tip { background: var(--mint-light); border: 1.5px solid var(--mint); border-radius: var(--radius); padding: 0.9rem 1.1rem; font-size: 13.5px; font-weight: 500; color: var(--mint-dark); line-height: 1.6; margin-top: 1.25rem; }
+
+  /* HARD WATER TREATMENT */
+  .hw-what { background: var(--warm-white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 13.5px; line-height: 1.7; margin-bottom: 1.25rem; }
+  .hw-what p + p { margin-top: 0.6rem; }
+  .hw-agents { display: grid; grid-template-columns: repeat(auto-fit, minmax(175px, 1fr)); gap: 10px; margin-bottom: 1.25rem; }
+  .hw-agent { background: var(--warm-white); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1rem; }
+  .hw-agent.pick { border-color: var(--sage); background: var(--sage-light); }
+  .hw-agent-name { font-size: 13px; font-weight: 700; margin-bottom: 3px; }
+  .hw-agent.pick .hw-agent-name { color: var(--sage-dark); }
+  .hw-agent-dose { font-size: 11px; font-weight: 600; color: var(--ink-muted); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.06em; }
+  .hw-agent p { font-size: 12.5px; line-height: 1.5; color: var(--ink-light); }
+  .hw-agent strong { color: var(--ink); font-weight: 600; }
+  .hw-pick-badge { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: var(--sage-dark); color: white; border-radius: 4px; padding: 1px 7px; margin-bottom: 5px; }
+  .hw-signs { background: var(--blush-light); border: 2px solid var(--blush); border-radius: var(--radius); padding: 1rem 1.25rem; margin-top: 1.25rem; }
+  .hw-signs h4 { font-size: 13px; font-weight: 700; color: var(--blush-dark); margin-bottom: 0.6rem; }
+  .hw-signs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+  .hw-sign-item { font-size: 12.5px; line-height: 1.4; display: flex; gap: 7px; align-items: flex-start; color: var(--blush-dark); }
+  .hw-sign-item::before { content: '⚠'; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+
   /* ENZYMES */
   .enzyme-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(195px, 1fr)); gap: 10px; }
   .enzyme-card { background: var(--warm-white); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.85rem 1rem; }
@@ -186,9 +172,9 @@
 
   /* DETERGENT TABS */
   .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
-  .tab { padding: 6px 16px; border-radius: 999px; font-size: 13px; border: 1px solid var(--border-strong); background: transparent; color: var(--ink-light); cursor: pointer; font-family: 'Fredoka', sans-serif; font-weight: 500; transition: all 0.15s; }
+  .tab { padding: 6px 16px; border-radius: 999px; font-size: 13px; border: 1px solid var(--border-strong); background: transparent; color: var(--ink-light); cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 500; transition: all 0.15s; }
   .tab:hover { background: var(--warm-white); color: var(--ink); }
-  .tab.active { background: var(--rose-dark); color: var(--cream); border-color: var(--rose-dark); }
+  .tab.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
   .tab-panel { display: none; }
   .tab-panel.active { display: block; }
   .det-list { list-style: none; }
@@ -224,21 +210,36 @@
   .pretreat-card p { font-size: 13px; color: var(--ink); line-height: 1.5; }
   .goat-badge { display: inline-block; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; background: var(--sage-light); color: var(--sage-dark); border-radius: 4px; padding: 1px 6px; margin-bottom: 4px; }
   .polyquat-box { background: var(--ink); color: var(--cream); border-radius: var(--radius); padding: 1.25rem 1.5rem; margin-top: 1.5rem; }
-  .polyquat-box h3 { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--blush); }
+  .polyquat-box h3 { font-family: 'Playfair Display', serif; font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--blush); }
   .polyquat-box p { font-size: 13px; line-height: 1.7; color: rgba(253,248,242,0.88); }
   .polyquat-box strong { color: var(--cream); }
 
-  /* HOW TO LOAD */
+  /* STAIN GUIDE */
+  .stain-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1rem; }
+  .stain-tab { padding: 6px 16px; border-radius: 999px; font-size: 13px; border: 1px solid var(--border-strong); background: transparent; color: var(--ink-light); cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 500; transition: all 0.15s; }
+  .stain-tab:hover { background: var(--warm-white); color: var(--ink); }
+  .stain-tab.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+  .stain-panel { display: none; }
+  .stain-panel.active { display: block; }
+  .stain-panel-inner { background: var(--warm-white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.1rem 1.25rem; }
+  .stain-urgency { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; padding: 2px 8px; border-radius: 4px; margin-bottom: 0.75rem; }
+  .stain-urgency.urgent { background: var(--blush-light); color: var(--blush-dark); }
+  .stain-urgency.normal { background: var(--butter-light); color: var(--butter-dark); }
+  .stain-urgency.patient { background: var(--sage-light); color: var(--sage-dark); }
+  .stain-steps { display: flex; flex-direction: column; gap: 8px; margin-top: 0.75rem; }
+  .stain-step { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.6; }
+  .stain-step-num { width: 22px; height: 22px; border-radius: 50%; background: var(--ink); color: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+  .stain-note { margin-top: 0.85rem; background: var(--peach-light); border: 1px solid var(--peach); border-radius: var(--radius-sm); padding: 7px 11px; font-size: 12.5px; color: var(--peach-dark); font-weight: 500; line-height: 1.5; }
   .steps { display: flex; flex-direction: column; gap: 12px; }
   .step { display: flex; gap: 14px; align-items: flex-start; background: var(--warm-white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; }
-  .step-num { width: 30px; height: 30px; border-radius: 50%; background: var(--rose-dark); color: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; }
+  .step-num { width: 30px; height: 30px; border-radius: 50%; background: var(--ink); color: var(--cream); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; }
   .step p { font-size: 13px; line-height: 1.6; padding-top: 4px; }
   .step strong { font-weight: 600; }
 
   /* ROUTINE */
   .routine-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 1.5rem; }
   .routine-card { background: var(--warm-white); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
-  .routine-head { background: var(--rose-dark); color: var(--cream); padding: 0.7rem 1rem; font-size: 13px; font-weight: 600; }
+  .routine-head { background: var(--ink); color: var(--cream); padding: 0.7rem 1rem; font-size: 13px; font-weight: 600; }
   .routine-row { display: flex; justify-content: space-between; align-items: center; padding: 0.55rem 1rem; border-bottom: 1px solid var(--border); font-size: 13px; }
   .routine-row:last-child { border-bottom: none; }
   .routine-row span:first-child { color: var(--ink-light); }
@@ -271,7 +272,7 @@
 
   /* SPORTS */
   .sport-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1rem; }
-  .sport-tab { padding: 6px 18px; border-radius: 999px; font-size: 13px; border: 1px solid var(--border-strong); background: transparent; color: var(--ink-light); cursor: pointer; font-family: 'Fredoka', sans-serif; font-weight: 600; transition: all 0.15s; }
+  .sport-tab { padding: 6px 18px; border-radius: 999px; font-size: 13px; border: 1px solid var(--border-strong); background: transparent; color: var(--ink-light); cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 600; transition: all 0.15s; }
   .sport-tab:hover { background: var(--sage-light); color: var(--sage-dark); border-color: var(--sage); }
   .sport-tab.active { background: var(--sage-dark); color: white; border-color: var(--sage-dark); }
   .sport-panel { display: none; }
@@ -285,7 +286,7 @@
 
   /* TLDR */
   .tldr { background: var(--ink); color: var(--cream); border-radius: var(--radius); padding: 2rem; margin-top: 3rem; }
-  .tldr h2 { font-family: 'Lora', serif; font-size: 1.5rem; margin-bottom: 0.25rem; color: var(--cream); }
+  .tldr h2 { font-family: 'Playfair Display', serif; font-size: 1.5rem; margin-bottom: 0.25rem; color: var(--cream); }
   .tldr .tldr-sub { font-size: 13px; color: rgba(253,248,242,0.6); margin-bottom: 1.25rem; }
   .tldr-steps { list-style: none; display: flex; flex-direction: column; gap: 10px; }
   .tldr-step { display: flex; gap: 12px; align-items: flex-start; font-size: 13px; line-height: 1.5; color: rgba(253,248,242,0.88); }
@@ -303,14 +304,14 @@
   .spa-tool-item.optional::before { content: '✨'; }
   .spa-steps { display: flex; flex-direction: column; gap: 10px; }
   .spa-step { display: flex; gap: 12px; align-items: flex-start; background: var(--warm-white); border: 1px solid var(--border); border-radius: var(--radius); padding: 0.9rem 1rem; }
-  .spa-step-num { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--rose-dark) 0%, var(--rose) 100%); color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
+  .spa-step-num { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--lilac) 0%, var(--rose) 100%); color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; }
   .spa-step p { font-size: 13px; line-height: 1.6; padding-top: 3px; }
   .spa-step strong { font-weight: 600; }
   .spa-tip { background: var(--lilac-light); border: 1.5px solid var(--lilac); border-radius: var(--radius); padding: 0.85rem 1.1rem; font-size: 13.5px; font-weight: 600; color: var(--lilac-dark); margin-top: 1rem; line-height: 1.6; }
 
   /* PRODUCT REFERENCE */
   .product-section { margin-top: 3rem; padding-top: 2.5rem; border-top: 3px solid var(--border); }
-  .product-section h2 { font-family: 'Lora', serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; margin-bottom: 0.4rem; }
+  .product-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 3vw, 1.9rem); font-weight: 700; margin-bottom: 0.4rem; }
   .product-section .sub { font-size: 13px; color: var(--ink-muted); margin-bottom: 1.5rem; }
   .product-category { margin-bottom: 1.75rem; }
   .product-category h3 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-muted); margin-bottom: 0.75rem; padding-bottom: 6px; border-bottom: 1px solid var(--border); }
@@ -337,8 +338,8 @@
 <body>
 
 <div class="hero">
-  <div class="hero-wordmark">That Laundry Mom</div>
-  <p class="hero-tagline">The Ultimate Laundry Guide</p>
+  <span class="hero-emoji">🧺</span>
+  <h1>A Mom's Guide to<br><em>Actually Clean</em> Laundry</h1>
   <p class="hero-sub">The science behind clean clothes — finally explained by someone who has been wronged by one too many red sauce stains.</p>
   <div class="hero-badges">
     <span class="badge">💧 Water science</span>
@@ -424,7 +425,6 @@
       <p>The universal 75% rule</p>
       <div class="fill-bar-wrap"><div class="fill-bar-fill"><span>75% clothes</span></div><span class="fill-bar-air">25% air ←</span></div>
       <p class="sub">Quick test: make a fist above your clothes. If your knuckles touch the top of the drum, you're about right.</p>
-      <p class="sub" style="margin-top:8px;">75% is your standard normal load. Smaller loads are totally fine — just dose your detergent and boosters down proportionally.</p>
     </div>
   </div>
 
@@ -444,14 +444,18 @@
         <p>Run several citric acid cycles until the water clears. Wipe away any gross black SCRUD as it comes loose. Clean your detergent drawer and lint trap with an antibacterial like <a href="https://amzn.to/49eX24c">Microban</a>. Google your specific machine model to find the filter.</p>
       </div>
     </div>
-    <div class="info-box" style="margin-top:1.25rem;">Not a DIY person? Fair enough. There are several solid washing machine cleaners that do the same job — they all contain citric acid plus a few extra components to go the extra mile. I like <a href="https://amzn.to/4uV8dqY">Affresh Tabs</a>, <a href="https://amzn.to/4dFfggy">Truly Free Washing Machine Cleaner</a> (yes, their laundry detergent is on my avoid list — their machine cleaner is a completely different story and it's genuinely excellent), <a href="https://amzn.to/4nHW86n">FEBU Washing Machine Cleaner</a>, and <a href="https://amzn.to/3PXYAci">Renuv Heavy Duty Washing Machine Tablets</a> for seriously neglected machines.</div>
   </div>
 
   <!-- WATER HARDNESS -->
   <div class="section">
     <p class="section-label">Water science (yes, really)</p>
     <h2>Understanding Water Hardness</h2>
-    <p class="section-desc">Look up your level in your city's municipal water report — a quick Google will find it. On well water? Test it with the <a href="https://amzn.to/3RjAdGx">API Fish Kit</a> — you almost certainly have hard water.</p>
+    <p class="section-desc">Hard water is quietly sabotaging your laundry and your machine — and most people have no idea. Look up your level in your city's municipal water report — a quick Google will find it. On well water? Test it with the <a href="https://amzn.to/3RjAdGx">API Fish Kit</a> — you almost certainly have hard water.</p>
+    <p class="quip">Hard water doesn't just make cleaning harder. It actively works against your detergent. Your water is out here undermining you and you didn't even know.</p>
+    <div class="hw-what">
+      <p>Hard water is full of dissolved calcium and magnesium minerals — invisible, irritating, and working against you on two fronts. They make soil and stains harder to lift out of fabric, and they react with your detergent and reduce how well it works. So you're using more product, getting worse results, and blaming yourself. It's not you. It's the water.</p>
+      <p>They also make rinsing genuinely difficult. Detergent leaves wash water highly alkaline, and alkaline water doesn't rinse out cleanly — especially with minerals helping everything cling to the fabric. A small amount of acid in the final rinse <strong>neutralizes that alkalinity</strong> (this is called "souring" the rinse) so residue actually lets go. That is the entire job of citric acid in the softener slot. Not softening. Not fragrance. Just: finishing the rinse correctly.</p>
+    </div>
     <div class="hardness-spectrum"></div>
     <div class="hardness-ticks"><span>0 ppm — Soft</span><span>100 ppm</span><span>200 ppm</span><span>400+ ppm — Very hard</span></div>
     <div class="hardness-grid">
@@ -460,8 +464,93 @@
       <div class="hlevel hlevel-hard"><div class="hlevel-name">Hard</div><div class="hlevel-range">200–400 ppm</div><div class="hlevel-action">Add 2 tbsp washing soda + 1 tbsp citric acid to the drum. Binds mineral deposits so your detergent can actually do its job.</div></div>
       <div class="hlevel hlevel-vhard"><div class="hlevel-name">Very hard</div><div class="hlevel-range">400+ ppm</div><div class="hlevel-action">Add 4 tbsp washing soda + 2 tbsp citric acid per load. Or 1 tsp <a href="https://amzn.to/43mJsIx">Trisodium Phosphate</a> — less eco-friendly, your call.</div></div>
     </div>
-    <div class="info-box" style="margin-bottom:1.25rem;">💡 <strong>Want an easier way to soften your water?</strong> There's a product called <a href="https://amzn.to/3RnpE5f">Calgon</a> that makes dosing simple — just add it to your load and it handles the softening for you. The catch: you sometimes need to use quite a bit of it, which can get pricey. But it works well and is a great option if you don't want to mess with washing soda and citric acid separately.</div>
-    <div class="trace-suds-box">✦ <strong>How to know you got the dose right:</strong> Look for "trace suds" — a thin film of 3–4 tiny bubbles on the window (front loader) or on the water surface (top loader) about 10 minutes in. That's the sweet spot. If you're seeing a bubble party, you've overdone it. And if your items are coming out of the dryer a bit stiff, just down-dose your water softeners until you reach your desired outcome.</div>
+    <div class="trace-suds-box">✦ <strong>How to know you got the detergent dose right:</strong> Look for "trace suds" — a thin film of 3–4 tiny bubbles on the window (front loader) or on the water surface (top loader) about 10 minutes in. That's the sweet spot. If you're seeing a bubble party, you've overdone it.</div>
+  </div>
+
+  <!-- PH & ALKALINITY -->
+  <div class="section">
+    <p class="section-label">Two words you have not heard since high school</p>
+    <h2>pH & Alkalinity — Why It Matters</h2>
+    <p class="section-desc">Water hardness tells you about minerals. pH tells you about chemistry. Both affect how well your detergent cleans — and they work together in ways worth understanding.</p>
+    <p class="quip">No, you don't need a chemistry degree. You just need to know that pH is a scale from 0 to 14, and that your laundry wants to be in a very specific part of it.</p>
+    <div class="ph-scale-wrap">
+      <div class="ph-bar">
+        <div class="ph-marker" style="left: calc(100% * 7/14)">
+          <span class="ph-marker-label">Tap water ~7</span>
+        </div>
+        <div class="ph-marker" style="left: calc(100% * 10/14); background: var(--sky-dark)">
+          <span class="ph-marker-label" style="color:var(--sky-dark)">Detergent ~10</span>
+        </div>
+        <div class="ph-marker" style="left: calc(100% * 3/14); background: var(--blush-dark)">
+          <span class="ph-marker-label" style="color:var(--blush-dark)">Citric acid ~3</span>
+        </div>
+      </div>
+      <div class="ph-ticks">
+        <span>0 — Acid</span><span>3</span><span>5</span><span>7 — Neutral</span><span>9</span><span>11</span><span>14 — Alkaline</span>
+      </div>
+    </div>
+    <div class="ph-zones">
+      <div class="ph-zone ph-zone-acid">
+        <h4>🍋 Acidic (0–6)</h4>
+        <p><strong>Rinse cycle territory.</strong> After a wash cycle your water is highly alkaline — and alkaline water rinses poorly, leaving detergent residue and mineral deposits clinging to fabric. Adding citric acid to the final rinse "sours" or neutralizes that alkalinity, so everything can actually release and wash away. This is especially critical with hard water, where the alkalinity problem is even more pronounced. It's not about scenting or softening — it's about completing the rinse properly.</p>
+      </div>
+      <div class="ph-zone ph-zone-neutral">
+        <h4>😐 Neutral (7)</h4>
+        <p><strong>Plain tap water sits here.</strong> Neutral water alone doesn't clean much — it lacks the charge to lift oils and soils off fabric. This is why you need detergent. Soft water is close to neutral, which is actually a good starting point for detergent to work from.</p>
+      </div>
+      <div class="ph-zone ph-zone-alkaline">
+        <h4>🫧 Alkaline (8–14)</h4>
+        <p><strong>Wash cycle territory.</strong> Most detergents raise wash water to pH 9–11. This alkaline environment is what allows surfactants to break the bond between soil and fabric. The higher the pH, the more aggressive the clean — which is why hard water (already alkaline) can actually boost detergent, up to a point.</p>
+      </div>
+    </div>
+    <div class="ph-tip">💡 <strong>The one-two punch:</strong> Alkaline wash → acidic rinse. Your detergent raises the pH to clean. Your citric acid rinse brings it back down, neutralizing residue and leaving fabric at a healthy ~5–6. That's the full chemistry cycle in one sentence.</div>
+  </div>
+
+  <!-- HARD WATER TREATMENT -->
+  <div class="section">
+    <p class="section-label">When your water is working against you</p>
+    <h2>Treating Hard Water — In Depth</h2>
+    <p class="section-desc">Hard water minerals (calcium and magnesium) react with detergent and steal its cleaning power before it can reach your clothes. Here's exactly what to do about it.</p>
+
+    <div class="hw-what">
+      <p>When hard water minerals mix with detergent surfactants, they form a soap scum compound — literally insoluble deposits that never fully rinse out. Over time this builds up inside fabric fibers, leaving clothes stiff, dingy, and increasingly smelly even after washing. It also slowly coats your machine drum, pipes, and heating element.</p>
+      <p>The fix is <strong>sequestering agents</strong> — compounds that grab onto the calcium and magnesium ions before they can sabotage your detergent, holding them harmlessly in suspension so everything can rinse away.</p>
+    </div>
+
+    <div class="hw-agents">
+      <div class="hw-agent pick">
+        <div class="hw-pick-badge">★ Best pick</div>
+        <div class="hw-agent-name">Washing Soda</div>
+        <p>Sodium carbonate. <strong>Raises pH and softens water simultaneously</strong> — the most efficient choice. Dose scales with your hardness level. Use more in the drum, not the drawer. Affordable and widely available.</p>
+      </div>
+      <div class="hw-agent">
+        <div class="hw-agent-name">Borax</div>
+        <p>Effective softener but works differently than washing soda — it <strong>buffers pH rather than raising it</strong>. Better for moderately hard water. Some moms avoid it around young kids; your call. Don't use both borax and washing soda together — they cancel out.</p>
+      </div>
+      <div class="hw-agent">
+        <div class="hw-agent-name">Citric Acid</div>
+        <p>Dissolves mineral buildup via acidic chelation. <strong>Works differently from washing soda</strong> — it's descaling, not water softening. Pair with washing soda: soda handles the wash, citric acid handles the rinse. Do not mix them in the same slot.</p>
+      </div>
+      <div class="hw-agent">
+        <div class="hw-agent-name">TSP</div>
+        <p>Trisodium phosphate — extremely effective, especially for very hard water. <strong>Not eco-friendly</strong> (phosphates cause algal blooms). A last resort for very hard water situations, not a regular-use product. Check local regulations.</p>
+      </div>
+    </div>
+
+    <div class="info-box" style="margin-top:0;margin-bottom:1.25rem"><strong>Where to add sequestering agents:</strong> Always directly into the drum before loading clothes. Never in the detergent drawer — they'll interact with your detergent during dispensing and lose effectiveness before hitting the water. Washing soda + detergent in the drum, citric acid in the softener slot. Those are their lanes.</div>
+
+    <div class="hw-signs">
+      <h4>🚨 Signs your hard water treatment isn't working (yet)</h4>
+      <div class="hw-signs-grid">
+        <div class="hw-sign-item">Clothes feel stiff or crunchy after washing</div>
+        <div class="hw-sign-item">White or grey residue on dark fabrics</div>
+        <div class="hw-sign-item">Clothes smell musty even when "clean"</div>
+        <div class="hw-sign-item">Towels become less absorbent over time</div>
+        <div class="hw-sign-item">Scale buildup visible inside drum or door glass</div>
+        <div class="hw-sign-item">Detergent isn't sudsing even with normal doses</div>
+      </div>
+      <p style="font-size:12.5px;color:var(--blush-dark);margin-top:0.75rem;line-height:1.5">If you're seeing these, increase your washing soda dose and run a Spa Day on your most affected clothes. The buildup took months to accumulate — give it a few washes to fully clear.</p>
+    </div>
   </div>
 
   <!-- DETERGENT SCIENCE -->
@@ -510,7 +599,6 @@
     <div id="tab-liquid" class="tab-panel active">
       <ul class="det-list">
         <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://www.target.com/p/tide-liquid-he-odor-refresh-laundry-detergent-free-gentle/-/A-94711688">Tide Free &amp; Gentle Odor Refresh</a></strong> — best surfactant package, no fragrance. I would genuinely marry this detergent.<span class="det-note">Top pick · Fragrance-free</span></div></li>
-        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://www.costco.com/p/-/tide-advanced-care-liquid-laundry-detergent-free-gentle-125-loads-154-fl-oz/4000383853">Tide Free &amp; Clear Advanced Care</a></strong> — excellent liquid detergent, available at Costco.<span class="det-note">Top pick · Fragrance-free · Costco find</span></div></li>
         <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/3PHyslM">Persil Pro Clean</a></strong> — strong all-around performer</div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://www.costco.com/p/-/kirkland-signature-ultra-clean-free-clear-he-liquid-laundry-detergent-146-loads-194-fl-oz/100525739">Kirkland Free &amp; Clear</a></strong><span class="det-note">Great value</span></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4nFEdNo">Tide Ultra Oxi</a></strong></div></li>
@@ -529,8 +617,6 @@
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4v73tik">Tide Powder with Bleach</a></strong><span class="det-note">Whites only!</span></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/3Rksbx6">Ariel 2x</a></strong><span class="det-note">Incredible cleaner — very heavily scented. You've been warned.</span></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4v2WXJs">365 Unscented Powder</a></strong><span class="det-note">You'll need to use more than you think</span></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4f1qy1c">Country Save</a></strong> — best used with FEBU booster for optimal results.</div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4uCFEyX">Gain Original Powder</a></strong><span class="det-note">⚠ Contains optical brighteners — may fade darks</span></div></li>
       </ul>
     </div>
     <div id="tab-delicate" class="tab-panel">
@@ -541,10 +627,521 @@
       </ul>
     </div>
     <div id="tab-boosters" class="tab-panel">
-      <p style="font-size:13px;color:var(--ink-light);margin-bottom:1rem;line-height:1.6">Boosters are an essential laundry room product. If you're using a liquid detergent, pair it with an enzymatic booster to <strong>AMP UP</strong> the cleaning power of your detergent. If you're using a powder, pair it with a booster for better stain removal on especially dirty loads. And if you want to keep it simple and cheap, just buy <a href="https://amzn.to/3PVyXZF">pure sodium percarbonate</a> — it's the active ingredient in basically all of these.</p>
+      <p style="font-size:13px;color:var(--ink-light);margin-bottom:1rem;line-height:1.6">Boosters are non-negotiable. If you want to keep it simple and cheap, just buy <a href="https://amzn.to/3PVyXZF">pure sodium percarbonate</a> — it's the active ingredient in basically all of these.</p>
       <ul class="det-list">
         <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4nL63rF">FEBU Laundry Booster</a></strong> — the gold standard. Worth every penny for adult laundry.</div></li>
         <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4usx6uw">BIZ</a></strong> — excellent budget pick. My go-to for kid clothes because I am not using the expensive stuff on crayon stains.</div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4utN9Z4">365 Oxygen Booster</a></strong> — inexpensive and great for crunchy moms!</div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4dLZlxg">Dirty Labs Enzymatic Booster</a></strong></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4wJr8H2">OxiClean White Revive</a></strong></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4e1YtVp">OxiClean Versatile</a></strong></div></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- WORST LIST -->
+  <div class="section">
+    <p class="section-label">The hall of shame</p>
+    <h2>Detergents to Avoid</h2>
+    <p class="section-desc">You might as well be washing with tap water. These clean essentially nothing.</p>
+    <p class="quip">I know. Branch Basics has beautiful branding. Mrs. Meyers smells like a spa. I'm so sorry. Put them under the sink and use them for something else.</p>
+    <div class="worst-grid">
+      <div class="worst-item">All Free &amp; Clear</div>
+      <div class="worst-item">Branch Basics</div>
+      <div class="worst-item">Molly's Suds (SRY!!!)</div>
+      <div class="worst-item">ECOS</div>
+      <div class="worst-item">Zum</div>
+      <div class="worst-item">Dr. Bronner's Sal Suds</div>
+      <div class="worst-item">Mrs. Meyers</div>
+      <div class="worst-item">Attitude</div>
+      <div class="worst-item">Purex</div>
+      <div class="worst-item">Truly Free</div>
+      <div class="worst-item">365 Organic</div>
+      <div class="worst-item">Arm &amp; Hammer</div>
+    </div>
+    <p style="font-size:13px;color:var(--ink-light);margin-top:1rem;line-height:1.6">If you just restocked one of these, don't throw it out. Grab softening agents, a good booster, a pretreater, and a rinse aid to carry you through the bottle — then switch to something better. Thank you for coming to my TED talk.</p>
+  </div>
+
+  <!-- BUZZWORDS -->
+  <div class="section">
+    <p class="section-label">Know the lingo</p>
+    <h2>Laundry Buzzwords You Should Know</h2>
+    <p class="section-desc">Terms that get thrown around a lot — here's what they actually mean.</p>
+    <div class="buzzword-grid">
+      <div class="buzzword-card"><h3>OBAs <span class="buzz-tag buzz-neutral">Know this</span></h3><p><strong>Optical Brightening Agents.</strong> These can fade darks over time. Found in almost all powdered detergents and sodium percarbonate products. FEBU booster is OBA-free, and free &amp; clear liquids don't contain them — which is one of the main reasons I prefer pairing a liquid detergent with a booster.</p></div>
+      <div class="buzzword-card"><h3>Anti-Redeposition Agents <span class="buzz-tag buzz-good">Want this</span></h3><p><strong>This stops dirt from jumping back onto your clothes mid-wash.</strong> Yes, that's a real thing. All detergents listed in this guide contain anti-redeposition agents. It's one of the reasons those cheap detergents above don't actually clean — your clothes come out looking clean until the dirty rinse water redeposits the grime. Gross.</p></div>
+    </div>
+    <div class="buzzword-card" style="margin-top:12px"><h3>Odor Rebloom 😤 <span class="buzz-tag buzz-neutral">The worst</span></h3><p>When your clothes come out of the wash smelling perfectly fine — and then you put them on and immediately stink. Most commonly found in synthetic fabrics (looking at you, every single pair of workout leggings ever made). It happens because body oil and bacteria haven't been fully washed away, and "rebloom" a delightful odor the moment you start moving around in them. A detergent or booster with lipase can help prevent odor rebloom, as can a citric acid rinse aid to make sure all the dirt, debris, and bacteria are truly gone during the rinse cycle. <strong>Heads up:</strong> when you first start using a lipase-based detergent, your clothes may actually smell worse coming out of the washer — that's the enzyme doing its job and pulling up everything that was lurking deep in the fibers. Gross but good. Just keep washing and those smells will slowly fade away for good.</p></div>
+  </div>
+
+  <!-- PRETREATMENT -->
+  <div class="section">
+    <p class="section-label">Your new best friend</p>
+    <h2>The Importance of Pretreatment</h2>
+    <p class="section-desc">When it comes to stains — especially with kids — pretreatment is everything. Buy several bottles and keep them all over the house. Bathroom, kids' rooms, the car. Everywhere.</p>
+    <p class="quip">The moment the clothes come off, spray them generously, toss in the hamper, and forget about it. Stain treater can sit on fabric for up to 7 days. You're welcome.</p>
+    <div class="pretreat-flow">
+      <span class="flow-step">Stain happens</span><span class="flow-arrow">→</span>
+      <span class="flow-step">Spray generously</span><span class="flow-arrow">→</span>
+      <span class="flow-step">Toss in hamper</span><span class="flow-arrow">→</span>
+      <span class="flow-step highlight">Wait 48h–7 days</span><span class="flow-arrow">→</span>
+      <span class="flow-step done">Wash normally ✓</span>
+    </div>
+    <div style="background:var(--blush-light);border:1px solid var(--blush);border-radius:var(--radius);padding:0.85rem 1.1rem;font-size:13px;color:var(--blush-dark);margin-bottom:1.25rem;line-height:1.6">
+      <strong>For especially stubborn stains</strong> (turmeric, paint, pasta sauce): re-apply pretreatment daily until wash day. Takes 2 minutes. Leave the item somewhere you'll see it. You will be amazed.
+    </div>
+    <div style="font-size:14px;font-weight:600;margin-bottom:0.5rem">Top enzymatic stain pretreaters</div>
+    <p class="quip">Sorry to say it, Miss Mouth's, but you didn't make the cut.</p>
+    <div class="pretreat-grid">
+      <div class="pretreat-card goat"><div class="goat-badge">The GOAT</div><h4><a href="https://amzn.to/49bzPjw">OxiClean Max Force</a></h4><p>Buy the <a href="https://amzn.to/4dD1UBE">value refill</a>. Keep multiples everywhere. I bring this on vacation. Works on everything if you let it SIT.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/4tSh8c6">DadMode Deep Stain Remover</a></h4><p>Serious enzymatic formula, heavy lifting.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/3PTgayc">Puracy Stain Remover</a></h4><p>Plant-based option that actually performs.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/4uWesee">Tide OxiPro Stain Pack</a></h4><p>The grease formula works on wool and linen too — a rare win.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/43tfFhj">Tide PureClean Stain Treater</a></h4><p>Solid all-around enzymatic option.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/4v3m5jd">Dawn Powerwash</a></h4><p>For the extra tough grease stains.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/3PVyXZF">Pure Sodium Percarbonate</a></h4><p>For yellowing — soak in hot water, then wash as normal.</p></div>
+    </div>
+    <div class="polyquat-box">
+      <h3>⚠ The One Stain That Will Haunt You: Polyquat</h3>
+      <p>Polyquat stains come from <strong>polyquaternium-7</strong> — an ingredient in shampoos, leave-in conditioners, hairsprays, and those cheap bubble wands from Target (yes, the toddler ones). If this polymer contacts detergent before it's rinsed out, it leaves a <strong>gray, shiny, greasy-looking stain</strong> that is nearly impossible to remove. I'm so sorry, but if you encounter polyquat stains, the garment may be ruined. Do bubble parties shirtless, in swimsuits, or in clothes you don't care about. You've been warned.</p>
+    </div>
+  </div>
+
+  <!-- STAIN GUIDE -->
+  <div class="section">
+    <p class="section-label">Stain School</p>
+    <h2>How to Get Out Every Stain Ever</h2>
+    <p class="section-desc">Because "OxiClean it and pray" is my #1 strategy too — but sometimes we need a little extra TLC.</p>
+    <div class="stain-tabs">
+      <button class="stain-tab active" onclick="showStain('blood',this)">🩸 Blood</button>
+      <button class="stain-tab" onclick="showStain('grease',this)">🍳 Grease</button>
+      <button class="stain-tab" onclick="showStain('grass',this)">🌿 Grass</button>
+      <button class="stain-tab" onclick="showStain('mud',this)">🪣 Mud</button>
+      <button class="stain-tab" onclick="showStain('ink',this)">🖊️ Ink</button>
+      <button class="stain-tab" onclick="showStain('sweat',this)">💦 Sweat</button>
+      <button class="stain-tab" onclick="showStain('food',this)">🍝 Food</button>
+      <button class="stain-tab" onclick="showStain('chocolate',this)">🍫 Chocolate</button>
+      <button class="stain-tab" onclick="showStain('spice',this)">🌶️ Turmeric & Spices</button>
+    </div>
+
+    <div id="stain-blood" class="stain-panel active">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency urgent">⚡ Act fast — heat sets it permanently</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Cold water only.</strong> Rinse immediately from the back of the fabric to push the stain out. Never warm or hot — heat bonds blood protein to fabric fibers forever.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply OxiClean Max Force</strong> or any pretreater that contains protease — that's the enzyme that specifically breaks down blood and other proteins. Work it in gently and let it sit for at least 30 minutes.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash on cold</strong> with your normal detergent and add a booster (FEBU, BIZ, or OxiClean) to give stain removal an extra push. Check before drying — if the stain is still there, treat again. Do not put it in the dryer.</p></div>
+        </div>
+        <div class="stain-note">💡 I know — I preach warm or hot for everything. Blood is the exception. Think of it like a steak: the longer you cook it, the less rare it becomes. Warm or hot water will literally cook this stain into your clothes. Cold only. No exceptions.<br><br>Hydrogen peroxide works on fresh blood on white or light fabrics. Apply, watch it fizz, rinse cold. Don't use on colors — it will bleach them.</div>
+        <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid var(--border)">
+          <div style="font-size:13px;font-weight:700;margin-bottom:0.6rem">🕐 For old blood stains</div>
+          <p style="font-size:13px;line-height:1.6;margin-bottom:0.75rem">Follow the same steps above — but let your pretreater sit on the stain for longer before washing. When it comes out of the wash, there's a good chance the stain will still be there. That's okay. We have a plan.</p>
+          <div class="stain-steps">
+            <div class="stain-step"><div class="stain-step-num">1</div><p>Fill a bucket or bowl with <strong>hot water</strong> and add powdered oxygen bleach — OxiClean, Kirkland Oxi Boost, pure sodium percarbonate, any of them work. Stir until <strong>fully dissolved</strong> before adding the garment.</p></div>
+            <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Submerge the garment and soak overnight.</strong> The extended soak gives the oxygen bleach time to work on what the wash cycle couldn't shift.</p></div>
+            <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash as normal on cold.</strong> Check before drying. If it's still there, repeat the whole soak — it will eventually come out.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="stain-grease" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency normal">🕐 Sooner is better, but dried grease is treatable</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Blot — don't rub.</strong> Remove any solid residue with a spoon. Rubbing pushes the grease deeper into the fibers. You will regret rubbing.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply Dawn Powerwash</strong> directly to the stain and work it in with your fingers. Dawn is a degreaser — it's literally designed for this. Let it sit 10–15 minutes.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Follow with OxiClean Max Force</strong> on top of the Dawn. Let both sit together for another 30 minutes.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm or hot</strong> with a lipase-containing detergent and booster. Lipase is what breaks down oils — this is its moment.</p></div>
+        </div>
+        <div class="stain-note">💡 For old dried grease stains: apply a generous amount of dish soap and let it sit overnight before treating. The longer it sits, the more the lipase can work.</div>
+      </div>
+    </div>
+
+    <div id="stain-grass" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency normal">🕐 Treat before washing — don't just throw it in</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Brush off any dried grass</strong> before you do anything wet. Getting it dry first prevents you from grinding it further in.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply OxiClean Max Force</strong> or a protease-based pretreater directly to the stain. Grass stains are protein + chlorophyll — you need protease and pectate lyase working together.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Let it sit for 48 hours minimum.</strong> This is not a rinse-and-wash situation. Give the enzymes time to actually break down the stain.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm</strong> with a full enzyme detergent. Check before drying. Repeat the treatment if needed — grass is stubborn but it does come out.</p></div>
+        </div>
+        <div class="stain-note">💡 White baseball pants getting grass stains? This is what Out White Bright is for. Soak the pants separately before washing the full uniform.</div>
+      </div>
+    </div>
+
+    <div id="stain-mud" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency patient">✋ Wait — treating mud wet makes it worse</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Let it dry completely.</strong> This is the hardest part. Do not touch it, rub it, or try to rinse it while it's wet — you will spread it further into the fibers. Walk away.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Once fully dry, brush off as much as possible</strong> with a stiff brush or the edge of a spoon. You want to remove the bulk before introducing any liquid.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Apply OxiClean Max Force</strong> and let it sit for at least an hour. Mud is clay and mineral-based — a good enzyme detergent and some patience is all you need.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm or hot</strong> with your normal detergent and a booster. This one usually comes out in a single wash if you let it dry first.</p></div>
+        </div>
+        <div class="stain-note">💡 The most common mud mistake: panicking and rubbing it wet. Every time. Let. It. Dry.</div>
+      </div>
+    </div>
+
+    <div id="stain-ink" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency urgent">⚡ Fresh ink is treatable. Set ink is a different story.</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Place a clean cloth behind the stain</strong> so ink doesn't transfer through to the other side of the fabric.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>For ballpoint ink:</strong> apply rubbing alcohol with a cotton ball and blot from the outside of the stain inward. The alcohol dissolves the oil-based ink. Repeat until it stops transferring.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>For felt-tip or washable ink:</strong> cold water and dish soap first, then follow with OxiClean Max Force. These are water-based and much more forgiving.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on cold or warm</strong> — not hot — and check before drying. Heat sets ink just like blood.</p></div>
+        </div>
+        <div class="stain-note">💡 Permanent marker on fabric is genuinely difficult. Rubbing alcohol will fade it but rarely removes it completely. Manage expectations and lean on the pretreater hard.</div>
+      </div>
+    </div>
+
+    <div id="stain-sweat" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency normal">🕐 Treat before the stain sets in — don't let it sit in the hamper for a week</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Those yellow pit stains</strong> aren't just sweat — they're a reaction between sweat and aluminum in antiperspirant. The fix is acid: mix equal parts white vinegar and water, apply, and let sit for 30 minutes.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply OxiClean Max Force</strong> or a sodium percarbonate paste on top and let it work for another 30–60 minutes. For really set-in yellowing, soak in hot water with OxiClean White Revive for several hours.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash on warm or hot</strong> with a lipase and protease detergent. Sweat is oils and proteins — you want both enzymes working.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>For odor without visible staining</strong> — that's the gym clothes problem. See the Odor Rebloom section. The stain isn't on the surface, it's in the fibers.</p></div>
+        </div>
+        <div class="stain-note">💡 Prevention: switch to an aluminum-free deodorant and the yellow pit stain problem goes away entirely. Just saying.</div>
+      </div>
+    </div>
+
+    <div id="stain-food" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency normal">🕐 Depends on the food — details below</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off any solids first</strong> with a spoon — never rub. Then blot any wet residue with a clean cloth.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Identify what you're dealing with.</strong> Greasy food (butter, oil, salad dressing) → start with Dawn Powerwash. Tomato-based (pasta sauce, ketchup) → OxiClean Max Force straight away. Protein-based (egg, meat) → cold water first, then pretreater. Turmeric → sodium percarbonate soak in hot water, then sunlight.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Apply your pretreater</strong> and let it sit for 48 hours minimum. Food stains respond dramatically better with time.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm or hot</strong> with a full enzyme detergent and booster. Check before drying — food stains that have been dried in are significantly harder to shift.</p></div>
+        </div>
+        <div class="stain-note">💡 Turmeric is in a category of its own. Sodium percarbonate soak + direct sunlight is the most effective treatment. Sunlight acts as a natural bleaching agent on turmeric specifically — leave the damp garment outside and let the sun do its thing.</div>
+      </div>
+    </div>
+    <div id="stain-chocolate" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency urgent">⚡ Cold water only — heat is chocolate's best friend (and yours worst enemy)</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Let it dry or harden first</strong> if it's fresh melted chocolate. Trying to treat it while it's still liquid smears it further. Give it a few minutes, then gently scrape off the solid with a spoon.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Rinse from the back with cold water</strong> to push the stain out rather than deeper in. Chocolate is a triple threat — it's protein, fat, AND tannin — so you're fighting on three fronts.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Apply Dawn Powerwash first</strong> to tackle the fat, work it in gently, then follow immediately with OxiClean Max Force for the protein and tannin. Let both sit together for at least an hour — longer if it's dried in.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on cold or warm</strong> — never hot — with a full enzyme detergent. Protease for the protein, lipase for the fat. Check before drying. Repeat if needed.</p></div>
+        </div>
+        <div class="stain-note">💡 Milk chocolate is slightly easier than dark chocolate because it has more fat and less tannin. Dark chocolate on white fabric is the final boss. Be patient, be cold, and treat more than once if you need to.</div>
+      </div>
+    </div>
+
+    <div id="stain-spice" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency urgent">⚡ Turmeric especially — do not let this dry if you can help it</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off any solid residue immediately.</strong> Turmeric and spice stains are pigment-based — the longer they sit in the fiber, the deeper they bond. Speed matters more here than almost any other stain.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply dish soap or Dawn Powerwash</strong> immediately and work it in. Rinse with cold water. This won't remove it fully but it buys you time and lifts the surface layer before you move to the heavy treatment.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Make a sodium percarbonate paste</strong> — mix pure sodium percarbonate (or OxiClean) with just enough hot water to form a thick paste. Apply generously to the stain and leave it for several hours. This is the most effective dry treatment for turmeric.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm</strong> with a full enzyme detergent and booster. Then — and this is the secret — <strong>lay the damp garment in direct sunlight.</strong> Sunlight is a natural bleaching agent that specifically targets turmeric pigment. Leave it until dry. Repeat the whole process if the stain is still visible.</p></div>
+        </div>
+        <div class="stain-note">💡 Turmeric is one of the few stains where the dryer is your actual enemy. Never tumble dry a turmeric-stained garment until the stain is completely gone — heat bonds the pigment permanently. The sun is your friend here. Your dryer is not.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HOW TO WASH -->
+  <div class="section">
+    <p class="section-label">Let's get washing</p>
+    <h2>How to Actually Do a Load</h2>
+    <p class="section-desc">You are never washing on cold again. Cold is dead to us. Warm or hot, every time — that's how enzymes and surfactants actually activate. Also: towels ONLY get washed with other towels. This is non-negotiable.</p>
+    <p class="quip">"But cold is better for the environment!" Cool. These are your clothes. Wash them on warm.</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><p>Add any <strong>powder boosters or water softeners</strong> directly into the drum first — before the clothes go in.</p></div>
+      <div class="step"><div class="step-num">2</div><p>Load <strong>clothes to 75%</strong> capacity. Not 80%. Not "pretty full." 75%.</p></div>
+      <div class="step"><div class="step-num">3</div><p>Add <strong>4 tbsp of liquid detergent</strong> into your machine's detergent section. If you've softened your water correctly, this is the max you ever need. For powder, 2–3 heaping tbsp in the drum.</p></div>
+      <div class="step"><div class="step-num">4</div><p>Add <strong>¼ cup of fabric rinse</strong> (citric acid solution, Downy Rinse &amp; Refresh, or homemade) into the softener section. If your machine doesn't have one, use a Downy ball tossed in the drum.</p></div>
+      <div class="step"><div class="step-num">5</div><p>Select <strong>warm or hot</strong> and use as many extra rinses as your machine allows. Yes, really. Three rinses. I know. Just do it.</p></div>
+      <div class="step"><div class="step-num">6</div><p>Walk away for 2 hours. Come back to the cleanest laundry of your entire life.</p></div>
+    </div>
+    <div style="margin-top:1.75rem;font-size:14px;font-weight:600;margin-bottom:0.75rem">My exact routine (LG front loader · Lake Michigan water · ~120 ppm)</div>
+    <div class="routine-grid">
+      <div class="routine-card"><div class="routine-head">Adult laundry</div><div class="routine-row"><span>Detergent</span><span>4 tbsp Tide Odor Refresh</span></div><div class="routine-row"><span>Booster</span><span>1 scoop FEBU (in drum)</span></div><div class="routine-row"><span>Water softener</span><span>1 tsp Borax</span></div><div class="routine-row"><span>Rinse aid</span><span>¼ cup citric acid rinse</span></div><div class="routine-row"><span>Cycle</span><span>Warm · normal · 3 rinses</span></div></div>
+      <div class="routine-card"><div class="routine-head">Kid laundry</div><div class="routine-row"><span>Detergent</span><span>4 tbsp Tide Odor Refresh</span></div><div class="routine-row"><span>Booster</span><span>¼ cup BIZ (in drum)</span></div><div class="routine-row"><span>Water softener</span><span>1 tsp Borax</span></div><div class="routine-row"><span>Rinse aid</span><span>¼ cup citric acid rinse</span></div><div class="routine-row"><span>Cycle</span><span>Hot · heavy soil · 3 rinses</span></div></div>
+    </div>
+    <p class="quip">If you just bought a giant bottle of a detergent you now realize is bad — don't throw it out. Grab a good booster and a good pretreater and boost that bad boy until it runs out. Then buy something better. Thank you for coming to my TED talk.</p>
+  </div>
+
+  <!-- CITRIC ACID -->
+  <div class="section">
+    <p class="section-label">The rinse cycle secret</p>
+    <h2>Why Citric Acid in the Rinse?</h2>
+    <p class="section-desc">If you're using vinegar in your rinse cycle, you're not using nearly enough — it takes 2–3 cups of household cleaning vinegar to actually work. Citric acid is more concentrated, cheaper, and your clothes won't smell like a salad.</p>
+    <div class="citric-grid">
+      <div class="citric-card"><div class="icon">🧫</div><h4>Neutralizes detergent</h4><p>Most detergents are alkaline. Citric acid neutralizes the residue, eliminating that stiff, scratchy feeling — even if you accidentally overdosed.</p></div>
+      <div class="citric-card"><div class="icon">💎</div><h4>Fights hard water minerals</h4><p>Binds to calcium and magnesium so they rinse away instead of leaving a chalky film on your clothes or inside your machine.</p></div>
+      <div class="citric-card"><div class="icon">🌿</div><h4>Softens without coating</h4><p>Fabric softener leaves a waxy layer. Citric acid softens by removing buildup. Nothing added, just residue gone.</p></div>
+      <div class="citric-card"><div class="icon">⚙️</div><h4>Descales your machine</h4><p>Regular use prevents mineral scale buildup inside the drum and hoses over time. Your machine will silently thank you.</p></div>
+    </div>
+    <div class="recipe-card">
+      <div class="recipe-head">DIY concentrated citric acid rinse</div>
+      <div class="recipe-row"><span>Citric acid crystals</span><span>1½ cups</span></div>
+      <div class="recipe-row"><span>Distilled water</span><span>62 fl oz</span></div>
+      <div class="recipe-row"><span>Use per load</span><span>¼ cup in softener section</span></div>
+    </div>
+    <p style="font-size:12px;color:var(--ink-muted);margin-top:8px;line-height:1.5">Or add 1–2 tbsp citric acid crystals directly to the softener dispenser each load. Fragrance-free, septic-safe, available in bulk for almost nothing.</p>
+  </div>
+
+  <!-- TOWELS & SHEETS -->
+  <div class="section">
+    <p class="section-label">The finishing touch</p>
+    <h2>Keeping Towels &amp; Sheets Soft and Bright</h2>
+    <p class="section-desc">If your towels feel scratchy, it's almost always detergent buildup — too much product coats the fibers so they can't absorb water properly. Here's the fix.</p>
+    <p class="quip">Towels ONLY get washed with other towels. This is not a suggestion. This is a way of life.</p>
+    <div style="font-size:14px;font-weight:600;margin-bottom:0.75rem">🔄 Towel rehab — stripping the buildup</div>
+    <div class="towel-steps">
+      <div class="towel-step"><div class="towel-step-icon">1️⃣</div><p>Add <strong>½ cup of citric acid</strong> directly to the drum.</p></div>
+      <div class="towel-step"><div class="towel-step-icon">2️⃣</div><p>Load towels and wash on <strong>HOT, heavy soil, with extra rinses.</strong> Repeat until you see no more suds — that's all the old detergent coming out. Then promise me you won't overdose your detergent ever again.</p></div>
+      <div class="towel-step"><div class="towel-step-icon">3️⃣</div><p>Dry on a <strong>low/delicate heat setting.</strong> Towels are a looped fabric — high heat destroys them. Pull out when barely damp and fold as normal.</p></div>
+    </div>
+    <div class="maint-grid">
+      <div class="maint-card"><h3>🤍 Keeping white towels white</h3><p>Always hot, always extra rinses, slightly less detergent (you're clean when you use a towel — there's not much dirt for detergent to cling to). If they start going dingy, soak in a hot bath with <a href="https://amzn.to/4wJr8H2">OxiClean White Revive</a> or pure sodium percarbonate for a few hours, then wash and dry as normal.</p></div>
+      <div class="maint-card"><h3>🛏 White sheets — same rules, extra step</h3><p>Follow the same routine as white towels, but always <strong>pretreat any stains first.</strong> I have a large golden retriever who sleeps in our bed every single night and our cotton sheets are still a lovely bright white. The routine works.</p></div>
+    </div>
+  </div>
+
+  <!-- SPORTS MOM -->
+  <div class="section">
+    <p class="section-label">For the moms on the sideline</p>
+    <h2>I'm a Sports Mom — Help!</h2>
+    <p class="section-desc">Stains and stink are basically a sponsorship deal when you have athletes. Here's how to handle the specific chaos each sport brings.</p>
+    <div class="sport-tabs">
+      <button class="sport-tab active" onclick="showSport('baseball',this)">⚾ Baseball</button>
+      <button class="sport-tab" onclick="showSport('hockey',this)">🏒 Hockey</button>
+    </div>
+    <div id="sport-baseball" class="sport-panel active">
+      <p class="quip">Whoever decided that white pants belong on a dirt field is literally insane. Anyway. Here's how to undo the damage.</p>
+      <div class="sport-steps">
+        <div class="sport-step"><div class="sport-step-num">1</div><p><strong>Everything into a boiling hot soak</strong> — dissolve 1½ cups of powdered detergent in the hot water and submerge jerseys, socks, the whole uniform. Soak for at least 1 hour.</p></div>
+        <div class="sport-step"><div class="sport-step-num">2</div><p><strong>Pants get their own soak</strong> (separate step, just the pants). Hot water + ½ cup of <a href="https://amzn.to/49anigc">Out White Bright</a>. Soak for at least 1 hour.</p></div>
+        <div class="sport-step"><div class="sport-step-num">3</div><p><strong>Drain the gross soak water</strong> and throw everything in the washer. Warm or hot, good detergent, multiple rinses. Add 1–2 tbsp of sodium percarbonate (BIZ, FEBU, or OxiClean) to the drum if you want to go all in.</p></div>
+      </div>
+    </div>
+    <div id="sport-hockey" class="sport-panel">
+      <p class="quip">Hockey moms, I am about to become one of you. I have done an unhinged amount of research in preparation. Here's what I've learned.</p>
+      <div class="sport-steps">
+        <div class="sport-step"><div class="sport-step-num">1</div><p><strong>Anything that can go in the washer, wash it.</strong> Jerseys, socks, base layers — wash as normal and air dry.</p></div>
+        <div class="sport-step"><div class="sport-step-num">2</div><p><strong>Everything else must air out after every single practice.</strong> Don't let gear sit in a bag. Ever. Open it up, spread it out, let it breathe.</p></div>
+        <div class="sport-step"><div class="sport-step-num">3</div><p><strong>Spray non-washable gear with hypochlorous acid</strong> to kill bacteria and odor. Buy an <a href="https://amzn.to/4nHwDC1">enormous jug</a> and a spray bottle and just go to town.</p></div>
+      </div>
+      <div class="sport-tip">💡 Hypochlorous acid is safe, non-toxic, and genuinely effective — the same thing used in wound care. A large jug costs almost nothing and lasts forever. Keep it in your gear bag.</div>
+    </div>
+  </div>
+
+  <!-- AMMONIA -->
+  <div class="section">
+    <p class="section-label">The big guns</p>
+    <h2>Ammonia — When to Call in the Cavalry</h2>
+    <p class="section-desc">Not an everyday product. But if your husband comes home smelling like a garage, this is your friend.</p>
+    <p class="quip">Mechanics' wives, farmers' wives, anyone married to a person who works with their hands — this one's for you. You're welcome.</p>
+
+    <div class="hw-what">
+      <p>Ammonia is an alkaline cleaner with a particular talent for cutting through grease, oil, and heavy grime that regular detergent struggles to shift. It's been used in laundry for decades — it just fell out of fashion when detergents got better. On extremely soiled loads, it still earns its keep.</p>
+      <p>The key word is <em>extremely</em>. This is not something you're reaching for on a Tuesday with a regular load. It's for the mechanic's work clothes. The farm gear. The mystery-stained situation you've already washed twice and it's only getting worse. Used correctly, it's effective and safe. Used casually on everything, it's unnecessary and will shorten the life of your fabrics.</p>
+    </div>
+
+    <div class="maint-grid">
+      <div class="maint-card">
+        <h3>✅ What it's good for</h3>
+        <p>Heavy grease and oil stains, embedded grime, work clothes that smell like a job site, anything where detergent alone isn't making a dent. Pairs especially well with a Spa Day soak — add it right before you transfer clothes to the machine as your final step.</p>
+      </div>
+      <div class="maint-card">
+        <h3>🚫 The one rule you cannot break</h3>
+        <p><strong>Never mix ammonia with bleach — or with any product containing bleach.</strong> This produces toxic chloramine gas. It is not a "don't do this at home" warning. It is a do-not-do-this-anywhere warning. Keep them completely separate, always.</p>
+      </div>
+    </div>
+
+    <div class="info-box" style="margin-top:1.25rem">💡 <strong>How to use it:</strong> Pour about 1 cup of plain liquid ammonia into the liquid bleach slot in your machine drawer — that's exactly what that slot is for. On a top loader, you can also add it directly to the drum after the wash water has filled, before the cycle starts. Wash on warm or hot with an extra rinse. And while we're here: you shouldn't be putting liquid bleach in that slot anyway. We have better options. Consider it ammonia's slot now.</div>
+
+    <div class="polyquat-box" style="margin-top:1.25rem">
+      <h3>What to buy</h3>
+      <p>Plain, unscented household ammonia — the kind with no added surfactants or cleaning agents. It's usually labeled "clear ammonia" or "pure ammonia." The scented versions and multipurpose formulas have other stuff in them you don't need in your laundry. It costs almost nothing and a bottle lasts forever because you're barely using it.</p>
+    </div>
+  </div>
+
+  <!-- SPA DAY -->
+  <div class="section">
+    <p class="section-label">The resurrection</p>
+    <h2>Spa Day 🧖‍♀️</h2>
+    <p class="section-desc">How to give your stinky, dirty, dead-to-you clothes a second chance at life.</p>
+    <p class="quip">This is not regular laundry. This is a full intervention. Commit to the process.</p>
+
+    <div class="spa-header">
+      <p><strong>What is Spa Day?</strong> A hot soak treatment for clothes that regular washing just isn't cutting — think gym clothes with permanent stink, thrift finds, heavily soiled items, or anything you've given up on. The extended soak lets enzymes and surfactants work deep into the fibers in a way a normal wash cycle simply can't.</p>
+    </div>
+
+    <div class="spa-tools">
+      <h3>Gather your tools</h3>
+      <div class="spa-tools-grid">
+        <div class="spa-tool-item">Cooler or plastic storage bin with lid</div>
+        <div class="spa-tool-item">Wooden or plastic cooking spoon</div>
+        <div class="spa-tool-item">1-cup measuring cup</div>
+        <div class="spa-tool-item">Old towel (to weigh clothes down)</div>
+        <div class="spa-tool-item"><a href="https://amzn.to/4uq9UwL">Tide Original Powder</a> — easiest option</div>
+        <div class="spa-tool-item optional">Cleaning gloves (for sensitive skin)</div>
+        <div class="spa-tool-item optional">Fine mesh kitchen strainer</div>
+        <div class="spa-tool-item optional">Bucket or smaller bin for transfer</div>
+        <div class="spa-tool-item optional">Liquid ammonia (odor nuclear option)</div>
+        <div class="spa-tool-item optional">Citric acid (for the rehab rinse)</div>
+      </div>
+    </div>
+
+    <div class="spa-steps">
+      <div class="spa-step"><div class="spa-step-num">1</div><p><strong>Set up your bin in the bathtub.</strong> Fill it ⅓ to ½ with hot tap water.</p></div>
+      <div class="spa-step"><div class="spa-step-num">2</div><p><strong>Add 1½ cups of Tide Original Powder</strong> per ~6 gallons of water. Stir until all granules are fully dissolved — this takes a few minutes. Use the strainer to fish out any stubborn granules. Undissolved powder can leave spots.</p></div>
+      <div class="spa-step"><div class="spa-step-num">3</div><p><strong>Add your clothes.</strong> Make sure everything is fully submerged. Lay the old towel on top to keep it all under the water. Put the lid on.</p></div>
+      <div class="spa-step"><div class="spa-step-num">4</div><p><strong>Wait 8–12 hours.</strong> Overnight works great. Set a reminder alarm so you don't forget about your laundry soup.</p></div>
+      <div class="spa-step"><div class="spa-step-num">5</div><p><strong>Drain — do not wring or squeeze.</strong> While it drains, prep your washing machine: detergent in the drawer, citric acid in the softener slot, settings pre-selected.</p></div>
+      <div class="spa-step"><div class="spa-step-num">6</div><p><strong>Transfer clothes to the machine.</strong> If using ammonia, pour 1 cup directly onto the soaked clothes, then immediately close the door and press start. Speed matters here — ammonia should be your very last step.</p></div>
+      <div class="spa-step"><div class="spa-step-num">7</div><p><strong>Wash on warm or hot, heavy soil, with an extra rinse.</strong> Normal cycles are fine for most fabrics.</p></div>
+      <div class="spa-step"><div class="spa-step-num">8</div><p><strong>Dry as normal</strong> — delicates hang to dry, everything else on low/delicate heat. <em>Don't dry on hot if you're still working on a stain.</em></p></div>
+    </div>
+
+    <div class="spa-tip">
+      💜 Long-term maintenance: incorporate a lipase detergent or booster into your regular routine to prevent buildup from coming back. Citric acid in every rinse keeps things fresh.
+    </div>
+  </div>
+
+  <!-- TLDR -->
+  <div class="tldr">
+    <h2>✦ The TLDR</h2>
+    <p class="tldr-sub">For when you just need to start doing laundry correctly right now. You've got kids. I get it.</p>
+    <ul class="tldr-steps">
+      <li class="tldr-step"><div class="tldr-num">1</div><p><strong>Know your water hardness</strong> → add the right softener to the drum before loading.</p></li>
+      <li class="tldr-step"><div class="tldr-num">2</div><p><strong>Fill to 75%</strong> only. Never overfill. Not even close.</p></li>
+      <li class="tldr-step"><div class="tldr-num">3</div><p><strong>4 tbsp liquid detergent + a booster</strong> (FEBU for adults, BIZ for kids) into the drum.</p></li>
+      <li class="tldr-step"><div class="tldr-num">4</div><p><strong>¼ cup citric acid rinse</strong> in the softener slot. No fabric softener. Ever.</p></li>
+      <li class="tldr-step"><div class="tldr-num">5</div><p><strong>Warm or hot</strong>, as many rinses as your machine allows. Cold is not an option.</p></li>
+      <li class="tldr-step"><div class="tldr-num">6</div><p><strong>Pretreat every stain</strong> with OxiClean Max Force the moment it happens. Let it sit 48h minimum.</p></li>
+      <li class="tldr-step"><div class="tldr-num">7</div><p><strong>Clean your machine</strong> with ½ cup citric acid every 90 loads. Don't skip this.</p></li>
+      <li class="tldr-step"><div class="tldr-num">8</div><p><strong>Towels only with towels.</strong> Hot. Low heat dry. Take out slightly damp. That's it.</p></li>
+    </ul>
+  </div>
+
+  <!-- PRODUCT REFERENCE -->
+  <div class="product-section">
+    <p class="section-label">Shop the guide</p>
+    <h2>Products Listed in This Guide</h2>
+    <p class="sub">All links are affiliate links — thank you so much for your support! 🧺</p>
+
+    <div class="product-category">
+      <h3>🧴 Liquid Detergents</h3>
+      <div class="product-links">
+        <div class="product-link-item"><a href="https://www.target.com/p/tide-liquid-he-odor-refresh-laundry-detergent-free-gentle/-/A-94711688">Tide Free &amp; Gentle Odor Refresh</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3PHyslM">Persil Pro Clean</a></div>
+        <div class="product-link-item"><a href="https://www.costco.com/p/-/kirkland-signature-ultra-clean-free-clear-he-liquid-laundry-detergent-146-loads-194-fl-oz/100525739">Kirkland Free &amp; Clear</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4nFEdNo">Tide Ultra Oxi</a></div>
+        <div class="product-link-item"><a href="https://www.wegmans.com/shop/product/54930-Fresh-Scent-Laundry-Detergent-with-Oxi-Booster">Wegman's Fresh Scent</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4wFMOE0">Ginger Lily Farms Unscented</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4fxWBpt">365 Laundry Detergent</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4fGA7CG">Tide Liquid Original</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4v20Uhi">Dreft</a></div>
+      </div>
+    </div>
+
+    <div class="product-category">
+      <h3>🧂 Powder Detergents</h3>
+      <div class="product-links">
+        <div class="product-link-item"><a href="https://amzn.to/43oWuFq">Tide Clean &amp; Gentle Powder</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4uq9UwL">Tide Original Powder</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4tIAkst">Tide Ultra Oxi Powder</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4v73tik">Tide Powder w/Bleach</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3Rksbx6">Ariel 2x</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4v2WXJs">365 Unscented Powder</a></div>
+      </div>
+    </div>
+
+    <div class="product-category">
+      <h3>🧺 Delicate Detergents</h3>
+      <div class="product-links">
+        <div class="product-link-item"><a href="https://amzn.to/4nKO58M">Miele WoolCare</a></div>
+      </div>
+    </div>
+
+    <div class="product-category">
+      <h3>⚡ Boosters</h3>
+      <div class="product-links">
+        <div class="product-link-item"><a href="https://amzn.to/4nL63rF">FEBU Laundry Booster</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4usx6uw">BIZ</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4utN9Z4">365 Oxygen Booster</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4dLZlxg">Dirty Labs Enzymatic Booster</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4wJr8H2">OxiClean White Revive</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4e1YtVp">OxiClean Versatile</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3PVyXZF">Pure Sodium Percarbonate</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4f1oC8S">FEBU (enzyme booster)</a></div>
+      </div>
+    </div>
+
+    <div class="product-category">
+      <h3>🎯 Stain Pretreaters</h3>
+      <div class="product-links">
+        <div class="product-link-item"><a href="https://amzn.to/49bzPjw">OxiClean Max Force</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4dD1UBE">OxiClean Max Force Value Refill</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4tSh8c6">DadMode Deep Stain Remover</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3PTgayc">Puracy Stain Remover</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4uWesee">Tide OxiPro Stain Pack</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/43tfFhj">Tide PureClean Stain Treater</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4v3m5jd">Dawn Powerwash</a></div>
+      </div>
+    </div>
+
+    <div class="product-category">
+      <h3>🔬 Machine Care &amp; Water Testing</h3>
+      <div class="product-links">
+        <div class="product-link-item"><a href="https://amzn.to/3RlAzwh">Pure Citric Acid Powder</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/49eX24c">Microban Antibacterial Spray</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3RjAdGx">API Fish Kit (water hardness test)</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3Ph4OE3">Washing Soda</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4tSggUS">Borax</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/43mJsIx">Trisodium Phosphate (TSP)</a></div>
+        <div class="product-link-item"><a href="https://garamecleaning.co/products/odour-remover">Gear Guard (DNase)</a></div>
+      </div>
+    </div>
+
+    <div class="product-category">
+      <h3>⚾🏒 Sports Mom</h3>
+      <div class="product-links">
+        <div class="product-link-item"><a href="https://amzn.to/49anigc">Out White Bright</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4nHwDC1">Hypochlorous Acid (large jug)</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="outro">
+    <p>That's it. That's the Laundry Guide. 🎉<br><br>The world of laundry is endless and it's easy to get bogged down in a laundry spiral. If you want to go deeper, <strong>r/laundry on Reddit</strong> is an excellent corner of the internet — be warned though, you'll likely become obsessed just like me.<br><br>Thanks so much for your support and <strong>happy laundering!</strong></p>
+  </div>
+
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+function showStain(id, btn) {
+  document.querySelectorAll('.stain-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.stain-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('stain-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+  document.querySelectorAll('.sport-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.sport-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('sport-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
