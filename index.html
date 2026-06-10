@@ -755,6 +755,7 @@
       <div class="worst-item">Arm &amp; Hammer</div>
     </div>
     <p style="font-size:13px;color:var(--ink-light);margin-top:1rem;line-height:1.6">If you just restocked one of these, don't throw it out. Grab softening agents, a good booster, a pretreater, and a rinse aid to carry you through the bottle — then switch to something better. Thank you for coming to my TED talk.</p>
+    <div class="info-box" style="margin-top:1rem">⚠️ <strong>A note on Truly Free, for my crunchy moms:</strong> Their detergent is on this list for a reason — it genuinely doesn't clean well. BUT — and this is important — their other enzyme-based laundry products are actually excellent. The <a href="https://amzn.to/4ea8Je8">Enzyme Stain Remover</a>, the <a href="https://amzn.to/3QyGON9">OxyBoost</a>, and the <a href="https://amzn.to/43uhLhb">Washing Machine Cleaner</a> are all worth using. Just don't let them anywhere near your detergent slot. It's complicated.</div>
   </div>
 
   <!-- BUZZWORDS -->
@@ -793,6 +794,8 @@
       <div class="pretreat-card"><h4><a href="https://amzn.to/4oi4lhM">Puracy Stain Remover</a></h4><p>Plant-based option that actually performs.</p></div>
       <div class="pretreat-card"><h4><a href="https://amzn.to/4uorgcR">Tide OxiPro Stain Pack</a></h4><p>The grease formula works on wool and linen too — a rare win.</p></div>
       <div class="pretreat-card"><h4><a href="https://amzn.to/49SU31P">Tide PureClean Stain Treater</a></h4><p>Solid all-around enzymatic option.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/4ea8Je8">Truly Free Enzyme Stain Remover</a></h4><p>Their detergent? No. This? Actually great.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/3QbWiXi">Truly Free Stain Spray</a></h4><p>Different product, same great enzyme philosophy.</p></div>
       <div class="pretreat-card"><h4><a href="https://amzn.to/4vGa97g">Dawn Powerwash</a></h4><p>For the extra tough grease stains.</p></div>
       <div class="pretreat-card"><h4><a href="https://amzn.to/4v2QjDl">Pure Sodium Percarbonate</a></h4><p>For yellowing — soak in hot water, then wash as normal.</p></div>
     </div>
@@ -817,6 +820,9 @@
       <button class="stain-tab" onclick="showStain('food',this)">🍝 Food</button>
       <button class="stain-tab" onclick="showStain('chocolate',this)">🍫 Chocolate</button>
       <button class="stain-tab" onclick="showStain('coffee',this)">☕ Coffee</button>
+      <button class="stain-tab" onclick="showStain('baby',this)">💩 Baby Blowouts</button>
+      <button class="stain-tab" onclick="showStain('sunscreen',this)">🌞 Sunscreen</button>
+      <button class="stain-tab" onclick="showStain('rust',this)">🔧 Rust</button>
       <button class="stain-tab" onclick="showStain('polyquat',this)">🫧 Bubbles</button>
       <button class="stain-tab" onclick="showStain('spice',this)">🌶️ Turmeric & Spices</button>
     </div>
@@ -887,7 +893,7 @@
         <div class="stain-steps">
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Place a clean cloth behind the stain</strong> so ink doesn't transfer straight through to the other side. Basic but important.</p></div>
           <div class="stain-step"><div class="stain-step-num">2</div><p><strong>For ballpoint ink:</strong> saturate with rubbing alcohol and blot — do not rub — from the outside of the stain inward. Keep blotting with fresh sections of cloth until it stops transferring. The alcohol dissolves the oil-based ink.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>For felt-tip, marker, or "washable" ink</strong> (and kids f**king LOVE markers — dry erase, "washable," permanent, all of them, especially on fabric): your regular pretreater isn't going to cut it. Rubbing alcohol first, then OxiClean Max Force. For serious marker situations, call in <a href="https://amzn.to/4uqYoBt">Amodex</a> or <a href="https://amzn.to/4usD2DV">Carbona Stain Devil 3</a> — and follow those instructions VERY closely. These are not products to freestyle with.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>For felt-tip, marker, or "washable" ink</strong> (and kids f**king LOVE markers — dry erase, "washable," permanent, all of them, especially on fabric): your regular pretreater isn't going to cut it. Rubbing alcohol first, then OxiClean Max Force. For serious marker situations, call in <a href="https://amzn.to/3RZg8FS">Amodex</a> or <a href="https://amzn.to/4ehYNzk">Carbona Stain Devil 3</a> — and follow those instructions VERY closely. These are not products to freestyle with.</p></div>
           <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on cold or warm</strong> — not hot — and check before drying. Heat sets ink just like blood. If permanent marker is still visible after washing, repeat. It will fade. Manage expectations.</p></div>
         </div>
         <div class="stain-note">💡 "Washable" is doing a LOT of heavy lifting on those marker labels. Treat it like regular marker and you won't be disappointed.</div>
@@ -945,6 +951,48 @@
       </div>
     </div>
 
+    <div id="stain-baby" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency urgent">⚡ Act fast — and maybe pour yourself a drink first</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>First, take a breath.</strong> You are a parent. You have seen things. You can handle this. The onesie is not lost. Probably.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Rinse with cold water immediately</strong> — and rinse from the back of the fabric to push the stain out rather than further in. Hot water will set a protein stain. Cold only. We've been over this with blood. Same rules apply here, for obvious reasons.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Pretreat immediately with an enzymatic stain remover.</strong> This is exactly what protease enzyme was made for — breaking down protein-based biological material. <a href="https://amzn.to/3RZhikA">OxiClean Max Force</a> is your go-to here. Let it sit for as long as you can stand to look at it.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash as normal on cold or warm.</strong> Check before drying — if the stain is gone, congratulations. You did it. You're basically a professional now.</p></div>
+          <div class="stain-step"><div class="stain-step-num">5</div><p><strong>If the stain persists:</strong> soak in hot water with <a href="https://amzn.to/4xicXck">OxiClean Baby</a> — it's formulated specifically for baby messes and gentle enough for their delicate little clothes that they are absolutely destroying. Soak until you see it lifting, then wash as normal. Repeat if needed.</p></div>
+        </div>
+        <div class="stain-note">💡 Baby poop stains on white onesies respond really well to sunlight after washing — same principle as turmeric. Make sure the garment has been fully washed and rinsed first — you want it wet, not pretreated. Laying something outside with pretreater still on it can cause more yellowing when the sun interacts with the ingredients. Wash first, then sun.</div>
+      </div>
+    </div>
+
+    <div id="stain-sunscreen" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency normal">🕐 Pretreat before every wash — these get worse over time</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Why sunscreen stains are their own whole thing.</strong> Sunscreen is a cocktail of UV filters (which are yellow — that's not a coincidence), oils, and film-forming polymers that make it water resistant on your skin. Great for the beach. A nightmare for fabric. The higher the SPF, the more UV filters, the worse the staining risk. You're welcome for that information.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>That orange-rust color?</strong> That's the UV filters reacting with copper and iron ions in your tap water during washing, then oxidizing as the fabric dries. Essentially: rust. On your clothes. From sunscreen. Yes, really. This is why hard water makes sunscreen stains significantly worse — more minerals, more reaction, more orange.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Pretreat before every single wash</strong> — apply liquid detergent directly to any sunscreen-exposed areas and let it sit for at least 30 minutes. Don't skip this and just throw it in the wash — the heat will set the oils and make it worse.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>For existing yellow or orange stains:</strong> the oil component responds to <a href="https://amzn.to/4vEvT3p">Dawn dish soap</a> first — same as grease. Follow with OxiClean Max Force and let it sit for 48 hours. If your water is hard, add <a href="https://amzn.to/4oizrWJ">Calgon</a> to the wash to chelate those metal ions before they can react. Wash on warm.</p></div>
+          <div class="stain-step"><div class="stain-step-num">5</div><p><strong>If it still persists:</strong> soak in hot water with oxygen bleach overnight, then wash as normal. Repeat. Sunscreen stains that have been through the dryer multiple times are genuinely very difficult — manage expectations and keep going.</p></div>
+        </div>
+        <div class="stain-note">💡 <strong>Prevention is so much easier than treatment here.</strong> Wait 20 minutes after applying sunscreen before getting dressed — letting it form a film on your skin first dramatically reduces how much transfers to fabric. Wearing dark colors helps too (sunscreen stains basically disappear on black fabric). And if you're using a Korean sunscreen, good news — they're typically formulated with newer-generation UV filters that are far less likely to cause staining.</div>
+      </div>
+    </div>
+
+    <div id="stain-rust" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency normal">🕐 Don't put it in the dryer — heat sets rust permanently</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Lay the garment flat</strong> on a clean surface and <strong>saturate the stain with distilled white vinegar.</strong> Regular cleaning vinegar works too — you want the acidity to start breaking down the iron oxide. This is rust we're dealing with. Acid is its enemy.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Sprinkle a generous layer of salt over the vinegar</strong> while it's still wet. The salt acts as a mild abrasive and helps draw the rust out of the fibers. Let the whole thing sit for 30 minutes to an hour — longer if it's a stubborn or old stain.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Gently scrub with a soft nylon brush</strong> — an old toothbrush works perfectly. Don't go hard on the fabric; you're coaxing the rust out, not sanding the garment down.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Rinse thoroughly in cold water</strong> and wash as normal. Check before drying — always check before drying. If the stain is still there, repeat the whole process before that dryer gets anywhere near it.</p></div>
+          <div class="stain-step"><div class="stain-step-num">5</div><p><strong>If the vinegar and salt method isn't cutting it:</strong> <a href="https://amzn.to/49RtTMM">Carbona Stain Devil #9</a> is specifically formulated for rust and is genuinely very effective. Follow the instructions closely — it's a specialty product, not something to freestyle with.</p></div>
+        </div>
+        <div class="stain-note">💡 Never use chlorine bleach on rust stains. It reacts with the iron and makes the stain permanently darker. Counterintuitive, deeply annoying, absolutely true.</div>
+      </div>
+    </div>
+
     <div id="stain-polyquat" class="stain-panel">
       <div class="stain-panel-inner">
         <span class="stain-urgency normal">🕐 Prevention is everything here — treatment is rough</span>
@@ -965,7 +1013,7 @@
           <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Check before drying.</strong> If the stain is gone — amazing, you're done. If it's still there, do not put it in the dryer. Heat will bond turmeric pigment permanently. Repeat the treatment and wash again.</p></div>
           <div class="stain-step"><div class="stain-step-num">4</div><p><strong>If the stain persists after washing — lay it in the sun.</strong> Yes. The sun. Direct sunlight is a natural bleaching agent that specifically targets turmeric pigment in a way that detergent simply cannot. Leave the damp garment outside until dry. It works. It's annoying, but it works.</p></div>
         </div>
-        <div class="stain-note">💡 So maybe try not to use turmeric in the winter, ok? ☀️</div>
+        <div class="stain-note">💡 So maybe try not to use turmeric in the winter, ok? ☀️ And when you do lay it in the sun — make sure it's been fully washed first. Wet is good. Pretreater still on it is not. The sun interacting with pretreater ingredients can cause extra yellowing. Wash, then sun.</div>
       </div>
     </div>
 
@@ -1205,6 +1253,7 @@
         <div class="product-link-item"><a href="https://amzn.to/4ut9NQi">365 Oxygen Booster</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4vK57Xy">Dirty Labs Enzymatic Booster</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4v4SRkp">OxiClean White Revive</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4xicXck">OxiClean Baby</a></div>
         <div class="product-link-item"><a href="https://amzn.to/3QuywWy">OxiClean Versatile</a></div>
         <div class="product-link-item"><a href="https://amzn.to/3QyGON9">Truly Free OxyBoost</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4v2QjDl">Pure Sodium Percarbonate</a></div>
@@ -1214,7 +1263,11 @@
     <div class="product-category">
       <h3>🎯 Stain Pretreaters</h3>
       <div class="product-links">
+        <div class="product-link-item"><a href="https://amzn.to/3RZg8FS">Amodex (ink & marker)</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4ehYNzk">Carbona Stain Devil #3 (ink)</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/49RtTMM">Carbona Stain Devil #9 (rust)</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4ea8Je8">Truly Free Enzyme Stain Remover</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3QbWiXi">Truly Free Stain Spray</a></div>
         <div class="product-link-item"><a href="https://amzn.to/3RZhikA">OxiClean Max Force</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4ey5Xke">OxiClean Max Force Value Refill</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4fxpXEC">DadMode Deep Stain Remover</a></div>
