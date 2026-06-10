@@ -120,6 +120,21 @@
   .trace-suds-box { margin-top: 1.25rem; background: var(--butter-light); border: 2px solid var(--butter); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 14.5px; font-weight: 500; line-height: 1.7; color: var(--butter-dark); }
   .trace-suds-box strong { font-weight: 700; }
 
+
+  /* JUMP NAV */
+  .jump-nav { background: var(--warm-white); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 2rem; }
+  .jump-nav-toggle { width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 1.5rem; background: none; border: none; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+  .jump-nav-toggle-left { display: flex; align-items: center; gap: 0.5rem; }
+  .jump-nav-toggle-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-muted); }
+  .jump-nav-toggle-hint { font-size: 12px; color: var(--ink-light); font-weight: 400; }
+  .jump-nav-arrow { font-size: 12px; color: var(--ink-muted); transition: transform 0.2s; }
+  .jump-nav.open .jump-nav-arrow { transform: rotate(180deg); }
+  .jump-nav-body { display: none; padding: 0 1.5rem 1.25rem; border-top: 1px solid var(--border); padding-top: 1rem; }
+  .jump-nav.open .jump-nav-body { display: block; }
+  .jump-nav-links { display: flex; flex-wrap: wrap; gap: 8px; }
+  .jump-nav-links a { font-size: 12.5px; font-weight: 500; color: var(--ink); text-decoration: none; background: var(--cream); border: 1px solid var(--border-strong); border-radius: 999px; padding: 4px 14px; transition: all 0.15s; white-space: nowrap; }
+  .jump-nav-links a:hover { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
   /* INFO BOX */
   .info-box { background: var(--lilac-light); border: 2px solid var(--lilac); border-radius: var(--radius); padding: 1rem 1.25rem; font-size: 14px; font-weight: 500; line-height: 1.7; color: var(--lilac-dark); margin-bottom: 1.25rem; }
 
@@ -351,10 +366,46 @@
 
 <div class="page">
 
+<div class="jump-nav" id="jump-nav">
+    <button class="jump-nav-toggle" onclick="document.getElementById('jump-nav').classList.toggle('open')">
+      <div class="jump-nav-toggle-left">
+        <span class="jump-nav-toggle-label">✦ Jump to a section</span>
+        <span class="jump-nav-toggle-hint">— tap to expand</span>
+      </div>
+      <span class="jump-nav-arrow">▼</span>
+    </button>
+    <div class="jump-nav-body">
+      <div class="jump-nav-links">
+        <a href="#ground-rules">Ground Rules</a>
+        <a href="#your-machine">Your Machine</a>
+        <a href="#machine-care">Machine Care</a>
+        <a href="#water-hardness">Water Hardness</a>
+        <a href="#ph-alkalinity">pH & Alkalinity</a>
+        <a href="#hard-water">Treating Hard Water</a>
+        <a href="#detergents">Detergents</a>
+        <a href="#enzymes">Enzymes</a>
+        <a href="#recommended">Recommended Detergents</a>
+        <a href="#avoid">Detergents to Avoid</a>
+        <a href="#buzzwords">Buzzwords</a>
+        <a href="#pretreatment">Pretreatment</a>
+        <a href="#stain-school">Stain School 🩸</a>
+        <a href="#how-to-wash">How to Wash</a>
+        <a href="#citric-acid">Citric Acid</a>
+        <a href="#towels">Towels & Sheets</a>
+        <a href="#sports">Sports Mom</a>
+        <a href="#ammonia">Ammonia</a>
+        <a href="#spa-day">Spa Day 🧖‍♀️</a>
+        <a href="#machine-cleaners">Machine Cleaners</a>
+        <a href="#tldr">TLDR</a>
+        <a href="#products">Products</a>
+      </div>
+    </div>
+  </div>
+
   <!-- GROUND RULES -->
   <div class="section">
     <p class="section-label">Before we begin</p>
-    <h2>The Ground Rules</h2>
+    <h2 id="ground-rules">The Ground Rules</h2>
     <p class="section-desc">Memorize these. Tattoo them on your forearm. Do whatever it takes.</p>
     <div class="rules-grid">
       <div class="rule-card do"><div class="rule-icon">💧</div><div><div class="rule-tag">Do</div><p>Know your water hardness. It determines literally everything about how you dose your detergent.</p></div></div>
@@ -368,7 +419,7 @@
   <!-- WASHER TYPES -->
   <div class="section">
     <p class="section-label">Know your machine</p>
-    <h2>Understanding Your Washing Machine</h2>
+    <h2 id="your-machine">Understanding Your Washing Machine</h2>
     <p class="section-desc">There are three types on the market — and they are not the same. Know yours before you do anything else.</p>
     <div class="washer-grid">
       <div class="washer-card">
@@ -430,18 +481,53 @@
 
   <!-- MACHINE MAINTENANCE -->
   <div class="section">
-    <p class="section-label">Machine care</p>
-    <h2>Maintaining Your Machine</h2>
-    <p class="section-desc">Clothes cannot get clean in a dirty washer. This is not up for debate. Clean it every ~90 loads — roughly once or twice a quarter.</p>
-    <p class="quip">"SCRUD" is a real word for the black gunky dots that appear when you finally clean a neglected machine. You're welcome for that knowledge.</p>
+    <p class="section-label">Keep her happy and she'll keep your clothes clean</p>
+    <h2 id="machine-care">Maintaining Your Machine</h2>
+    <p class="section-desc">Clothes cannot get clean in a dirty washer. Clean it once a month — no clothes, no detergent, just the hottest longest cycle your machine has. That's it. That's the rule.</p>
+    <p class="quip">"SCRUD" is a real word for the dark, waxy buildup that forms when detergent residue and fabric softener bake onto your drum over time. You can't always see it. It's getting on your clothes. Clean your machine.</p>
     <div class="maint-grid">
       <div class="maint-card">
-        <h3>🍋 Regular maintenance</h3>
-        <p>Add ½ cup of <a href="https://amzn.to/3RlAzwh">pure citric acid powder</a> to the drum and run the longest, hottest cycle. Repeat until the water runs clean. Cheap, effective, deeply satisfying.</p>
+        <h3>🍋 The citric acid method</h3>
+        <p>Add ½ cup of <a href="https://amzn.to/4uwtIhk">pure citric acid powder</a> directly to the drum and run the longest, hottest cycle. Repeat until the water runs clean. Cheap, effective, and deeply satisfying. This is also what you're doing during Spa Day machine maintenance.</p>
       </div>
       <div class="maint-card">
         <h3>🦠 If you have buildup / SCRUD</h3>
-        <p>Run several citric acid cycles until the water clears. Wipe away any gross black SCRUD as it comes loose. Clean your detergent drawer and lint trap with an antibacterial like <a href="https://amzn.to/49eX24c">Microban</a>. Google your specific machine model to find the filter.</p>
+        <p>Run several citric acid cycles until the water clears, wiping away any black SCRUD as it comes loose. Clean your detergent drawer and lint trap with an antibacterial like <a href="https://amzn.to/4v68A2C">Microban</a>. Google your specific machine model to find the filter — yes, there's a filter. Yes, you should clean it.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- WASHING MACHINE CLEANERS -->
+  <div class="section">
+    <p class="section-label">For when you need a quick and easy solution</p>
+    <h2 id="machine-cleaners">Machine Cleaning Tablets &amp; Powders</h2>
+    <p class="section-desc">We're busy. Sometimes you just need to drop something in and press start. Keep a box under the sink and you'll actually remember to use them.</p>
+    <div class="hw-agents">
+      <div class="hw-agent pick">
+        <div class="hw-pick-badge">★ Best pick</div>
+        <div class="hw-agent-name"><a href="https://amzn.to/4usApky">FEBU Washing Machine Cleaner</a></div>
+        <p>Enzyme-based and consistent with the rest of your routine. From the same brand as the booster — same philosophy.</p>
+      </div>
+      <div class="hw-agent pick">
+        <div class="hw-pick-badge">★ Best pick</div>
+        <div class="hw-agent-name"><a href="https://amzn.to/4anbSGi">Affresh</a></div>
+        <p>The most widely available option. One tablet, one cycle, done. Easy to find at any grocery store or Target.</p>
+      </div>
+      <div class="hw-agent">
+        <div class="hw-agent-name"><a href="https://amzn.to/43Yfnzl">Uproot Washing Machine Tabs</a></div>
+        <p>A solid all-around tablet option.</p>
+      </div>
+      <div class="hw-agent">
+        <div class="hw-agent-name"><a href="https://amzn.to/43uhLhb">Truly Free Washing Machine Cleaner</a></div>
+        <p>Fragrance-free and non-toxic — great for sensitive families.</p>
+      </div>
+      <div class="hw-agent">
+        <div class="hw-agent-name"><a href="https://amzn.to/3Sh0qFY">Renuv</a></div>
+        <p>Powder-based, good for tackling heavy mineral buildup.</p>
+      </div>
+      <div class="hw-agent">
+        <div class="hw-agent-name"><a href="https://amzn.to/4ee5Uc5">Lemi Shine</a></div>
+        <p>Citric acid-based — doubles as a descaler. Ideal if you have very hard water.</p>
       </div>
     </div>
   </div>
@@ -449,8 +535,8 @@
   <!-- WATER HARDNESS -->
   <div class="section">
     <p class="section-label">Water science (yes, really)</p>
-    <h2>Understanding Water Hardness</h2>
-    <p class="section-desc">Hard water is quietly sabotaging your laundry and your machine — and most people have no idea. Look up your level in your city's municipal water report — a quick Google will find it. On well water? Test it with the <a href="https://amzn.to/3RjAdGx">API Fish Kit</a> — you almost certainly have hard water.</p>
+    <h2 id="water-hardness">Understanding Water Hardness</h2>
+    <p class="section-desc">Hard water is quietly sabotaging your laundry and your machine — and most people have no idea. Look up your level in your city's municipal water report — a quick Google will find it. On well water? Test it with the <a href="https://amzn.to/4xq9gBy">API Fish Kit</a> — you almost certainly have hard water.</p>
     <p class="quip">Hard water doesn't just make cleaning harder. It actively works against your detergent. Your water is out here undermining you and you didn't even know.</p>
     <div class="hw-what">
       <p>Hard water is full of dissolved calcium and magnesium minerals — invisible, irritating, and working against you on two fronts. They make soil and stains harder to lift out of fabric, and they react with your detergent and reduce how well it works. So you're using more product, getting worse results, and blaming yourself. It's not you. It's the water.</p>
@@ -460,10 +546,11 @@
     <div class="hardness-ticks"><span>0 ppm — Soft</span><span>100 ppm</span><span>200 ppm</span><span>400+ ppm — Very hard</span></div>
     <div class="hardness-grid">
       <div class="hlevel hlevel-soft"><div class="hlevel-name">Soft</div><div class="hlevel-range">0–100 ppm</div><div class="hlevel-action">You lucky duck. No softening needed. Standard detergent dose works perfectly.</div></div>
-      <div class="hlevel hlevel-mod"><div class="hlevel-name">Moderately hard</div><div class="hlevel-range">100–200 ppm</div><div class="hlevel-action">Add 1–2 tsp <a href="https://amzn.to/3Ph4OE3">washing soda</a> or <a href="https://amzn.to/4tSggUS">borax</a> to the drum. Actually lets you use less detergent — saving money!</div></div>
+      <div class="hlevel hlevel-mod"><div class="hlevel-name">Moderately hard</div><div class="hlevel-range">100–200 ppm</div><div class="hlevel-action">Add 1–2 tsp <a href="https://amzn.to/4eklJOl">washing soda</a> or <a href="https://amzn.to/4uomewZ">borax</a> to the drum. Actually lets you use less detergent — saving money!</div></div>
       <div class="hlevel hlevel-hard"><div class="hlevel-name">Hard</div><div class="hlevel-range">200–400 ppm</div><div class="hlevel-action">Add 2 tbsp washing soda + 1 tbsp citric acid to the drum. Binds mineral deposits so your detergent can actually do its job.</div></div>
-      <div class="hlevel hlevel-vhard"><div class="hlevel-name">Very hard</div><div class="hlevel-range">400+ ppm</div><div class="hlevel-action">Add 4 tbsp washing soda + 2 tbsp citric acid per load. Or 1 tsp <a href="https://amzn.to/43mJsIx">Trisodium Phosphate</a> — less eco-friendly, your call.</div></div>
+      <div class="hlevel hlevel-vhard"><div class="hlevel-name">Very hard</div><div class="hlevel-range">400+ ppm</div><div class="hlevel-action">Add 4 tbsp washing soda + 2 tbsp citric acid per load. Or 1 tsp <a href="https://amzn.to/4v3WjvG">Trisodium Phosphate</a> — less eco-friendly, your call.</div></div>
     </div>
+    <div class="info-box" style="margin-bottom:1.25rem">💡 <strong>Want an easier option?</strong> There's a product called <a href="https://amzn.to/4oizrWJ">Calgon</a> that takes the guesswork out of water softening — add it to your load and it handles the softening for you. The catch: you sometimes need to use quite a bit of it, which can get pricey. But it works well and is a great option if you don't want to mess with washing soda doses separately.</div>
     <div class="trace-suds-box">✦ <strong>How to know you got the detergent dose right:</strong> Look for "trace suds" — a thin film of 3–4 tiny bubbles on the window (front loader) or on the water surface (top loader) about 10 minutes in. That's the sweet spot. If you're seeing a bubble party, you've overdone it.</div>
   </div>
 
@@ -509,7 +596,7 @@
   <!-- HARD WATER TREATMENT -->
   <div class="section">
     <p class="section-label">When your water is working against you</p>
-    <h2>Treating Hard Water — In Depth</h2>
+    <h2 id="hard-water">Treating Hard Water — In Depth</h2>
     <p class="section-desc">Hard water minerals (calcium and magnesium) react with detergent and steal its cleaning power before it can reach your clothes. Rude. Here's exactly what to do about it.</p>
     <p class="quip">There is a whole category of products specifically designed to deal with your water so your detergent doesn't have to. They're cheap. They work. You should be using them.</p>
     <div class="hw-what">
@@ -556,7 +643,7 @@
   <!-- DETERGENT SCIENCE -->
   <div class="section">
     <p class="section-label">Detergent deep dive</p>
-    <h2>Types of Detergents, Enzymes &amp; Boosters</h2>
+    <h2 id="detergents">Types of Detergents, Enzymes &amp; Boosters</h2>
     <p class="section-desc">Choosing your detergent is personal. Eczema kid? Nostalgic for Tide? We hear you. But let's talk about what's actually in there first.</p>
     <p class="quip">Laundry sheets are trash and pods are for college freshmen. You're an adult now. Time to level up.</p>
     <div class="info-box"><strong>What are surfactants?</strong> Short for "surface-acting agents," surfactants are the workhorses of your detergent. They connect soils to water — even oily or sticky soils that would cling to fabric — so everything can rinse away. They work best when paired with enzymes.</div>
@@ -570,7 +657,7 @@
   <!-- ENZYMES -->
   <div class="section">
     <p class="section-label">Back to high school science</p>
-    <h2>The Enzymes You Need to Know</h2>
+    <h2 id="enzymes">The Enzymes You Need to Know</h2>
     <p class="section-desc">Each enzyme targets a different type of stain. Most powder detergents contain the first six. DNase is newer — and if you wear leggings or have teenage boys, it's going to change your life.</p>
     <div class="enzyme-grid">
       <div class="enzyme-card"><div class="enzyme-name">Protease</div><div class="enzyme-type">Breaks down proteins</div><div class="enzyme-examples">Blood, grass, body soil, collar grime</div><span class="enzyme-warn">⚠ Don't use on wool, cashmere, or linen</span></div>
@@ -581,14 +668,14 @@
       <div class="enzyme-card"><div class="enzyme-name">Pectate lyase</div><div class="enzyme-type">Handles fruit &amp; wine pigments</div><div class="enzyme-examples">Berry stains, red wine, fruit juice</div></div>
       <div class="enzyme-card star"><div class="goat-badge">✨ New to market</div><div class="enzyme-name">DNase</div><div class="enzyme-type">Breaks down deep organic deposits</div><div class="enzyme-examples">Odor-causing residue trapped deep in synthetic fabrics — this is why gym clothes still smell after washing. Your detergent cleans the surface. DNase reaches what it can't.</div></div>
     </div>
-    <p style="font-size:13px;color:var(--ink-light);margin-top:1rem;line-height:1.6">Pairing a liquid detergent with <a href="https://amzn.to/4f1oC8S">FEBU</a> covers the full enzyme spectrum. If you use powder with enzymes, adding a DNase-specific product like <a href="https://garamecleaning.co/products/odour-remover">Gear Guard</a> is your finishing move.</p>
+    <p style="font-size:13px;color:var(--ink-light);margin-top:1rem;line-height:1.6">Pairing a liquid detergent with <a href="https://amzn.to/4fDneJL">FEBU</a> covers the full enzyme spectrum. If you use powder with enzymes, adding a DNase-specific product like <a href="https://garamecleaning.co/products/odour-remover">Gear Guard</a> is your finishing move.</p>
     <p class="quip">I try to be a scrunchy mom. Glass containers, organic produce, the whole thing. But I draw the line at laundry. Your standard "non-toxic" detergent is not cleaning your clothes. I tried. Molly's Suds belongs under your sink next to the toilet brush.</p>
   </div>
 
   <!-- RECOMMENDED DETERGENTS -->
   <div class="section">
     <p class="section-label">The shopping list</p>
-    <h2>Recommended Detergents</h2>
+    <h2 id="recommended">Recommended Detergents</h2>
     <p class="section-desc">Personal picks, tested by a real mom with real stains and real opinions.</p>
     <div class="tabs">
       <button class="tab active" onclick="showTab('liquid',this)">Liquid</button>
@@ -599,42 +686,50 @@
     <div id="tab-liquid" class="tab-panel active">
       <ul class="det-list">
         <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://www.target.com/p/tide-liquid-he-odor-refresh-laundry-detergent-free-gentle/-/A-94711688">Tide Free &amp; Gentle Odor Refresh</a></strong> — best surfactant package, no fragrance. I would genuinely marry this detergent.<span class="det-note">Top pick · Fragrance-free</span></div></li>
-        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/3PHyslM">Persil Pro Clean</a></strong> — strong all-around performer</div></li>
+                <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://www.costco.com/p/-/tide-advanced-care-liquid-laundry-detergent-free--gentle-125-loads-154-fl-oz/4000383853.html">Tide Advanced Care Free &amp; Gentle</a></strong> — excellent free &amp; clear option, available at Costco.<span class="det-note">Top pick · Fragrance-free · Costco find</span></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4v818nC">Persil Free &amp; Clear</a></strong></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4opJ0Dk">Tide Free &amp; Gentle</a></strong></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://www.costco.com/p/-/kirkland-signature-ultra-clean-free-clear-he-liquid-laundry-detergent-146-loads-194-fl-oz/100525739?langId=-1">Kirkland Ultra Clean Free &amp; Clear</a></strong><span class="det-note">Great value · Costco</span></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://www.costco.com/p/-/kirkland-signature-ultra-clean-he-liquid-laundry-detergent-146-loads-194-fl-oz/100525846?langId=-1">Kirkland Ultra Clean Regular</a></strong><span class="det-note">Great value · Costco</span></div></li>
+        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/444TBda">Persil Pro Clean</a></strong> — strong all-around performer</div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://www.costco.com/p/-/kirkland-signature-ultra-clean-free-clear-he-liquid-laundry-detergent-146-loads-194-fl-oz/100525739">Kirkland Free &amp; Clear</a></strong><span class="det-note">Great value</span></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4nFEdNo">Tide Ultra Oxi</a></strong></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4uoni3X">Tide Ultra Oxi</a></strong></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://www.wegmans.com/shop/product/54930-Fresh-Scent-Laundry-Detergent-with-Oxi-Booster">Wegman's Fresh Scent</a></strong></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4wFMOE0">Ginger Lily Farms Unscented</a></strong> — great for scrunchy families. Use a booster with every load.<span class="det-note">Pairs best with a booster</span></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4fxWBpt">365 Laundry Detergent</a></strong><span class="det-note">⚠ Non-organic version ONLY — the organic one is trash</span></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4fGA7CG">Tide Liquid Original</a></strong><span class="det-note">⚠ Contains optical brighteners — may fade darks</span></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4v20Uhi">Dreft</a></strong> — the smell is intoxicating and I understand the addiction. Please use a booster with it.<span class="det-note">Add a booster or it's just scented water</span></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4uoni3X">Ginger Lily Farms Unscented</a></strong> — great for scrunchy families. Use a booster with every load.<span class="det-note">Pairs best with a booster</span></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/3SiyLEF">365 Laundry Detergent</a></strong><span class="det-note">⚠ Non-organic version ONLY — the organic one is trash</span></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/43rHqam">Tide Liquid Original</a></strong><span class="det-note">⚠ Contains optical brighteners — may fade darks</span></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4fD6IJY">Dreft</a></strong> — the smell is intoxicating and I understand the addiction. Please use a booster with it.<span class="det-note">Add a booster or it's just scented water</span></div></li>
       </ul>
     </div>
     <div id="tab-powder" class="tab-panel">
       <ul class="det-list">
-        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/43oWuFq">Tide Clean &amp; Gentle Powder</a></strong></div></li>
-        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4tIAkst">Tide Ultra Oxi Powder</a></strong></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4uq9UwL">Tide Original Powder</a></strong> — I use this to mop my floors too!</div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4v73tik">Tide Powder with Bleach</a></strong><span class="det-note">Whites only!</span></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/3Rksbx6">Ariel 2x</a></strong><span class="det-note">Incredible cleaner — very heavily scented. You've been warned.</span></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4v2WXJs">365 Unscented Powder</a></strong><span class="det-note">You'll need to use more than you think</span></div></li>
+        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4vGvKfS">Tide Clean &amp; Gentle Powder</a></strong></div></li>
+        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4vGvKfS">Tide Ultra Oxi Powder</a></strong></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4v2340O">Tide Original Powder</a></strong> — I use this to mop my floors too!</div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4v6b5C2">Tide Powder with Bleach</a></strong><span class="det-note">Whites only!</span></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/3PQBW5S">Ariel 2x</a></strong><span class="det-note">Incredible cleaner — very heavily scented. You've been warned.</span></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/440VwQ4">365 Unscented Powder</a></strong><span class="det-note">You'll need to use more than you think</span></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4fxpXEC">Country Save Powder</a></strong> — great for sensitive families, best paired with a booster</div></li>
       </ul>
     </div>
     <div id="tab-delicate" class="tab-panel">
       <div style="background:var(--blush-light);border:1px solid var(--blush);border-radius:var(--radius-sm);padding:0.75rem 1rem;font-size:13px;color:var(--blush-dark);margin-bottom:1rem">⚠ <strong>Do not use enzyme boosters with wool, cashmere, or linen.</strong> Protease will literally eat the fabric. Don't find out the hard way.</div>
       <ul class="det-list">
-        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4nKO58M">Miele WoolCare</a></strong></div></li>
+        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4fDneJL">Miele WoolCare</a></strong></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong>Steamery Delicate Detergent</strong></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4fDneJL">Heritage Park Silk &amp; Wool Care</a></strong></div></li>
       </ul>
     </div>
     <div id="tab-boosters" class="tab-panel">
-      <p style="font-size:13px;color:var(--ink-light);margin-bottom:1rem;line-height:1.6">Boosters are non-negotiable. If you want to keep it simple and cheap, just buy <a href="https://amzn.to/3PVyXZF">pure sodium percarbonate</a> — it's the active ingredient in basically all of these.</p>
+      <p style="font-size:13px;color:var(--ink-light);margin-bottom:1rem;line-height:1.6">Boosters are non-negotiable. If you want to keep it simple and cheap, just buy <a href="https://amzn.to/4v2QjDl">pure sodium percarbonate</a> — it's the active ingredient in basically all of these.</p>
       <ul class="det-list">
-        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4nL63rF">FEBU Laundry Booster</a></strong> — the gold standard. Worth every penny for adult laundry.</div></li>
-        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4usx6uw">BIZ</a></strong> — excellent budget pick. My go-to for kid clothes because I am not using the expensive stuff on crayon stains.</div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4utN9Z4">365 Oxygen Booster</a></strong> — inexpensive and great for crunchy moms!</div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4dLZlxg">Dirty Labs Enzymatic Booster</a></strong></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4wJr8H2">OxiClean White Revive</a></strong></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4e1YtVp">OxiClean Versatile</a></strong></div></li>
+        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4fCjtV5">FEBU Laundry Booster</a></strong> — the gold standard. Worth every penny for adult laundry.</div></li>
+        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4fCjtV5">BIZ</a></strong> — excellent budget pick. My go-to for kid clothes because I am not using the expensive stuff on crayon stains.</div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4ut9NQi">365 Oxygen Booster</a></strong> — inexpensive and great for crunchy moms!</div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4vK57Xy">Dirty Labs Enzymatic Booster</a></strong></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4v4SRkp">OxiClean White Revive</a></strong></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/3QuywWy">OxiClean Versatile</a></strong></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/3QyGON9">Truly Free OxyBoost</a></strong> — great for crunchy/sensitive families</div></li>
       </ul>
     </div>
   </div>
@@ -642,7 +737,7 @@
   <!-- WORST LIST -->
   <div class="section">
     <p class="section-label">The hall of shame</p>
-    <h2>Detergents to Avoid</h2>
+    <h2 id="avoid">Detergents to Avoid</h2>
     <p class="section-desc">You might as well be washing with tap water. These clean essentially nothing.</p>
     <p class="quip">I know. Branch Basics has beautiful branding. Mrs. Meyers smells like a spa. I'm so sorry. Put them under the sink and use them for something else.</p>
     <div class="worst-grid">
@@ -665,7 +760,7 @@
   <!-- BUZZWORDS -->
   <div class="section">
     <p class="section-label">Know the lingo</p>
-    <h2>Laundry Buzzwords You Should Know</h2>
+    <h2 id="buzzwords">Laundry Buzzwords You Should Know</h2>
     <p class="section-desc">Terms that get thrown around a lot — here's what they actually mean.</p>
     <div class="buzzword-grid">
       <div class="buzzword-card"><h3>OBAs <span class="buzz-tag buzz-neutral">Know this</span></h3><p><strong>Optical Brightening Agents.</strong> These can fade darks over time. Found in almost all powdered detergents and sodium percarbonate products. FEBU booster is OBA-free, and free &amp; clear liquids don't contain them — which is one of the main reasons I prefer pairing a liquid detergent with a booster.</p></div>
@@ -677,7 +772,7 @@
   <!-- PRETREATMENT -->
   <div class="section">
     <p class="section-label">Your new best friend</p>
-    <h2>The Importance of Pretreatment</h2>
+    <h2 id="pretreatment">The Importance of Pretreatment</h2>
     <p class="section-desc">When it comes to stains — especially with kids — pretreatment is everything. Buy several bottles and keep them all over the house. Bathroom, kids' rooms, the car. Everywhere.</p>
     <p class="quip">The moment the clothes come off, spray them generously, toss in the hamper, and forget about it. Stain treater can sit on fabric for up to 7 days. You're welcome.</p>
     <div class="pretreat-flow">
@@ -693,13 +788,13 @@
     <div style="font-size:14px;font-weight:600;margin-bottom:0.5rem">Top enzymatic stain pretreaters</div>
     <p class="quip">Sorry to say it, Miss Mouth's, but you didn't make the cut.</p>
     <div class="pretreat-grid">
-      <div class="pretreat-card goat"><div class="goat-badge">The GOAT</div><h4><a href="https://amzn.to/49bzPjw">OxiClean Max Force</a></h4><p>Buy the <a href="https://amzn.to/4dD1UBE">value refill</a>. Keep multiples everywhere. I bring this on vacation. Works on everything if you let it SIT.</p></div>
-      <div class="pretreat-card"><h4><a href="https://amzn.to/4tSh8c6">DadMode Deep Stain Remover</a></h4><p>Serious enzymatic formula, heavy lifting.</p></div>
-      <div class="pretreat-card"><h4><a href="https://amzn.to/3PTgayc">Puracy Stain Remover</a></h4><p>Plant-based option that actually performs.</p></div>
-      <div class="pretreat-card"><h4><a href="https://amzn.to/4uWesee">Tide OxiPro Stain Pack</a></h4><p>The grease formula works on wool and linen too — a rare win.</p></div>
-      <div class="pretreat-card"><h4><a href="https://amzn.to/43tfFhj">Tide PureClean Stain Treater</a></h4><p>Solid all-around enzymatic option.</p></div>
-      <div class="pretreat-card"><h4><a href="https://amzn.to/4v3m5jd">Dawn Powerwash</a></h4><p>For the extra tough grease stains.</p></div>
-      <div class="pretreat-card"><h4><a href="https://amzn.to/3PVyXZF">Pure Sodium Percarbonate</a></h4><p>For yellowing — soak in hot water, then wash as normal.</p></div>
+      <div class="pretreat-card goat"><div class="goat-badge">The GOAT</div><h4><a href="https://amzn.to/3RZhikA">OxiClean Max Force</a></h4><p>Buy the <a href="https://amzn.to/4ey5Xke">value refill</a>. Keep multiples everywhere. I bring this on vacation. Works on everything if you let it SIT.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/4fxpXEC">DadMode Deep Stain Remover</a></h4><p>Serious enzymatic formula, heavy lifting.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/4oi4lhM">Puracy Stain Remover</a></h4><p>Plant-based option that actually performs.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/4uorgcR">Tide OxiPro Stain Pack</a></h4><p>The grease formula works on wool and linen too — a rare win.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/49SU31P">Tide PureClean Stain Treater</a></h4><p>Solid all-around enzymatic option.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/4vGa97g">Dawn Powerwash</a></h4><p>For the extra tough grease stains.</p></div>
+      <div class="pretreat-card"><h4><a href="https://amzn.to/4v2QjDl">Pure Sodium Percarbonate</a></h4><p>For yellowing — soak in hot water, then wash as normal.</p></div>
     </div>
     <div class="polyquat-box">
       <h3>⚠ The One Stain That Will Haunt You: Polyquat</h3>
@@ -829,7 +924,7 @@
         <span class="stain-urgency urgent">⚡ Cold water only — heat is chocolate's best friend (and your worst enemy)</span>
         <div class="stain-steps">
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off any solid first.</strong> If it's fresh melted chocolate, let it harden for a minute before scraping — trying to treat it liquid just smears it further.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Dab blue Dawn dish soap directly onto the stain.</strong> Don't rub — dab. Work it in gently with your fingers and let it sit for a few minutes.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Dab <a href="https://amzn.to/4vEvT3p">blue Dawn</a> dish soap directly onto the stain.</strong> Don't rub — dab. Work it in gently with your fingers and let it sit for a few minutes.</p></div>
           <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Soak in cold water — overnight if you can.</strong> This is the dish soap and soak method, and it works. Cold water only. Do not be tempted by warm.</p></div>
           <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash as normal</strong> with your regular detergent and booster. Check before drying.</p></div>
         </div>
@@ -855,7 +950,7 @@
         <span class="stain-urgency normal">🕐 Prevention is everything here — treatment is rough</span>
         <div class="stain-steps">
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>What is a polyquat stain?</strong> Store-bought bubble solution contains polyquaternium-7 — also found in shampoos, leave-in conditioners, and hairsprays. If this polymer contacts detergent before it's fully rinsed out, it leaves a <strong>gray, shiny, greasy-looking stain</strong> that is genuinely very hard to remove. Do bubble parties shirtless, in swimsuits, or in clothes you don't care about. You've been warned.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>The hack that prevents this entirely:</strong> pour out the store-bought bubble solution. Dissolve 1 tsp of blue Dawn in warm water and refill the bottle. It blows just as good bubbles, it's completely non-toxic, and if it gets on clothes it washes out without a trace. No polyquat. No stain. No heartbreak.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>The hack that prevents this entirely:</strong> pour out the store-bought bubble solution. Dissolve 1 tsp of <a href="https://amzn.to/4vEvT3p">blue Dawn</a> in warm water and refill the bottle. It blows just as good bubbles, it's completely non-toxic, and if it gets on clothes it washes out without a trace. No polyquat. No stain. No heartbreak.</p></div>
         </div>
         <div class="stain-note">💡 You already have the Dawn — for laundry, for dishes, for grease stains. It does everything. This is just one more thing. Pass this hack on to every toddler mom you know.</div>
       </div>
@@ -879,7 +974,7 @@
   <!-- HOW TO WASH -->
   <div class="section">
     <p class="section-label">Let's get washing</p>
-    <h2>How to Actually Do a Load</h2>
+    <h2 id="how-to-wash">How to Actually Do a Load</h2>
     <p class="section-desc">You are never washing on cold again. Cold is dead to us. Warm or hot, every time — that's how enzymes and surfactants actually activate. Also: towels ONLY get washed with other towels. This is non-negotiable.</p>
     <p class="quip">"But cold is better for the environment!" Cool. These are your clothes. Wash them on warm.</p>
     <div class="steps">
@@ -901,7 +996,7 @@
   <!-- CITRIC ACID -->
   <div class="section">
     <p class="section-label">Your new best friend (seriously)</p>
-    <h2>Why Citric Acid in the Rinse?</h2>
+    <h2 id="citric-acid">Why Citric Acid in the Rinse?</h2>
     <p class="section-desc">If you're using vinegar in your rinse cycle — first of all, how much are you using? Because it takes 2–3 cups of household cleaning vinegar to actually do anything. Citric acid is more concentrated, cheaper, and your clothes won't smell like a salad. We're switching. Right now.</p>
     <div class="citric-grid">
       <div class="citric-card"><div class="icon">🧫</div><h4>Neutralizes detergent residue</h4><p>Detergent is alkaline. Citric acid neutralizes what's left behind — eliminating that stiff, scratchy feeling even if you accidentally overdosed. Which you have. We all have.</p></div>
@@ -921,7 +1016,7 @@
   <!-- TOWELS & SHEETS -->
   <div class="section">
     <p class="section-label">A religion, not a suggestion</p>
-    <h2>Keeping Towels &amp; Sheets Soft and Bright</h2>
+    <h2 id="towels">Keeping Towels &amp; Sheets Soft and Bright</h2>
     <p class="section-desc">If your towels feel scratchy and stiff, that's not wear and tear — that's detergent buildup coating the fibers so they can't absorb water properly. The good news: it's completely reversible.</p>
     <p class="quip">Towels ONLY get washed with other towels. This is not a suggestion. This is a way of life.</p>
     <div style="font-size:14px;font-weight:600;margin-bottom:0.75rem">🔄 Towel rehab — stripping the buildup</div>
@@ -931,7 +1026,7 @@
       <div class="towel-step"><div class="towel-step-icon">3️⃣</div><p>Dry on a <strong>low/delicate heat setting.</strong> Towels are a looped fabric — high heat destroys them. Pull out when barely damp and fold as normal.</p></div>
     </div>
     <div class="maint-grid">
-      <div class="maint-card"><h3>🤍 Keeping white towels white</h3><p>Hot, always. Extra rinses, always. Slightly less detergent than you think — you're clean when you use a towel, so there's genuinely not much dirt for the detergent to grab onto. If they start going dingy, soak in a hot bath with <a href="https://amzn.to/4wJr8H2">OxiClean White Revive</a> or pure sodium percarbonate for a few hours, then wash and dry as normal. They will come back.</p></div>
+      <div class="maint-card"><h3>🤍 Keeping white towels white</h3><p>Hot, always. Extra rinses, always. Slightly less detergent than you think — you're clean when you use a towel, so there's genuinely not much dirt for the detergent to grab onto. If they start going dingy, soak in a hot bath with <a href="https://amzn.to/4v4SRkp">OxiClean White Revive</a> or pure sodium percarbonate for a few hours, then wash and dry as normal. They will come back.</p></div>
       <div class="maint-card"><h3>🛏 White sheets — same rules, extra step</h3><p>Follow the white towel routine, but <strong>pretreat any stains first.</strong> I have a large golden retriever who sleeps in our bed every single night and our cotton sheets are still a lovely bright white. The routine works. The dog stays.</p></div>
     </div>
   </div>
@@ -939,7 +1034,7 @@
   <!-- SPORTS MOM -->
   <div class="section">
     <p class="section-label">For the moms on the sideline</p>
-    <h2>I'm a Sports Mom — Help!</h2>
+    <h2 id="sports">I'm a Sports Mom — Help!</h2>
     <p class="section-desc">Stains and stink are basically a sponsorship deal when you have athletes. Here's how to handle the specific chaos each sport brings.</p>
     <div class="sport-tabs">
       <button class="sport-tab active" onclick="showSport('baseball',this)">⚾ Baseball</button>
@@ -949,7 +1044,7 @@
       <p class="quip">Whoever decided that white pants belong on a dirt field is literally insane. Anyway. Here's how to undo the damage.</p>
       <div class="sport-steps">
         <div class="sport-step"><div class="sport-step-num">1</div><p><strong>Everything into a boiling hot soak</strong> — dissolve 1½ cups of powdered detergent in the hot water and submerge jerseys, socks, the whole uniform. Soak for at least 1 hour.</p></div>
-        <div class="sport-step"><div class="sport-step-num">2</div><p><strong>Pants get their own soak</strong> (separate step, just the pants). Hot water + ½ cup of <a href="https://amzn.to/49anigc">Out White Bright</a>. Soak for at least 1 hour.</p></div>
+        <div class="sport-step"><div class="sport-step-num">2</div><p><strong>Pants get their own soak</strong> (separate step, just the pants). Hot water + ½ cup of <a href="https://amzn.to/3QAtZlo">Out White Bright</a>. Soak for at least 1 hour.</p></div>
         <div class="sport-step"><div class="sport-step-num">3</div><p><strong>Drain the gross soak water</strong> and throw everything in the washer. Warm or hot, good detergent, multiple rinses. Add 1–2 tbsp of sodium percarbonate (BIZ, FEBU, or OxiClean) to the drum if you want to go all in.</p></div>
       </div>
     </div>
@@ -958,7 +1053,7 @@
       <div class="sport-steps">
         <div class="sport-step"><div class="sport-step-num">1</div><p><strong>Anything that can go in the washer, wash it.</strong> Jerseys, socks, base layers — wash as normal and air dry.</p></div>
         <div class="sport-step"><div class="sport-step-num">2</div><p><strong>Everything else must air out after every single practice.</strong> Don't let gear sit in a bag. Ever. Open it up, spread it out, let it breathe.</p></div>
-        <div class="sport-step"><div class="sport-step-num">3</div><p><strong>Spray non-washable gear with hypochlorous acid</strong> to kill bacteria and odor. Buy an <a href="https://amzn.to/4nHwDC1">enormous jug</a> and a spray bottle and just go to town.</p></div>
+        <div class="sport-step"><div class="sport-step-num">3</div><p><strong>Spray non-washable gear with hypochlorous acid</strong> to kill bacteria and odor. Buy an <a href="https://amzn.to/3S0xWAn">enormous jug</a> and a spray bottle and just go to town.</p></div>
       </div>
       <div class="sport-tip">💡 Hypochlorous acid is safe, non-toxic, and genuinely effective — the same thing used in wound care. A large jug costs almost nothing and lasts forever. Keep it in your gear bag.</div>
     </div>
@@ -967,7 +1062,7 @@
   <!-- AMMONIA -->
   <div class="section">
     <p class="section-label">The big guns</p>
-    <h2>Ammonia — When to Call in the Cavalry</h2>
+    <h2 id="ammonia">Ammonia — When to Call in the Cavalry</h2>
     <p class="section-desc">Not an everyday product. But if your husband comes home smelling like a garage, this is your friend.</p>
     <p class="quip">Mechanics' wives, farmers' wives, anyone married to a person who works with their hands — this one's for you. You're welcome.</p>
 
@@ -998,7 +1093,7 @@
   <!-- SPA DAY -->
   <div class="section">
     <p class="section-label">The resurrection</p>
-    <h2>Spa Day 🧖‍♀️</h2>
+    <h2 id="spa-day">Spa Day 🧖‍♀️</h2>
     <p class="section-desc">How to give your stinky, dirty, dead-to-you clothes a second chance at life. This one requires commitment. Clear your afternoon.</p>
     <p class="quip">This is not regular laundry. This is a full intervention. Put on a podcast. We're going to be here for a while.</p>
 
@@ -1014,7 +1109,7 @@
         <div class="spa-tool-item">Wooden or plastic cooking spoon</div>
         <div class="spa-tool-item">1-cup measuring cup</div>
         <div class="spa-tool-item">Old towel (to weigh clothes down)</div>
-        <div class="spa-tool-item"><a href="https://amzn.to/4uq9UwL">Tide Original Powder</a> — easiest option</div>
+        <div class="spa-tool-item"><a href="https://amzn.to/4v2340O">Tide Original Powder</a> — easiest option</div>
         <div class="spa-tool-item optional">Cleaning gloves (for sensitive skin)</div>
         <div class="spa-tool-item optional">Fine mesh kitchen strainer</div>
         <div class="spa-tool-item optional">Bucket or smaller bin for transfer</div>
@@ -1058,79 +1153,91 @@
   <!-- PRODUCT REFERENCE -->
   <div class="product-section">
     <p class="section-label">Shop the guide</p>
-    <h2>Products Listed in This Guide</h2>
+    <h2 id="products">Products Listed in This Guide</h2>
     <p class="sub">All links are affiliate links — thank you so much for your support! 🧺</p>
 
     <div class="product-category">
       <h3>🧴 Liquid Detergents</h3>
       <div class="product-links">
         <div class="product-link-item"><a href="https://www.target.com/p/tide-liquid-he-odor-refresh-laundry-detergent-free-gentle/-/A-94711688">Tide Free &amp; Gentle Odor Refresh</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/3PHyslM">Persil Pro Clean</a></div>
+        <div class="product-link-item"><a href="https://www.costco.com/p/-/tide-advanced-care-liquid-laundry-detergent-free--gentle-125-loads-154-fl-oz/4000383853.html">Tide Advanced Care Free &amp; Clear</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4v818nC">Persil Free &amp; Clear</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4opJ0Dk">Tide Free &amp; Gentle</a></div>
+        <div class="product-link-item"><a href="https://www.costco.com/p/-/kirkland-signature-ultra-clean-free-clear-he-liquid-laundry-detergent-146-loads-194-fl-oz/100525739?langId=-1">Kirkland Ultra Clean Free &amp; Clear</a></div>
+        <div class="product-link-item"><a href="https://www.costco.com/p/-/kirkland-signature-ultra-clean-he-liquid-laundry-detergent-146-loads-194-fl-oz/100525846?langId=-1">Kirkland Ultra Clean Regular</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/444TBda">Persil Pro Clean</a></div>
         <div class="product-link-item"><a href="https://www.costco.com/p/-/kirkland-signature-ultra-clean-free-clear-he-liquid-laundry-detergent-146-loads-194-fl-oz/100525739">Kirkland Free &amp; Clear</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4nFEdNo">Tide Ultra Oxi</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4uoni3X">Tide Ultra Oxi</a></div>
         <div class="product-link-item"><a href="https://www.wegmans.com/shop/product/54930-Fresh-Scent-Laundry-Detergent-with-Oxi-Booster">Wegman's Fresh Scent</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4wFMOE0">Ginger Lily Farms Unscented</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4fxWBpt">365 Laundry Detergent</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4fGA7CG">Tide Liquid Original</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4v20Uhi">Dreft</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4uoni3X">Ginger Lily Farms Unscented</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3SiyLEF">365 Laundry Detergent</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/43rHqam">Tide Liquid Original</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4fD6IJY">Dreft</a></div>
       </div>
     </div>
 
     <div class="product-category">
       <h3>🧂 Powder Detergents</h3>
       <div class="product-links">
-        <div class="product-link-item"><a href="https://amzn.to/43oWuFq">Tide Clean &amp; Gentle Powder</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4uq9UwL">Tide Original Powder</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4tIAkst">Tide Ultra Oxi Powder</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4v73tik">Tide Powder w/Bleach</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/3Rksbx6">Ariel 2x</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4v2WXJs">365 Unscented Powder</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4vGvKfS">Tide Clean &amp; Gentle Powder</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4v2340O">Tide Original Powder</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4vGvKfS">Tide Ultra Oxi Powder</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4v6b5C2">Tide Powder w/Bleach</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3PQBW5S">Ariel 2x</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/440VwQ4">365 Unscented Powder</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4fxpXEC">Country Save Powder</a></div>
       </div>
     </div>
 
     <div class="product-category">
       <h3>🧺 Delicate Detergents</h3>
       <div class="product-links">
-        <div class="product-link-item"><a href="https://amzn.to/4nKO58M">Miele WoolCare</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4fDneJL">Miele WoolCare</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4fDneJL">Heritage Park Silk &amp; Wool Care</a></div>
       </div>
     </div>
 
     <div class="product-category">
       <h3>⚡ Boosters</h3>
       <div class="product-links">
-        <div class="product-link-item"><a href="https://amzn.to/4nL63rF">FEBU Laundry Booster</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4usx6uw">BIZ</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4utN9Z4">365 Oxygen Booster</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4dLZlxg">Dirty Labs Enzymatic Booster</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4wJr8H2">OxiClean White Revive</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4e1YtVp">OxiClean Versatile</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/3PVyXZF">Pure Sodium Percarbonate</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4f1oC8S">FEBU (enzyme booster)</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4fCjtV5">FEBU Laundry Booster</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4fCjtV5">BIZ</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4ut9NQi">365 Oxygen Booster</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4vK57Xy">Dirty Labs Enzymatic Booster</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4v4SRkp">OxiClean White Revive</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3QuywWy">OxiClean Versatile</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3QyGON9">Truly Free OxyBoost</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4v2QjDl">Pure Sodium Percarbonate</a></div>
       </div>
     </div>
 
     <div class="product-category">
       <h3>🎯 Stain Pretreaters</h3>
       <div class="product-links">
-        <div class="product-link-item"><a href="https://amzn.to/49bzPjw">OxiClean Max Force</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4dD1UBE">OxiClean Max Force Value Refill</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4tSh8c6">DadMode Deep Stain Remover</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/3PTgayc">Puracy Stain Remover</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4uWesee">Tide OxiPro Stain Pack</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/43tfFhj">Tide PureClean Stain Treater</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4v3m5jd">Dawn Powerwash</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4ea8Je8">Truly Free Enzyme Stain Remover</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3RZhikA">OxiClean Max Force</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4ey5Xke">OxiClean Max Force Value Refill</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4fxpXEC">DadMode Deep Stain Remover</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4oi4lhM">Puracy Stain Remover</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4uorgcR">Tide OxiPro Stain Pack</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/49SU31P">Tide PureClean Stain Treater</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4vEvT3p">Blue Dawn Dish Soap</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4vGa97g">Dawn Powerwash</a></div>
       </div>
     </div>
 
     <div class="product-category">
       <h3>🔬 Machine Care &amp; Water Testing</h3>
       <div class="product-links">
-        <div class="product-link-item"><a href="https://amzn.to/3RlAzwh">Pure Citric Acid Powder</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/49eX24c">Microban Antibacterial Spray</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/3RjAdGx">API Fish Kit (water hardness test)</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/3Ph4OE3">Washing Soda</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4tSggUS">Borax</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/43mJsIx">Trisodium Phosphate (TSP)</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4ol1rJe">Cobi Dryer Sheets</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4gcrccy">Wool Dryer Balls</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4uwtIhk">Pure Citric Acid Powder</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4v68A2C">Microban Antibacterial Spray</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4xq9gBy">API Fish Kit (water hardness test)</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4oizrWJ">Calgon Water Softener</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4eklJOl">Washing Soda</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4uomewZ">Borax</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4v3WjvG">Trisodium Phosphate (TSP)</a></div>
         <div class="product-link-item"><a href="https://garamecleaning.co/products/odour-remover">Gear Guard (DNase)</a></div>
       </div>
     </div>
@@ -1138,8 +1245,19 @@
     <div class="product-category">
       <h3>⚾🏒 Sports Mom</h3>
       <div class="product-links">
-        <div class="product-link-item"><a href="https://amzn.to/49anigc">Out White Bright</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4nHwDC1">Hypochlorous Acid (large jug)</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3QAtZlo">Out White Bright</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3S0xWAn">Hypochlorous Acid (large jug)</a></div>
+      </div>
+    </div>
+    <div class="product-col">
+      <div class="product-col-title">🫧 Machine Cleaners</div>
+      <div class="product-links">
+        <div class="product-link-item"><a href="https://amzn.to/4usApky">FEBU Washing Machine Cleaner</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4anbSGi">Affresh</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/43uhLhb">Truly Free Washing Machine Cleaner</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/43Yfnzl">Uproot Washing Machine Tabs</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/3Sh0qFY">Renuv</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4ee5Uc5">Lemi Shine Appliance Cleaner</a></div>
       </div>
     </div>
   </div>
