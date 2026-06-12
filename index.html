@@ -633,7 +633,7 @@
       </div>
     </div>
 
-    <div class="info-box" style="margin-top:0;margin-bottom:1.25rem"><strong>Where to add sequestering agents:</strong> Always directly into the drum before loading clothes. Never in the detergent drawer — they'll interact with your detergent during dispensing and lose effectiveness before hitting the water. Washing soda + detergent in the drum, citric acid in the softener slot. Those are their lanes.</div>
+    <div class="info-box" style="margin-top:0;margin-bottom:1.25rem"><strong>Where to add these:</strong> Always straight into the drum before the clothes go in. Never the detergent drawer — they'll react with your detergent on the way out and lose their punch before they even hit the water. Softeners and detergent in the drum, your rinse aid in the softener slot. Everybody stays in their lane.</div>
 
     <div class="hw-signs">
       <h4>🚨 Signs your hard water treatment isn't working (yet)</h4>
@@ -837,6 +837,9 @@
       <button class="stain-tab" onclick="showStain('milk',this)">🍼 Breastmilk & Formula</button>
       <button class="stain-tab" onclick="showStain('sunscreen',this)">🌞 Sunscreen</button>
       <button class="stain-tab" onclick="showStain('rust',this)">🔧 Rust</button>
+      <button class="stain-tab" onclick="showStain('glue',this)">🩹 Glue</button>
+      <button class="stain-tab" onclick="showStain('crayon',this)">🖍️ Crayon</button>
+      <button class="stain-tab" onclick="showStain('dried',this)">🔁 Dried-In Stains</button>
       <button class="stain-tab" onclick="showStain('polyquat',this)">🫧 Bubbles</button>
       <button class="stain-tab" onclick="showStain('spice',this)">🌶️ Turmeric & Spices</button>
     </div>
@@ -1017,6 +1020,43 @@
           <div class="stain-step"><div class="stain-step-num">5</div><p><strong>If the vinegar and salt method isn't cutting it:</strong> <a href="https://amzn.to/49RtTMM" target="_blank" rel="noopener">Carbona Stain Devil #9</a> is specifically formulated for rust and is genuinely very effective. Follow the instructions closely — it's a specialty product, not something to freestyle with.</p></div>
         </div>
         <div class="stain-note">💡 Never use chlorine bleach on rust stains. It reacts with the iron and makes the stain permanently darker. Counterintuitive, deeply annoying, absolutely true.</div>
+      </div>
+    </div>
+
+    <div id="stain-glue" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency normal">🕐 The fix depends entirely on what kind of glue it is</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>School glue, washable glue, or Mod Podge (water-based):</strong> the easy ones. Scrape off the excess, soak in the hottest water the fabric can handle to soften, then scrape again. Work in <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">blue Dawn</a> (especially for Mod Podge — it's a decoupage glue and Dawn cuts right through it), pretreat with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">OxiClean Max Force</a>, and wash. Usually comes right out.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Hot glue:</strong> freeze it. An hour in the freezer makes it brittle enough to peel or chip right off. Pretreat any residue and wash as normal.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Super glue (the nightmare):</strong> let it dry, scrape off what you can, then dab acetone (plain nail polish remover) on with a cotton swab. <strong>Test a hidden seam first</strong> — acetone can wreck synthetics and never goes near acetate. Blot, repeat, wash. Check before drying — always.</p></div>
+        </div>
+        <div class="stain-note">💡 Real talk: super glue is the one even the pros sometimes can't beat — some stain guides flatly call it unremovable. Acetone gives you a fighting chance, but manage your expectations. School glue, though? Comes out almost every time. Know which battle you're fighting.</div>
+      </div>
+    </div>
+
+    <div id="stain-crayon" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency normal">🕐 Straight from Crayola — this is their official method</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off as much crayon as possible</strong> with a dull knife or spoon. Get the bulk of the wax off before you introduce anything wet.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">liquid dish soap</a> and work it into the stain.</strong> Let it stand a few minutes, then rub the fabric under warm water to lift the stain.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Machine wash on the heavy soil setting</strong> with the hottest water the fabric will allow, plus oxygen bleach (OxiClean, BIZ, 365 Oxygen Whitener, sodium percarbonate). Air dry, and repeat as needed.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Alternate method:</strong> <a href="https://amzn.to/3RZg8FS" target="_blank" rel="noopener">Amodex Ink &amp; Stain Remover</a> is Crayola's officially recommended product for tougher crayon stains. Use it per the manufacturer's directions.</p></div>
+        </div>
+        <div class="stain-note">💡 PSA: if you know your kid has been anywhere near crayons, check. their. pockets. Every time. Restaurant crayons, classroom crayons, the rogue one living in the car — they end up in pockets and then in your wash. Sneaky little bastards (that we love so, so much).</div>
+      </div>
+    </div>
+
+    <div id="stain-dried" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency patient">✋ Don't panic — "set" doesn't always mean "permanent"</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Don't throw it out yet.</strong> The dryer makes stains harder to remove, not always impossible. A lot of the time you can still save it.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Treat it by type.</strong> The dryer doesn't change what the stain <em>is</em> — grease still needs Dawn, protein still needs cold water and protease, tannin still needs OxiClean. Find your stain in the rest of Stain School and follow it, but pretreat generously and let it sit much longer (hours, not minutes).</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash, then check before drying.</strong> If it's gone, you saved it. If it persists, do a hot soak with oxygen bleach (OxiClean, BIZ, 365 Oxygen Whitener, sodium percarbonate) — dissolve fully, soak overnight, wash again. Repeat until it's gone, and never put it back in the dryer between attempts. Air dry while you work.</p></div>
+        </div>
+        <div class="stain-note">💡 This is exactly why "check before you dry" is the rule I repeat constantly. The dryer is where a fixable stain becomes a maybe-fixable one. Build the habit of checking every item and you'll end up here a lot less.</div>
       </div>
     </div>
 
