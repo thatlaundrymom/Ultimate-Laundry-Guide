@@ -936,6 +936,19 @@
     <p class="section-label">Stain School</p>
     <h2 id="stain-school">How to Get Out Every Stain Ever</h2>
     <p class="section-desc">Because "OxiClean it and pray" is my #1 strategy too — but sometimes we need a little extra TLC.</p>
+
+    <div style="background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.3rem;margin-bottom:1.25rem">
+      <p style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:0.7rem">🧠 First, the cheat code: every stain belongs to a <em>family</em> — and the family tells you what removes it.</p>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0.5rem 1.25rem;font-size:12.5px;line-height:1.55;color:var(--ink-light)">
+        <div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#D86A92;margin-right:6px"></span><strong style="color:var(--ink)">Protein</strong> — blood, blowouts, vomit. Enzymes (protease) break it down. Heat sets it — enzyme first, always.</div>
+        <div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#F2A878;margin-right:6px"></span><strong style="color:var(--ink)">Greasy / oily</strong> — butter, sebum, peanut butter. A degreaser (Dawn) or lipase enzyme lifts the oil.</div>
+        <div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#7858A8;margin-right:6px"></span><strong style="color:var(--ink)">Enzymatic</strong> — food that has to be digested: sauces, fruit, starches. Enzyme pretreat + time.</div>
+        <div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#E8C858;margin-right:6px"></span><strong style="color:var(--ink)">Bleachable</strong> — coffee, wine, turmeric. Loud color, tannin-based. Oxygen bleach lifts what's left.</div>
+        <div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#6ABFB8;margin-right:6px"></span><strong style="color:var(--ink)">Particulate</strong> — mud, clay, chalk: actual dirt. Let it dry, brush it off. A soak in washing soda or borax breaks apart the mineral bonds gluing dirt to fabric, so it lets go in the machine.</div>
+        <div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#9C3A60;margin-right:6px"></span><strong style="color:var(--ink)">Special</strong> — engineered to stay: ink, rust, dye bleed, glue. Each one needs its specific product, not a generic pretreater.</div>
+      </div>
+    </div>
+
     <div class="stain-tabs">
       <button class="stain-tab active" onclick="showStain('blood',this)">🩸 Blood</button>
       <button class="stain-tab" onclick="showStain('grease',this)">🍳 Grease</button>
@@ -963,6 +976,16 @@
       <button class="stain-tab" onclick="showStain('dried',this)">🔁 Dried-In Stains</button>
       <button class="stain-tab" onclick="showStain('polyquat',this)">🫧 Bubbles</button>
       <button class="stain-tab" onclick="showStain('spice',this)">🌶️ Turmeric & Spices</button>
+      <button class="stain-tab" onclick="showStain('paint',this)">🎨 Paint</button>
+      <button class="stain-tab" onclick="showStain('vomit',this)">🤢 Vomit</button>
+      <button class="stain-tab" onclick="showStain('urine',this)">🚽 Potty Accidents</button>
+      <button class="stain-tab" onclick="showStain('reddye',this)">🧃 Popsicles & Red Drinks</button>
+      <button class="stain-tab" onclick="showStain('gum',this)">🍬 Gum & Play-Doh</button>
+      <button class="stain-tab" onclick="showStain('peanut',this)">🥜 Peanut Butter</button>
+      <button class="stain-tab" onclick="showStain('banana',this)">🍌 Banana & Avocado</button>
+      <button class="stain-tab" onclick="showStain('syrup',this)">🍯 Syrup & Honey</button>
+      <button class="stain-tab" onclick="showStain('polish',this)">💅 Nail Polish</button>
+      <button class="stain-tab" onclick="showStain('deodorant',this)">👕 Deodorant Streaks</button>
     </div>
 
     <div id="stain-blood" class="stain-panel active">
@@ -1229,7 +1252,7 @@
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Why sunscreen stains are their own whole thing.</strong> Sunscreen is a cocktail of UV filters (which are yellow — that's not a coincidence), oils, and film-forming polymers that make it water resistant on your skin. Great for the beach. A nightmare for fabric. The higher the SPF, the more UV filters, the worse the staining risk. You're welcome for that information.</p></div>
           <div class="stain-step"><div class="stain-step-num">2</div><p><strong>That orange-rust color?</strong> That's the UV filters reacting with copper and iron ions in your tap water during washing, then oxidizing as the fabric dries. Essentially: rust. On your clothes. From sunscreen. Yes, really. This is why hard water makes sunscreen stains significantly worse — more minerals, more reaction, more orange.</p></div>
           <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Pretreat before every single wash</strong> — apply liquid detergent directly to any sunscreen-exposed areas and let it sit for at least 30 minutes. Don't skip this and just throw it in the wash — the heat will set the oils and make it worse.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>For existing yellow or orange stains:</strong> the oil component responds to <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">Dawn dish soap</a> first — same as grease. Follow with OxiClean Max Force and let it sit for 48 hours. If your water is hard, add <a href="https://amzn.to/4oizrWJ" target="_blank" rel="noopener">Calgon</a> to the wash to chelate those metal ions before they can react. Wash on warm.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>For existing yellow or orange stains:</strong> the oil component responds to <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">Dawn dish soap</a> first — same as grease. Follow with OxiClean Max Force and let it sit for 48 hours. If your water is hard, add <a href="https://amzn.to/4oizrWJ" target="_blank" rel="noopener">Calgon</a> or citric acid to the wash to chelate those metal ions before they can react. Wash on warm.</p></div>
           <div class="stain-step"><div class="stain-step-num">5</div><p><strong>If it still persists:</strong> soak in hot water with oxygen bleach overnight, then wash as normal. Repeat. Sunscreen stains that have been through the dryer multiple times are genuinely very difficult — manage expectations and keep going.</p></div>
         </div>
         <div class="stain-note">💡 <strong>Prevention is so much easier than treatment here.</strong> Wait 20 minutes after applying sunscreen before getting dressed — letting it form a film on your skin first dramatically reduces how much transfers to fabric. Wearing dark colors helps too (sunscreen stains basically disappear on black fabric). And if you're using a Korean sunscreen, good news — they're typically formulated with newer-generation UV filters that are far less likely to cause staining.</div>
@@ -1308,6 +1331,135 @@
           <div class="stain-step"><div class="stain-step-num">4</div><p><strong>If the stain persists after washing — lay it in the sun.</strong> Yes. The sun. Direct sunlight is a natural bleaching agent that specifically targets turmeric pigment in a way that detergent simply cannot. Leave the damp garment outside until dry. It works. It's annoying, but it works.</p></div>
         </div>
         <div class="stain-note">💡 So maybe try not to use turmeric in the winter, ok? ☀️ And when you do lay it in the sun — make sure it's been fully washed first. Wet is good. Pretreater still on it is not. The sun interacting with pretreater ingredients can cause extra yellowing. Wash, then sun.</div>
+      </div>
+    </div>
+
+    <div id="stain-paint" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency urgent">⚡ Washable paint = easy. Acrylic = race the clock — once it dries, it's plastic</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>First, read the paint bottle.</strong> "Washable" tempera or washable kids' paint → flush from the back with cold water, pretreat, wash. Done. That word on the label is doing exactly what it promised.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Acrylic or craft paint, still WET? Move now.</strong> Keep it wet — do not let it dry. Flush from the back with cold water, work in <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">blue Dawn</a> with your fingers, rinse, repeat until the water runs clear.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Already dried?</strong> It's plastic now — literally. Scrape or pick off everything you can, then work rubbing alcohol into what's left with an old toothbrush. It softens the acrylic so you can lift it in layers. Slow, but it's the move.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Pretreat what remains and wash on warm.</strong> Check before drying — repeat the alcohol round if you need to.</p></div>
+        </div>
+        <div class="stain-note">💡 Oil-based paint is its own beast: it needs the solvent listed on the can (usually mineral spirits), outside, before any washing. And honestly? Sometimes craft night just costs you a shirt. That's why paint clothes exist.</div>
+      </div>
+    </div>
+
+    <div id="stain-vomit" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency urgent">⚡ Protein + stomach acid — treat it like blood's gross cousin</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off everything you can</strong> with a spoon or paper towel, then rinse from the back with <strong>cold</strong> water. It's a protein stain — warm water now will set it.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Pretreat with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">OxiClean Max Force</a></strong> and let it sit at least 30 minutes. Protease handles the protein; the enzymes also start on the smell.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash on warm</strong> with a booster.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Sniff test before the dryer.</strong> If there's any smell left, run it again with a cup of white vinegar in the rinse. Odor gone = actually clean.</p></div>
+        </div>
+        <div class="stain-note">💡 For the 2am stomach-bug load: strip the bed, scrape, and everything goes in together on warm with booster. You don't need perfect technique at 2am — you need the washer running and everyone back in bed.</div>
+      </div>
+    </div>
+
+    <div id="stain-urine" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency normal">🕐 Fresh is a non-event. Set-in smell is the real fight</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Rinse or soak in cold water as soon as you can.</strong> Fresh accidents mostly rinse right out — it's the sitting that creates the situation.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Pretreat or soak with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">Max Force</a></strong> — enzymes break down the urine compounds that cause both the yellow and the smell.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash on warm</strong> with a booster — and <strong>skip the fabric softener.</strong> Softener coats the fibers and seals odor in. That's how you end up with sheets that smell fine until they hit warm little bodies.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Lingering smell?</strong> Rewash with a cup of white vinegar in the rinse. For the potty-training era: keep a wet bag or lidded bucket by the machine so accidents never marinate in the hamper.</p></div>
+        </div>
+        <div class="stain-note">💡 This is a season, mama. The washer can handle it, and so can you.</div>
+      </div>
+    </div>
+
+    <div id="stain-reddye" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency urgent">⚡ That red isn't juice — it's DYE. Act while it's wet</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Blot and flush from the back with cold water</strong> immediately. Red 40 starts bonding to fibers fast, and it does not negotiate.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Pretreat with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">Max Force</a></strong> — the enzymes clear the sugar and fruit base so you can get at the dye underneath.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Soak in oxygen bleach dissolved in hot water</strong> — hours, overnight if it's bad. Oxidizing is what actually breaks the dye's color.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash and check before drying.</strong> Still pink? Soak again. It usually takes stubbornness, not a miracle. On whites, damp + direct sun after washing helps finish it.</p></div>
+        </div>
+        <div class="stain-note">💡 Red popsicle on a white shirt at a birthday party is a rite of passage. You were never going to stop it. You can only avenge it.</div>
+      </div>
+    </div>
+
+    <div id="stain-gum" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency patient">✋ Do not pick at warm gum. Cold is your weapon</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Gum: freezer, 1 hour.</strong> Bag the garment, freeze, then snap the brittle gum off in pieces. An ice cube pressed on it works if the freezer's full of chicken nuggets.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Play-Doh: let it DRY completely.</strong> Same rule as mud — touch nothing while it's soft. Once dry, it crumbles and brushes right off.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Treat what's left behind:</strong> a little <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">Dawn</a> worked into any waxy gum residue or Play-Doh color, then pretreat.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash as normal.</strong> Check before drying.</p></div>
+        </div>
+        <div class="stain-note">💡 Gum in HAIR is a different tutorial (and a different kind of day). Peanut butter works there — which is ironic, because peanut butter has its own tab now.</div>
+      </div>
+    </div>
+
+    <div id="stain-peanut" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency normal">🕐 It's a grease stain wearing a lunchbox disguise</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off the blob with a spoon — never rub.</strong> Rubbing drives the oil deeper, and peanut butter is basically flavored oil.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Work in <a href="https://amzn.to/4vGa97g" target="_blank" rel="noopener">Dawn Powerwash</a> or <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">blue Dawn</a></strong>, or use a lipase pretreater like <a href="https://amzn.to/4oi4lhM" target="_blank" rel="noopener">Puracy</a> — lipase is the enzyme that eats fats.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Layer <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">Max Force</a> on top</strong> and let it all sit. Give it hours — oil stains reward patience.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm or hot.</strong> Check before drying — a leftover oil shadow will darken in the dryer.</p></div>
+        </div>
+        <div class="stain-note">💡 Jelly hitched a ride too? Enzymes in your pretreater handle the fruit half. PB&J is a combo stain — treat the grease first, the jelly comes out in the wash.</div>
+      </div>
+    </div>
+
+    <div id="stain-banana" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency urgent">⚡ The sneakiest stain in baby-land — it looks fine, then browns LATER</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Rinse from the back with cold water</strong> even if you can barely see anything. Banana and avocado look clear when fresh — that's the trap.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Pretreat with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">Max Force</a> and let it dwell.</strong> The enzymes clear the fruit before its pigments get a chance to oxidize.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash on warm.</strong> Check carefully in good light before drying.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Brown ghost showed up anyway?</strong> That's oxidized pigment now — treat it as a bleachable: hot oxygen-bleach soak until it lifts.</p></div>
+        </div>
+        <div class="stain-note">💡 This is why "but it washed out!" onesies come out of the drawer with brown spots a week later. The stain was always there — it just hadn't developed yet. Like a Polaroid. A gross little Polaroid.</div>
+      </div>
+    </div>
+
+    <div id="stain-syrup" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency normal">🕐 Sugar rinses easy — but what's left behind loves the dryer</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off the sticky bulk</strong> and rinse with warm water — sugar dissolves, so most of it goes straight down the drain.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Pretreat with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">Max Force</a></strong> — amylase is the enzyme that handles sugars and starches, and syrup is its whole job description.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash on warm.</strong></p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Check before drying — same trap as watermelon.</strong> Invisible sugar residue caramelizes into a brown mark in a hot dryer. If the spot feels even slightly stiff, wash again first.</p></div>
+        </div>
+        <div class="stain-note">💡 Pancake Saturday casualties: rinse the sleeve when it happens, not after it's been balled up in the hamper gluing itself to a sock for three days.</div>
+      </div>
+    </div>
+
+    <div id="stain-polish" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency urgent">⚡ Blot and lift — one wipe and you've doubled the stain</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Lift, don't wipe.</strong> Scoop wet polish off the surface with the edge of a card or spoon. Wiping smears it into clean fabric.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Test acetone on a hidden seam first.</strong> And know your fabric: <strong>never acetone on acetate, triacetate, or modacrylic</strong> — it will dissolve the fabric itself, not just the polish.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Work from the back:</strong> clean rag under the stain, acetone on a cotton swab, small dabs pushing the polish out into the rag. Move to fresh rag sections as the color transfers.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Dawn on the spot, then wash.</strong> Color ghost left? Oxygen-bleach soak. Check before drying.</p></div>
+        </div>
+        <div class="stain-note">💡 Glitter polish adds a plastic layer that acetone has to fight through — go slower and expect more rounds. And manage expectations: polish is pigment in a film-former. Sometimes the couch cushion flips over for a reason.</div>
+      </div>
+    </div>
+
+    <div id="stain-deodorant" class="stain-panel">
+      <div class="stain-panel-inner">
+        <span class="stain-urgency normal">🕐 The white streak from getting dressed — 10-second fix</span>
+        <div class="stain-steps">
+          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Rub the streak with a dry piece of nylon</strong> (tights, a sock), a microfiber cloth, or even a dryer sheet. The marks lift off dry fabric like magic — no water needed.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Stubborn streak?</strong> A damp cloth with a drop of Dawn, then blot dry. Done.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Know which problem you have:</strong> a white STREAK is today's deodorant sitting on the surface. Yellow, stiff pit build-up is deodorant + sweat bonded into the fabric — that's a different fight, and it lives in the <strong>Sweat tab</strong>.</p></div>
+        </div>
+        <div class="stain-note">💡 Dressing hack: shirt first, then deodorant — or hold the hem away from your body on the way down. Ask me how many black shirts taught me that.</div>
       </div>
     </div>
 
