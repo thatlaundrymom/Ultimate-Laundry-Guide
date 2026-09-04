@@ -348,7 +348,54 @@
     .maint-grid { grid-template-columns: 1fr; }
     .buzzword-grid { grid-template-columns: 1fr; }
   }
-</style>
+
+/* ===== Water softener calculator (wsc-*) ===== */
+.wsc{background:var(--warm-white);border:2px solid var(--blush-light);border-radius:20px;padding:1.75rem 1.5rem;margin:1.5rem 0 1.25rem}
+.wsc-kicker{font-family:'DM Sans',sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rose-dark);margin:0 0 .35rem;font-weight:700}
+.wsc-title{font-family:'Playfair Display',serif;font-size:1.55rem;line-height:1.2;color:var(--ink);margin:0 0 .5rem}
+.wsc-intro{font-size:.95rem;color:var(--ink-light);margin:0 0 1.5rem;max-width:46ch}
+.wsc-field{border:0;padding:0;margin:0 0 1.35rem}
+.wsc-field legend{font-weight:700;font-size:.95rem;color:var(--ink);padding:0;margin-bottom:.55rem}
+.wsc-choices{display:flex;gap:.55rem}
+.wsc-choices.wsc-three{display:grid;grid-template-columns:repeat(3,1fr);gap:.45rem}
+.wsc-choice{flex:1;margin:0}
+.wsc-choice input{position:absolute;opacity:0;width:0;height:0}
+.wsc-choice span{display:block;text-align:center;padding:.7rem .4rem;background:#fff;border:2px solid var(--blush-light);border-radius:14px;font-size:.92rem;font-weight:600;color:var(--ink);cursor:pointer;line-height:1.25;transition:background .12s,border-color .12s,color .12s}
+.wsc-three .wsc-choice span{font-size:.85rem;padding:.65rem .25rem}
+.wsc-choice small{display:block;font-size:.72rem;font-weight:400;color:var(--ink-muted);margin-top:.1rem}
+.wsc-choice input:checked+span{background:var(--rose);border-color:var(--rose);color:#fff}
+.wsc-choice input:checked+span small{color:rgba(255,255,255,.9)}
+.wsc-choice input:focus-visible+span{outline:3px solid var(--lilac-dark);outline-offset:2px}
+.wsc-hardrow{display:flex;align-items:baseline;justify-content:space-between;gap:.75rem;margin-bottom:.3rem}
+.wsc-hardval{font-family:'Playfair Display',serif;font-size:1.75rem;line-height:1;color:var(--rose-dark)}
+.wsc-hardval em{font-family:'DM Sans',sans-serif;font-size:.85rem;font-style:normal;color:var(--ink-muted)}
+.wsc-band{font-size:.9rem;font-weight:600;color:var(--ink-light);text-align:right}
+.wsc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:34px;background:transparent;margin:0;padding:0;cursor:pointer;display:block}
+.wsc input[type=range]::-webkit-slider-runnable-track{height:10px;border-radius:99px;background:linear-gradient(90deg,var(--sage) 0%,var(--butter) 38%,var(--peach) 70%,var(--rose-dark) 100%)}
+.wsc input[type=range]::-moz-range-track{height:10px;border-radius:99px;background:linear-gradient(90deg,var(--sage) 0%,var(--butter) 38%,var(--peach) 70%,var(--rose-dark) 100%)}
+.wsc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:28px;height:28px;margin-top:-9px;border-radius:50%;background:#fff;border:3px solid var(--rose-dark);box-shadow:0 1px 4px rgba(0,0,0,.18)}
+.wsc input[type=range]::-moz-range-thumb{width:28px;height:28px;border-radius:50%;background:#fff;border:3px solid var(--rose-dark)}
+.wsc input[type=range]:focus-visible{outline:3px solid var(--lilac-dark);outline-offset:4px;border-radius:99px}
+.wsc-scale{display:flex;justify-content:space-between;font-size:.75rem;color:var(--ink-muted);margin-top:-.15rem}
+.wsc-result{background:#fff;border:2px solid var(--blush-light);border-radius:16px;padding:1.25rem 1.15rem;margin-top:1.5rem}
+.wsc-lead{font-size:.88rem;font-weight:600;color:var(--ink-light);margin:0 0 .15rem}
+.wsc-dose{font-family:'Playfair Display',serif;font-size:2.1rem;line-height:1.15;color:var(--rose-dark);margin:.1rem 0 .2rem}
+.wsc-grams{font-size:.92rem;font-weight:600;color:var(--ink-muted);margin:0}
+.wsc-copy{font-size:.92rem;line-height:1.55;color:var(--ink-light);margin:.85rem 0 0;max-width:48ch}
+.wsc-note{font-size:.9rem;line-height:1.5;color:var(--ink);margin:.9rem 0 0;padding:.75rem .9rem;background:var(--butter-light);border-left:4px solid var(--butter);border-radius:0 10px 10px 0}
+.wsc-note-alt{background:var(--blush-light);border-left-color:var(--rose)}
+.wsc-note:empty{display:none}
+.wsc-details{margin-top:1.25rem;font-size:.9rem}
+.wsc-details summary{cursor:pointer;font-weight:700;color:var(--ink);padding:.6rem 0;border-top:2px solid var(--blush-light)}
+.wsc-details summary:focus-visible{outline:3px solid var(--lilac-dark);outline-offset:2px}
+.wsc-details ul{margin:.4rem 0 0;padding-left:1.15rem;color:var(--ink-light)}
+.wsc-details li{margin-bottom:.4rem;line-height:1.5}
+.wsc-details p{color:var(--ink-light);margin-top:.6rem}
+.wsc-fine{font-size:.82rem;color:var(--ink-muted);margin:1rem 0 0}
+@media (max-width:520px){.wsc{padding:1.35rem 1.1rem}.wsc-choices{flex-direction:column}.wsc-choices.wsc-three{grid-template-columns:1fr}.wsc-dose{font-size:1.85rem}}
+@media (prefers-reduced-motion:reduce){.wsc *{transition:none!important}}
+
+  </style>
 </head>
 <body>
 
@@ -595,12 +642,70 @@
     </div>
     <div class="hardness-spectrum"></div>
     <div class="hardness-ticks"><span>0 ppm — Soft</span><span>100 ppm</span><span>200 ppm</span><span>400+ ppm — Very hard</span></div>
-    <div class="hardness-grid">
-      <div class="hlevel hlevel-soft"><div class="hlevel-name">Soft</div><div class="hlevel-range">0–100 ppm</div><div class="hlevel-action">You lucky duck. No softening needed. Standard detergent dose works perfectly.</div></div>
-      <div class="hlevel hlevel-mod"><div class="hlevel-name">Moderately hard</div><div class="hlevel-range">100–200 ppm</div><div class="hlevel-action">Start by adding ½ tbsp <a href="https://amzn.to/4eklJOl" target="_blank" rel="noopener">washing soda</a> or <a href="https://amzn.to/4uomewZ" target="_blank" rel="noopener">borax</a> to the drum. Dose up if you need to. Actually lets you use less detergent — saving money!</div></div>
-      <div class="hlevel hlevel-hard"><div class="hlevel-name">Hard</div><div class="hlevel-range">200–400 ppm</div><div class="hlevel-action">Within this range sodium citrate is going to be your best friend. You can mix together washing soda and citric acid crystals in a 2:1 ratio to make your own and keep it in an airtight container, or you can <a href="https://amzn.to/4wLX7W9" target="_blank" rel="noopener">buy sodium citrate</a>. Start with 1 tbsp for a normal load, and dose up if you need to.</div></div>
-      <div class="hlevel hlevel-vhard"><div class="hlevel-name">Very hard</div><div class="hlevel-range">400+ ppm</div><div class="hlevel-action">Add 4 tbsp washing soda + 2 tbsp citric acid per load. Or 1 tsp <a href="https://amzn.to/4v3WjvG" target="_blank" rel="noopener">Trisodium Phosphate</a> — less eco-friendly, your call.</div></div>
+    <div class="wsc">
+      <p class="wsc-kicker">Your load, your number</p>
+      <h3 class="wsc-title">How much do I actually add?</h3>
+      <p class="wsc-intro">Slide to your hardness, tell me your machine and detergent, then toggle to whatever is already in your cabinet.</p>
+
+      <fieldset class="wsc-field">
+        <legend>What kind of washer?</legend>
+        <div class="wsc-choices">
+          <label class="wsc-choice"><input type="radio" name="wsc-washer" value="front" checked><span>Front load<small>or HE top load</small></span></label>
+          <label class="wsc-choice"><input type="radio" name="wsc-washer" value="top"><span>Top load<small>deep fill</small></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="wsc-field">
+        <legend>What kind of detergent?</legend>
+        <div class="wsc-choices">
+          <label class="wsc-choice"><input type="radio" name="wsc-det" value="conv" checked><span>Conventional<small>Tide, Persil, etc.</small></span></label>
+          <label class="wsc-choice"><input type="radio" name="wsc-det" value="plant"><span>Plant based<small>Molly&#8217;s, Dropps, etc.</small></span></label>
+        </div>
+      </fieldset>
+
+      <fieldset class="wsc-field">
+        <legend>How hard is your water?</legend>
+        <div class="wsc-hardrow">
+          <div class="wsc-hardval"><span id="wsc-ppm-out">150</span> <em>ppm</em></div>
+          <div class="wsc-band" id="wsc-band">Hard</div>
+        </div>
+        <input type="range" id="wsc-ppm" min="0" max="500" step="5" value="150" aria-label="Water hardness in parts per million">
+        <div class="wsc-scale"><span>0</span><span>250</span><span>500</span></div>
+      </fieldset>
+
+      <fieldset class="wsc-field">
+        <legend>Which softener?</legend>
+        <div class="wsc-choices wsc-three">
+          <label class="wsc-choice"><input type="radio" name="wsc-prod" value="citrate" checked><span>Sodium citrate<small>cleanest</small></span></label>
+          <label class="wsc-choice"><input type="radio" name="wsc-prod" value="soda"><span>Washing soda<small>cheapest</small></span></label>
+          <label class="wsc-choice"><input type="radio" name="wsc-prod" value="borax"><span>Borax<small>mildest</small></span></label>
+        </div>
+      </fieldset>
+
+      <div class="wsc-result" aria-live="polite">
+        <p class="wsc-lead" id="wsc-lead">Add to the drum, before the clothes go in:</p>
+        <p class="wsc-dose" id="wsc-dose">1&#189; teaspoons</p>
+        <p class="wsc-grams" id="wsc-grams">about 7 grams</p>
+        <p class="wsc-copy" id="wsc-copy"></p>
+        <p class="wsc-note" id="wsc-note"></p>
+        <p class="wsc-note wsc-note-alt" id="wsc-note2"></p>
+      </div>
+
+      <details class="wsc-details">
+        <summary>How I got these numbers</summary>
+        <ul>
+          <li>Your hardness number is milligrams of mineral per liter. Multiply by how much water your machine actually uses in the wash step and you get the mineral load sitting in the drum.</li>
+          <li>I&#8217;m figuring about 20 liters for a front loader and 80 for a deep-fill top loader. This is the whole reason machine type matters &#8212; the same water gives a top loader four times the mineral to deal with.</li>
+          <li>Your detergent handles some of it on its own, and conventional formulas handle more than plant-based ones. That assumes 2&#8211;3 tablespoons per load, the way I tell you to dose.</li>
+          <li>Sodium citrate grabs calcium one-to-one, which works out to about 2.9 grams per gram of leftover mineral. Washing soda gets there at about 1.06 grams because it converts the mineral instead of holding it.</li>
+          <li>Borax is the exception &#8212; it helps, but not in a way that scales cleanly with a hardness number, so you get the standard scoop instead of a calculated one.</li>
+          <li>Spoon conversions assume 5 grams per teaspoon, 15 per tablespoon. Grinds vary, so a cheap kitchen scale beats a measuring spoon here.</li>
+        </ul>
+        <p>These are starting points, not prescriptions. Run a few loads, feel your towels, adjust.</p>
+      </details>
+      <p class="wsc-fine">Estimates only &#8212; test your own water and dial it in from there. More on what each of these does in <a href="#hard-water">Treating Hard Water</a>.</p>
     </div>
+
     <div class="info-box" style="margin-bottom:1.25rem">💡 <strong>Want an easier option?</strong> There's a product called <a href="https://amzn.to/4oizrWJ" target="_blank" rel="noopener">Calgon</a> that takes the guesswork out of water softening — add it to your load and it handles the softening for you. The catch: you sometimes need to use quite a bit of it, which can get pricey. But it works well and is a great option if you don't want to mess with washing soda doses separately.</div>
     <div class="trace-suds-box">✦ <strong>How to know you got the detergent dose right:</strong> Look for "trace suds" — a thin film of 3–4 tiny bubbles on the window (front loader) or on the water surface (top loader) about 10 minutes in. That's the sweet spot. If you're seeing a bubble party, you've overdone it. And don't confuse trace suds with hard-water no-suds: trace suds means a thin film is <em>there</em>. Untreated hard water means literally nothing — zero bubbles, plus stiff, dingy clothes. Crunchy towels and a bone-dry window? That's your water talking, not your dose.</div>
   </div>
@@ -652,17 +757,17 @@
     <p class="quip">There is a whole category of products specifically designed to deal with your water so your detergent doesn't have to. They're cheap. They work. You should be using them.</p>
     <div class="hw-what">
       <p>When hard water minerals meet detergent surfactants, they form insoluble soap scum deposits that never fully rinse out — building up in fabric fibers over time and leaving clothes stiff, dingy, and increasingly smelly no matter how much detergent you use. It also coats your machine drum and heating element. Nothing about this is your fault. It's just chemistry being annoying.</p>
-      <p>The fix is <strong>sequestering agents</strong> — compounds that grab onto the calcium and magnesium ions before they can cause chaos, holding them harmlessly in suspension so everything actually rinses away clean.</p>
+      <p>The fix is a whole category of products that deal with the minerals so your detergent doesn’t have to. There are two ways they pull it off. <strong>Chelators</strong> like sodium citrate grab the minerals and hold on tight, keeping them dissolved so they rinse away with everything else. <strong>Builders</strong> like washing soda turn them into a chalky solid instead, which also rinses away. Different route, same destination — your detergent finally gets to do its actual job.</p>
     </div>
 
     <div class="hw-agents">
       <div class="hw-agent pick">
         <div class="hw-pick-badge">★ Best pick</div>
-        <div class="hw-agent-name">Washing Soda</div>
+        <div class="hw-agent-name"><a href="https://amzn.to/4eklJOl" target="_blank" rel="noopener">Washing Soda</a></div>
         <p>Sodium carbonate. <strong>Raises pH and softens water simultaneously</strong> — the most efficient choice. Dose scales with your hardness level. Use more in the drum, not the drawer. Affordable and widely available.</p>
       </div>
       <div class="hw-agent">
-        <div class="hw-agent-name">Borax</div>
+        <div class="hw-agent-name"><a href="https://amzn.to/4uomewZ" target="_blank" rel="noopener">Borax</a></div>
         <p>Effective softener but works differently than washing soda — it <strong>buffers pH rather than raising it</strong>. Better for moderately hard water. Some moms avoid it around young kids; your call. And yes — borax and washing soda play beautifully together. My homemade softener mix is exactly that combo, and it's in every load I run.</p>
       </div>
       <div class="hw-agent">
@@ -670,7 +775,7 @@
         <p>A <strong>chelating agent</strong> — it binds to calcium and magnesium minerals and neutralizes them, rather than removing them the way washing soda does. Works a little differently but is very effective in hard water. A great addition to your routine if washing soda alone isn't cutting it.</p>
       </div>
       <div class="hw-agent">
-        <div class="hw-agent-name">TSP</div>
+        <div class="hw-agent-name"><a href="https://amzn.to/4v3WjvG" target="_blank" rel="noopener">TSP</a></div>
         <p>Trisodium phosphate — extremely effective, especially for very hard water. <strong>Not eco-friendly</strong> (phosphates cause algal blooms). A last resort for very hard water situations, not a regular-use product. Check local regulations.</p>
       </div>
     </div>
@@ -729,7 +834,6 @@
     <p class="section-label">The shopping list</p>
     <h2 id="recommended">Recommended Detergents</h2>
     <p class="section-desc">Personal picks, tested by a real mom with real stains and real opinions.</p>
-    <div class="ph-tip" style="margin-bottom:1.25rem">💜 <strong>My take — liquid vs. powder:</strong> I've always been a liquid laundry detergent gal. I find that it is much easier to control the dosing for any type of load. I also like that <em>most</em> liquids do not contain optical brightening agents, so I can use them on all of my dark clothing. I always pair a liquid with a booster to do laundry, and honestly I find that it works much better than powder.<br><br>If you are a powder person though, and you love it, and it works for you — keep doing what fits your needs, lifestyle, and budget. Laundry is subjective and everyone does it differently!</div>
     <div class="tabs">
       <button class="tab active" onclick="showTab('liquid',this)">Liquid</button>
       <button class="tab" onclick="showTab('powder',this)">Powder</button>
@@ -738,7 +842,7 @@
     </div>
     <div id="tab-liquid" class="tab-panel active">
       <ul class="det-list">
-        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://www.target.com/p/tide-liquid-he-odor-refresh-laundry-detergent-free-gentle/-/A-94711688" target="_blank" rel="noopener">Tide Free &amp; Gentle Odor Refresh</a></strong> — best surfactant package, no fragrance. I would genuinely marry this detergent. <strong>⚠ Being discontinued September 2026</strong> — if you can find it, stock up. Liquid detergent has a shelf life of 12–18 months.<span class="det-note">Top pick · Fragrance-free · Discontinuing Sept 2026</span></div></li>
+        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://www.target.com/p/tide-liquid-he-odor-refresh-laundry-detergent-free-gentle/-/A-94711688" target="_blank" rel="noopener">Tide Free &amp; Gentle Odor Refresh</a></strong> — best surfactant package, no fragrance. I would genuinely marry this detergent.<span class="det-note">Top pick · Fragrance-free</span></div></li>
                 <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://www.costco.com/p/-/tide-advanced-care-liquid-laundry-detergent-free-gentle-125-loads-154-fl-oz/4000383853" target="_blank" rel="noopener">Tide Advanced Care Free &amp; Gentle</a></strong> — excellent free &amp; clear option, available at Costco.<span class="det-note">Top pick · Fragrance-free · Costco find</span></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4v818nC" target="_blank" rel="noopener">Persil Free &amp; Clear</a></strong></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4opJ0Dk" target="_blank" rel="noopener">Tide Free &amp; Gentle</a></strong></div></li>
@@ -749,8 +853,6 @@
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/441Yyng" target="_blank" rel="noopener">Tide with Oxi</a></strong> — solid everyday liquid with built-in oxi action</div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://www.wegmans.com/shop/product/54930-Fresh-Scent-Laundry-Detergent-with-Oxi-Booster" target="_blank" rel="noopener">Wegman's Fresh Scent</a></strong></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4uoni3X" target="_blank" rel="noopener">Ginger Lily Farms Unscented</a></strong> — great for scrunchy families. Use a booster with every load.<span class="det-note">Pairs best with a booster</span></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/3TZnppZ" target="_blank" rel="noopener">Mrs. Meyer's Clean Day</a></strong> — for the plant-based crowd who wants to stay in the natural aisle. Real talk: it's a moderate cleaner, not a workhorse. Don't run it solo on dirty loads — pair it with a booster like BIZ, FEBU, or Dirty Labs every wash and it holds its own.<span class="det-note">Plant-based · Use a booster every load</span></div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4gu05tc" target="_blank" rel="noopener">Seventh Generation Free &amp; Clear</a></strong> — fragrance-free, plant-based, and gentle on sensitive skin. Cleaning power is middle-of-the-road, so give it backup: a booster like BIZ, FEBU, or Dirty Labs closes the gap on soiled and sweaty loads.<span class="det-note">Plant-based · Fragrance-free · Use a booster</span></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/3SiyLEF" target="_blank" rel="noopener">365 Laundry Detergent</a></strong><span class="det-note">⚠ Non-organic version ONLY — the organic one is trash</span></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/44yaTzG" target="_blank" rel="noopener">365 Sport Detergent</a></strong> — a little culty and hard to find, and the surfactants aren't the strongest. Not my everyday pick, but it does the job on synthetic-only loads.<span class="det-note">Synthetic loads only</span></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4h8IAiK" target="_blank" rel="noopener">Gain Plus</a></strong> — solid everyday liquid, heavily scented if that's your thing</div></li>
@@ -770,7 +872,10 @@
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/3PQBW5S" target="_blank" rel="noopener">Ariel 2x</a></strong><span class="det-note">Incredible cleaner — very heavily scented. You've been warned.</span><div style="font-size:12px;color:var(--blush-dark);margin-top:5px;line-height:1.5;background:var(--blush-light);border:1px solid var(--blush);border-radius:6px;padding:6px 9px">⚠ <strong>Front loaders, read this:</strong> Ariel doesn't contain suds-suppressing ingredients, which can be a real problem in front-load machines — excess suds lead to buildup, clogs, and a whole host of issues. It's a top performer, but used incorrectly in a front loader it can be a nightmare. Dose carefully and watch your suds.</div></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://www.walmart.com/ip/ARIEL-PWD-REG-BAG-2-5-8KG-129LD/17146066978" target="_blank" rel="noopener">Ariel Original Powder</a></strong><span class="det-note">Same front-loader suds warning as Ariel 2x — dose carefully</span></div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4gu0UCW" target="_blank" rel="noopener">Gain Powder</a></strong> — everyday powder, heavily scented</div></li>
-        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/440VwQ4" target="_blank" rel="noopener">365 Unscented Powder</a></strong> — a great pick if you're after a minimal-ingredient formula, and with no OBAs it's safe for darks. The trade-off: it lacks a little cleaning power and has no anti-redeposition agents, so loose dye and soil can resettle onto your clothes. Use more than the label dose, toss in a <a href="https://amzn.to/3S3Vww0" target="_blank" rel="noopener">color catcher</a>, and pair it with a booster.<span class="det-note">Use extra + color catcher + booster</span></div></li>      </ul>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/440VwQ4" target="_blank" rel="noopener">365 Unscented Powder</a></strong> — this powder is amazing and has no OBAs, so it's great for darks. BUT it also has no anti-redeposition agents, which means loose dye and soil can resettle onto your clothes. If you use it, PLEASE toss in a <a href="https://amzn.to/3S3Vww0" target="_blank" rel="noopener">color catcher</a>.<span class="det-note">You'll need to use more than you think</span></div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4fxpXEC" target="_blank" rel="noopener">Country Save Powder</a></strong> — great for sensitive families, best paired with a booster</div></li>
+        <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4uyYO85" target="_blank" rel="noopener">Essembly Washing Powder</a></strong> — great for babies, pair with an enzyme booster to get the full enzyme lineup</div></li>
+      </ul>
     </div>
     <div id="tab-delicate" class="tab-panel">
       <div style="background:var(--blush-light);border:1px solid var(--blush);border-radius:var(--radius-sm);padding:0.75rem 1rem;font-size:13px;color:var(--blush-dark);margin-bottom:1rem">⚠ <strong>Do not use enzyme boosters with wool or cashmere.</strong> Protease will literally eat the fabric. Don't find out the hard way.</div>
@@ -788,7 +893,7 @@
     <div id="tab-boosters" class="tab-panel">
       <p style="font-size:13px;color:var(--ink-light);margin-bottom:1rem;line-height:1.6"><strong>Enzyme boosters</strong> are the upgrade that does the heavy lifting. They add extra stain-fighting enzymes — proteases, amylases, the works — on top of your detergent, going after protein, food, and body-soil stains that a basic wash leaves behind. (Looking for plain oxygen bleach like OxiClean or sodium percarbonate? That's its own thing — I gave it a <a href="#oxygen-bleach" style="color:var(--rose-dark);font-weight:700">whole section here ↓</a>.) If you've got a stain machine for a kid, relatable, an enzyme booster earns its spot.</p>
       <ul class="det-list">
-        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4e4HEtZ" target="_blank" rel="noopener">FEBU Laundry Booster</a></strong> — the gold standard. Worth every penny, period. Use it with every load, especially the stinky ones.</div></li>
+        <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4e4HEtZ" target="_blank" rel="noopener">FEBU Laundry Booster</a></strong> — the gold standard. Worth every penny for adult laundry.</div></li>
         <li class="det-item"><span class="det-star">★</span><div><strong><a href="https://amzn.to/4fCjtV5" target="_blank" rel="noopener">BIZ</a></strong> — excellent budget pick. My go-to for kid clothes because I am not using the expensive stuff on crayon stains.</div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4vK57Xy" target="_blank" rel="noopener">Dirty Labs Enzymatic Booster</a></strong> — great for crunchy/sensitive families</div></li>
         <li class="det-item"><span class="det-star"> </span><div><strong><a href="https://amzn.to/4ep150X" target="_blank" rel="noopener">DadMode Heavy Duty Booster</a></strong> — enzyme-packed for when the everyday stuff isn't cutting it</div></li>
@@ -804,7 +909,7 @@
     <p class="section-label">The hall of shame</p>
     <h2 id="avoid">Detergents to Avoid</h2>
     <p class="section-desc">You might as well be washing with tap water. These clean essentially nothing.</p>
-    <p class="quip">I know. Branch Basics has beautiful branding. Molly's Suds has the crunchy-mom seal of approval. I'm so sorry. Put them under the sink and use them for something else.</p>
+    <p class="quip">I know. Branch Basics has beautiful branding. Mrs. Meyers smells like a spa. I'm so sorry. Put them under the sink and use them for something else.</p>
     <div class="worst-grid">
       <div class="worst-item">All Free &amp; Clear</div>
       <div class="worst-item">Branch Basics</div>
@@ -812,6 +917,7 @@
       <div class="worst-item">ECOS</div>
       <div class="worst-item">Zum</div>
       <div class="worst-item">Dr. Bronner's Sal Suds</div>
+      <div class="worst-item">Mrs. Meyers</div>
       <div class="worst-item">Attitude</div>
       <div class="worst-item">Purex</div>
       <div class="worst-item">Truly Free</div>
@@ -842,7 +948,7 @@
     <p class="quip">Chlorine bleach is a sledgehammer. Oxygen bleach is a scalpel — it gets the job done without destroying everything around it.</p>
 
     <div class="hw-what">
-      <p><strong>What it actually is:</strong> Oxygen bleach is <strong>sodium percarbonate</strong> — a powder that, the moment it hits water, breaks down into hydrogen peroxide and soda ash (washing soda). The hydrogen peroxide is the workhorse: it releases oxygen that lifts stains and brightens fabric, while the soda ash gives your wash a gentle alkaline boost. That's the whole magic. It's the active oxygen-bleaching agent inside products like OxiClean and <a href="https://amzn.to/4v2QjDl" target="_blank" rel="noopener">pure sodium percarbonate</a> or your oxygen bleach of choice.</p>
+      <p><strong>What it actually is:</strong> Oxygen bleach is <strong>sodium percarbonate</strong> — a powder that, the moment it hits water, breaks down into hydrogen peroxide and soda ash (washing soda). The hydrogen peroxide is the workhorse: it releases oxygen that lifts stains and brightens fabric, while the soda ash gives your wash a gentle alkaline boost. That's the whole magic. It's the active oxygen-bleaching agent inside products like OxiClean and 365 Oxygen Whitener.</p>
       <p><strong>Why it's color-safe when chlorine isn't:</strong> Chlorine bleach chemically strips color and weakens fibers. Oxygen bleach works through active oxygen instead, so on most colored fabrics it lifts the stain without stripping the dye. (Always spot-test anyway — some dyes are sensitive, and it's not recommended for wool, silk, or anything with special finishes.)</p>
     </div>
 
@@ -867,23 +973,25 @@
 
     <div class="ph-tip">💡 <strong>Heads up on OBAs — read your label.</strong> Check the ingredients on your oxygen bleach of choice for brightening agents (like Fluorescent Brightener 71, one you'll often see). If your oxygen bleach contains one, it can fade your darks over time — so either use that one on whites and colors only, or choose an "all-purpose" oxygen bleach you can safely use on everything. Whatever works for your family routine and your budget. If you want to skip brighteners entirely, <a href="https://amzn.to/4v2QjDl" target="_blank" rel="noopener">pure sodium percarbonate</a> is just the oxygen bleach with nothing added.</div>
 
-    <div class="ph-tip">⭐ <strong>My top pick:</strong> <a href="https://amzn.to/4v4SRkp" target="_blank" rel="noopener">OxiClean White Revive</a> is the best overall oxygen bleach. The catch: it's loaded with OBAs, so with heavy use it will gradually fade your colors and darks — so I recommend it for <strong>whites and lights</strong>. For darker colors and darks, keep something more versatile on hand. <a href="https://amzn.to/4v2QjDl" target="_blank" rel="noopener">Pure sodium percarbonate</a> is a fantastic option — no added brighteners so it's safe on everything, and it's inexpensive too.</div>
-
     <div class="product-category" style="margin-top:1.75rem">
       <h3>🫧 My Oxygen Bleach Picks</h3>
       <div class="product-links">
         <div class="product-link-item"><a href="https://amzn.to/4v2QjDl" target="_blank" rel="noopener">Pure Sodium Percarbonate</a></div>
         <div class="product-link-item"><a href="https://amzn.to/3QuywWy" target="_blank" rel="noopener">OxiClean Versatile</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4v4SRkp" target="_blank" rel="noopener">OxiClean White Revive</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4wvxkRU" target="_blank" rel="noopener">OxiClean Odor Blasters</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4ut9NQi" target="_blank" rel="noopener">365 Oxygen Booster</a></div>
         <div class="product-link-item"><a href="https://amzn.to/3QyGON9" target="_blank" rel="noopener">Truly Free OxyBoost</a></div>
         <div class="product-link-item"><a href="https://www.target.com/p/powder-stain-remover-56oz-up-38-up-8482/-/A-81069446" target="_blank" rel="noopener">Up &amp; Up Powder Stain Remover (Target)</a></div>
         <div class="product-link-item"><a href="https://www.target.com/p/oxiclean-maxforce-vsr-detergent-boosters-3lbs/-/A-94877091" target="_blank" rel="noopener">OxiClean Max Force Booster (Target)</a></div>
         <div class="product-link-item"><a href="https://www.costco.com/p/-/kirkland-signature-oxi-powder-328-loads-11-lbs/4000305727" target="_blank" rel="noopener">Kirkland Oxi Powder (Costco)</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4p60g0J" target="_blank" rel="noopener">Heritage Park Oxygen Bleach</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4eNC53w" target="_blank" rel="noopener">Charlie's Soap Oxygen Bleach</a></div>
         <div class="product-link-item"><a href="https://amzn.to/44U6K9m" target="_blank" rel="noopener">Molly's Suds Oxygen Bleach</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4wyRafu" target="_blank" rel="noopener">Pronounce Oxygen Bleach</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4wmoIgs" target="_blank" rel="noopener">Nellie's Oxygen Brightener</a></div>      </div>
+        <div class="product-link-item"><a href="https://amzn.to/44gM0bS" target="_blank" rel="noopener">Blueland Oxygen Bleach</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4wmoIgs" target="_blank" rel="noopener">Nellie's Oxygen Brightener</a></div>
+        <div class="product-link-item"><a href="https://www.getcleanpeople.com/product/oxygen-brightener/" target="_blank" rel="noopener">Clean People Oxygen Brightener</a></div>
+      </div>
     </div>
   </div>
 
@@ -934,19 +1042,6 @@
     <p class="section-label">Stain School</p>
     <h2 id="stain-school">How to Get Out Every Stain Ever</h2>
     <p class="section-desc">Because "OxiClean it and pray" is my #1 strategy too — but sometimes we need a little extra TLC.</p>
-
-    <div style="background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:1.1rem 1.3rem;margin-bottom:1.25rem">
-      <p style="font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:0.7rem">🧠 First, the cheat code: every stain belongs to a <em>family</em> — and the family tells you what removes it.</p>
-      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0.5rem 1.25rem;font-size:12.5px;line-height:1.55;color:var(--ink-light)">
-        <div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#D86A92;margin-right:6px"></span><strong style="color:var(--ink)">Protein</strong> — blood, blowouts, vomit. Enzymes (protease) break it down. Heat sets it — enzyme first, always.</div>
-        <div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#F2A878;margin-right:6px"></span><strong style="color:var(--ink)">Greasy / oily</strong> — butter, sebum, peanut butter. A degreaser (Dawn) or lipase enzyme lifts the oil.</div>
-        <div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#7858A8;margin-right:6px"></span><strong style="color:var(--ink)">Enzymatic</strong> — food that has to be digested: sauces, fruit, starches. Enzyme pretreat + time.</div>
-        <div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#E8C858;margin-right:6px"></span><strong style="color:var(--ink)">Bleachable</strong> — coffee, wine, turmeric. Loud color, tannin-based. Oxygen bleach lifts what's left.</div>
-        <div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#6ABFB8;margin-right:6px"></span><strong style="color:var(--ink)">Particulate</strong> — mud, clay, chalk: actual dirt. Let it dry, brush it off. A soak in washing soda or borax breaks apart the mineral bonds gluing dirt to fabric, so it lets go in the machine.</div>
-        <div><span style="display:inline-block;width:9px;height:9px;border-radius:50%;background:#9C3A60;margin-right:6px"></span><strong style="color:var(--ink)">Special</strong> — engineered to stay: ink, rust, dye bleed, glue. Each one needs its specific product, not a generic pretreater.</div>
-      </div>
-    </div>
-
     <div class="stain-tabs">
       <button class="stain-tab active" onclick="showStain('blood',this)">🩸 Blood</button>
       <button class="stain-tab" onclick="showStain('grease',this)">🍳 Grease</button>
@@ -956,9 +1051,6 @@
       <button class="stain-tab" onclick="showStain('sweat',this)">💦 Sweat</button>
       <button class="stain-tab" onclick="showStain('makeup',this)">💄 Makeup</button>
       <button class="stain-tab" onclick="showStain('food',this)">🍝 Food</button>
-      <button class="stain-tab" onclick="showStain('ketchup',this)">🍅 Ketchup</button>
-      <button class="stain-tab" onclick="showStain('mustard',this)">🌭 Mustard</button>
-      <button class="stain-tab" onclick="showStain('watermelon',this)">🍉 Watermelon</button>
       <button class="stain-tab" onclick="showStain('wine',this)">🍷 Wine</button>
       <button class="stain-tab" onclick="showStain('slime',this)">🟢 Slime</button>
       <button class="stain-tab" onclick="showStain('chalk',this)">🖌️ Chalk</button>
@@ -974,16 +1066,6 @@
       <button class="stain-tab" onclick="showStain('dried',this)">🔁 Dried-In Stains</button>
       <button class="stain-tab" onclick="showStain('polyquat',this)">🫧 Bubbles</button>
       <button class="stain-tab" onclick="showStain('spice',this)">🌶️ Turmeric & Spices</button>
-      <button class="stain-tab" onclick="showStain('paint',this)">🎨 Paint</button>
-      <button class="stain-tab" onclick="showStain('vomit',this)">🤢 Vomit</button>
-      <button class="stain-tab" onclick="showStain('urine',this)">🚽 Potty Accidents</button>
-      <button class="stain-tab" onclick="showStain('reddye',this)">🧃 Popsicles & Red Drinks</button>
-      <button class="stain-tab" onclick="showStain('gum',this)">🍬 Gum & Play-Doh</button>
-      <button class="stain-tab" onclick="showStain('peanut',this)">🥜 Peanut Butter</button>
-      <button class="stain-tab" onclick="showStain('banana',this)">🍌 Banana & Avocado</button>
-      <button class="stain-tab" onclick="showStain('syrup',this)">🍯 Syrup & Honey</button>
-      <button class="stain-tab" onclick="showStain('polish',this)">💅 Nail Polish</button>
-      <button class="stain-tab" onclick="showStain('deodorant',this)">👕 Deodorant Streaks</button>
     </div>
 
     <div id="stain-blood" class="stain-panel active">
@@ -1015,7 +1097,7 @@
         <span class="stain-urgency normal">🕐 Sooner is better, but dried grease is treatable</span>
         <div class="stain-steps">
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Blot — don't rub.</strong> Remove any solid residue with a spoon. Rubbing pushes the grease deeper into the fibers. You will regret rubbing.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply <a href="https://amzn.to/4vGa97g" target="_blank" rel="noopener">Dawn Powerwash</a> or <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">blue Dawn</a></strong> directly to the stain and work it in with your fingers. Dawn is a degreaser — it's literally designed for this. Let it sit 10–15 minutes. You can also use an enzyme stain remover that has lipase in it, which targets oil — <a href="https://amzn.to/4oi4lhM" target="_blank" rel="noopener">Puracy</a> and <a href="https://amzn.to/4vwgeDr" target="_blank" rel="noopener">DadMode</a> are great options.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply <a href="https://amzn.to/4vGa97g" target="_blank" rel="noopener">Dawn Powerwash</a> or <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">blue Dawn</a></strong> directly to the stain and work it in with your fingers. Dawn is a degreaser — it's literally designed for this. Let it sit 10–15 minutes.</p></div>
           <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Follow with OxiClean Max Force</strong> on top of the Dawn. Let both sit together for 48 hours. Yes, two days. Grease is stubborn and the enzymes need time to work. Set a reminder and walk away.</p></div>
           <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm or hot</strong> with a lipase-containing detergent and booster. Lipase is what breaks down oils — this is her moment. Let her work.</p></div>
         </div>
@@ -1030,7 +1112,7 @@
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Brush off any dried grass</strong> before you do anything wet. Getting it dry first prevents you from grinding it further in.</p></div>
           <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply OxiClean Max Force</strong> or a protease-based pretreater directly to the stain. Grass stains are protein + chlorophyll — you need protease and pectate lyase working together.</p></div>
           <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Let it sit for 48 hours minimum.</strong> This is not a rinse-and-wash situation. Give the enzymes time to actually break down the stain.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm.</strong> Check before drying. Repeat the treatment if needed — grass is stubborn but it does come out.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm</strong> with a full enzyme detergent. Check before drying. Repeat the treatment if needed — grass is stubborn but it does come out.</p></div>
         </div>
         <div class="stain-note">💡 White baseball pants getting grass stains? This is what Out White Bright is for. Soak the pants separately before washing the full uniform.</div>
       </div>
@@ -1042,7 +1124,7 @@
         <div class="stain-steps">
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Let it dry completely.</strong> This is the hardest part. Do not touch it, rub it, or try to rinse it while it's wet — you will spread it further into the fibers. Walk away.</p></div>
           <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Once fully dry, brush off as much as possible</strong> with a stiff brush or the edge of a spoon. You want to remove the bulk before introducing any liquid.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Apply OxiClean Max Force</strong> and let it sit for at least an hour. Mud is clay and mineral-based — a good enzyme pretreater and some patience is all you need.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Apply OxiClean Max Force</strong> and let it sit for at least an hour. Mud is clay and mineral-based — a good enzyme detergent and some patience is all you need.</p></div>
           <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm or hot</strong> with your normal detergent and a booster. This one usually comes out in a single wash if you let it dry first.</p></div>
         </div>
         <div class="stain-note">💡 The most common mud mistake: panicking and rubbing it wet. Every time. Let. It. Dry.</div>
@@ -1097,45 +1179,9 @@
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off any solids first</strong> with a spoon — never rub. Then blot any wet residue with a clean cloth.</p></div>
           <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Identify what you're dealing with.</strong> Greasy food (butter, oil, salad dressing) → start with Dawn Powerwash. Tomato-based (pasta sauce, ketchup) → OxiClean Max Force straight away. Protein-based (egg, meat) → cold water first, then pretreater. Turmeric → sodium percarbonate soak in hot water, then sunlight.</p></div>
           <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Apply your pretreater</strong> and let it sit for 48 hours minimum. Food stains respond dramatically better with time.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm or hot</strong> with a booster. Check before drying — food stains that have been dried in are significantly harder to shift.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm or hot</strong> with a full enzyme detergent and booster. Check before drying — food stains that have been dried in are significantly harder to shift.</p></div>
         </div>
         <div class="stain-note">💡 Turmeric is in a category of its own. Sodium percarbonate soak + direct sunlight is the most effective treatment. Sunlight acts as a natural bleaching agent on turmeric specifically — leave the damp garment outside and let the sun do its thing.</div>
-      </div>
-    </div>
-    <div id="stain-ketchup" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency normal">🕐 Fresh is easiest, but dried ketchup still comes out — don't panic</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off the excess</strong> with a spoon or the edge of a butter knife — never rub. Rubbing grinds the tomato pigment deeper into the fibers.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Flush from the BACK of the fabric with cold water.</strong> You want to push the stain back out the way it came in, not drive it further through. Skip warm water for now — ketchup is tomato-based, and heat sets the pigment.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Apply <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">OxiClean Max Force</a></strong> straight to the stain and work it in. Tomato stains are part tannin, part pigment, so the enzymes and oxygen bleach need time — let it sit at least a few hours, longer for a set-in stain.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm.</strong> Check before drying — if any reddish tint is left, you can treat again or soak in hot water with oxygen bleach to help color-correct. Don't put it in the dryer until it's fully gone.</p></div>
-        </div>
-        <div class="stain-note">💡 There's usually a little oil in ketchup too, so if you see a faint shadow after the tomato color lifts, hit it with a drop of <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">blue Dawn</a> and rewash. On stubborn whites, a soak in oxygen bleach dissolved in hot water finishes the job.</div>
-      </div>
-    </div>
-    <div id="stain-mustard" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency urgent">⚡ The yellow is turmeric — treat it like turmeric, and keep it away from anything alkaline</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off every bit of solid mustard</strong> with a spoon before it soaks in. Don't smear it trying to wipe it off — lift it away.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Flush from the back with cold water.</strong> Here's the part nobody warns you about: the yellow in mustard is <strong>turmeric</strong>, and turmeric pigment turns <strong>red-orange</strong> the moment it meets anything alkaline — ammonia, high-alkaline boosters, even some soaps. Keep those away from it. A dab of white vinegar (acidic) keeps it yellow and easier to lift.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Soak in oxygen bleach (sodium percarbonate) dissolved in hot water</strong>, or pretreat with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">OxiClean Max Force</a> and let it sit for hours. Then wash on warm. Check before drying — heat bonds turmeric pigment permanently.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>If a yellow ghost remains after washing, lay it in the sun.</strong> Direct sunlight is a natural bleaching agent that targets turmeric pigment like nothing else. Wash first, get the pretreater fully off, then leave the damp garment in the sun until dry — same trick as the Turmeric tab.</p></div>
-        </div>
-        <div class="stain-note">💡 If your mustard stain has already turned orange or red, don't panic — that's the turmeric reacting to something alkaline, not a new stain. Rinse well, stay acidic (vinegar), oxygen-bleach soak, and sun it out.</div>
-      </div>
-    </div>
-    <div id="stain-watermelon" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency normal">🕐 Looks like it rinsed out? It didn't — the sugar comes back brown if you dry it</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Blot up the juice</strong> and scrape off any pulp. Watermelon is a tannin stain — resist the urge to reach for bar soap, which can actually set tannin stains.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Flush from the back with cold running water</strong> to carry the juice out of the fibers. The more you rinse now, the less pigment and sugar is left to deal with.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Pretreat with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">OxiClean Max Force</a></strong> or soak in oxygen bleach dissolved in hot water. Give it time — a few hours minimum. Then wash on warm.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Check before drying — this one's a trap.</strong> Fruit juice carries sugar, and the pink often rinses away while the invisible sugar stays behind. A hot dryer caramelizes that sugar into a stubborn brown mark. If there's any doubt, treat and wash again before it ever sees heat.</p></div>
-        </div>
-        <div class="stain-note">💡 Same playbook works for most fruit — berries, cherries, peaches. Cold water, oxygen bleach, and never the dryer until you're 100% sure it's gone. ⚠ One warning: do NOT soak in oxygen bleach and then lay it in the sun — that combo will turn the fabric yellow. If you want to sun it, wash and rinse the oxygen bleach out completely first.</div>
       </div>
     </div>
     <div id="stain-wine" class="stain-panel">
@@ -1145,7 +1191,7 @@
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Blot immediately</strong> with a clean cloth — press, don't rub. Soak up as much as you can before it sets. Mom wine night casualty? It happens to the best of us.</p></div>
           <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Rinse from the back with cold water</strong> to push the stain out rather than deeper in. Wine is tannin-based — same family as coffee and tea — so cold water and speed are your friends.</p></div>
           <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Apply a little white vinegar</strong> directly to the stain. You can also submerge the whole item in vinegar; it won't hurt it. Let it soak for as long as you can, then wash as normal.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>If any color or stain remains, soak in oxygen bleach.</strong> Dissolve powdered oxygen bleach (OxiClean, BIZ, FEBU, <a href="https://amzn.to/4v2QjDl" target="_blank" rel="noopener">pure sodium percarbonate</a> — any of them) in hot water, fully dissolved before the garment goes in, and soak overnight. Wash again. Check before drying — wine that's been through the dryer is dramatically harder to remove. Repeat until it's gone.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>If any color or stain remains, soak in oxygen bleach.</strong> Dissolve powdered oxygen bleach (OxiClean, BIZ, FEBU, 365 Oxygen Powder — any of them) in hot water, fully dissolved before the garment goes in, and soak overnight. Wash again. Check before drying — wine that's been through the dryer is dramatically harder to remove. Repeat until it's gone.</p></div>
         </div>
         <div class="stain-note">💡 This is basically the exact same process as coffee — because they're both tannin stains. (Pure wine, like black coffee. No dairy curveball here, thankfully.) On white-only fabric, a spray of hydrogen peroxide can lift what's left — never on colors, it'll bleach them.</div>
       </div>
@@ -1158,7 +1204,7 @@
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Resist the urge to wipe.</strong> Wet slime smears into a bigger disaster. Let it dry and harden, or speed it up with an ice cube until it's stiff, then scrape off as much as you can with a dull knife or spoon.</p></div>
           <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Saturate what's left with white vinegar.</strong> Slime is mostly glue (PVA) and the acidity in vinegar breaks down the bond holding it to the fabric. Let it soak in for 5–10 minutes, then work it gently with an old toothbrush.</p></div>
           <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Rinse under warm water</strong> and repeat the vinegar if any slime remains. Most of it should lift and roll off as it loosens.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Pretreat any color left behind</strong> (slime dye is the real stainer) with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">OxiClean Max Force</a>, then wash on warm. Check before drying.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Pretreat any color left behind</strong> (slime dye is the real stainer) with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">OxiClean Max Force</a>, then wash warm with a full enzyme detergent. Check before drying.</p></div>
         </div>
         <div class="stain-note">💡 The dye in colored slime is often more stubborn than the slime itself. If a colored shadow remains after the slime is gone, treat it like a dye stain — pretreat, wash, repeat, and don't dry until it's clear.</div>
       </div>
@@ -1184,7 +1230,7 @@
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off the excess</strong> with a dull knife, an old credit card, or a paper towel — skim, don't grind. Diaper cream is thick and greasy, so get the gooey bulk off before it becomes a stain you're working into the fabric.</p></div>
           <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply a small amount of <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">blue Dawn</a> and work it in.</strong> A little goes a long way here — too much will suds up your washer. Diaper cream (Desitin, Boudreaux's, etc.) is mostly petroleum and oils, and Dawn is a degreaser, so this is exactly its job. Scrub gently with an old toothbrush and let it sit at least 30 minutes, longer is better.</p></div>
           <div class="stain-step"><div class="stain-step-num">3</div><p><strong>The yellow-grey stain is from zinc oxide.</strong> For that part, rubbing alcohol works well — pour or spray it on, rub the fabric together, and rinse under cool water. Repeat until it lightens.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm</strong> with an oxygen bleach booster. The more rinses the better for this stain — make sure your rinse water runs completely clear before you stop. <strong>Air dry</strong>, and check first: heat sets any grease left behind.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash warm</strong> with a full enzyme detergent and an oxygen bleach booster. The more rinses the better for this stain — make sure your rinse water runs completely clear before you stop. <strong>Air dry</strong>, and check first: heat sets any grease left behind.</p></div>
         </div>
         <div class="stain-note">💡 Zinc staining is cosmetic — even if a faint yellow tint lingers, the cream itself is out and it'll keep fading with each wash. Just don't tumble dry until you're happy, because the dryer locks in the greasy part for good.</div>
       </div>
@@ -1210,7 +1256,7 @@
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Blot immediately</strong> with whatever you have — a napkin, a burp cloth, the sleeve of a different shirt. Absorb as much as you can before it sets. Do not rub. You know this. You're panicking. Don't rub.</p></div>
           <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Rinse with cold water</strong> from the back of the fabric, then apply white vinegar or household cleaning vinegar directly to the stain. You can also just submerge the whole item in vinegar — it won't hurt it. Let it soak for as long as you can.</p></div>
           <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash as normal.</strong> Check before drying. If the stain is gone, you're done and the vinegar earned its keep.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>If the stain persists — two options.</strong> For white or light fabrics: spray hydrogen peroxide directly on the stain and let it sit before washing. For everything else: dissolve powdered oxygen bleach (OxiClean, BIZ, FEBU, <a href="https://amzn.to/4v2QjDl" target="_blank" rel="noopener">pure sodium percarbonate</a> — any of them) in hot water, fully dissolved before the garment goes in, and soak overnight. Wash as normal. Repeat until it's gone.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>If the stain persists — two options.</strong> For white or light fabrics: spray hydrogen peroxide directly on the stain and let it sit before washing. For everything else: dissolve powdered oxygen bleach (OxiClean, BIZ, FEBU, 365 Oxygen Powder — any of them) in hot water, fully dissolved before the garment goes in, and soak overnight. Wash as normal. Repeat until it's gone.</p></div>
         </div>
         <div class="stain-note">💡 If you take your coffee with milk or creamer, hit it with a little Dawn before the vinegar step to deal with the dairy component first. And the toddler who did this to you owes you a new shirt. Collect when they're 30.</div>
       </div>
@@ -1250,7 +1296,7 @@
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Why sunscreen stains are their own whole thing.</strong> Sunscreen is a cocktail of UV filters (which are yellow — that's not a coincidence), oils, and film-forming polymers that make it water resistant on your skin. Great for the beach. A nightmare for fabric. The higher the SPF, the more UV filters, the worse the staining risk. You're welcome for that information.</p></div>
           <div class="stain-step"><div class="stain-step-num">2</div><p><strong>That orange-rust color?</strong> That's the UV filters reacting with copper and iron ions in your tap water during washing, then oxidizing as the fabric dries. Essentially: rust. On your clothes. From sunscreen. Yes, really. This is why hard water makes sunscreen stains significantly worse — more minerals, more reaction, more orange.</p></div>
           <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Pretreat before every single wash</strong> — apply liquid detergent directly to any sunscreen-exposed areas and let it sit for at least 30 minutes. Don't skip this and just throw it in the wash — the heat will set the oils and make it worse.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>For existing yellow or orange stains:</strong> the oil component responds to <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">Dawn dish soap</a> first — same as grease. Follow with OxiClean Max Force and let it sit for 48 hours. If your water is hard, add <a href="https://amzn.to/4oizrWJ" target="_blank" rel="noopener">Calgon</a> or citric acid to the wash to chelate those metal ions before they can react. Wash on warm.</p></div>
+          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>For existing yellow or orange stains:</strong> the oil component responds to <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">Dawn dish soap</a> first — same as grease. Follow with OxiClean Max Force and let it sit for 48 hours. If your water is hard, add <a href="https://amzn.to/4oizrWJ" target="_blank" rel="noopener">Calgon</a> to the wash to chelate those metal ions before they can react. Wash on warm.</p></div>
           <div class="stain-step"><div class="stain-step-num">5</div><p><strong>If it still persists:</strong> soak in hot water with oxygen bleach overnight, then wash as normal. Repeat. Sunscreen stains that have been through the dryer multiple times are genuinely very difficult — manage expectations and keep going.</p></div>
         </div>
         <div class="stain-note">💡 <strong>Prevention is so much easier than treatment here.</strong> Wait 20 minutes after applying sunscreen before getting dressed — letting it form a film on your skin first dramatically reduces how much transfers to fabric. Wearing dark colors helps too (sunscreen stains basically disappear on black fabric). And if you're using a Korean sunscreen, good news — they're typically formulated with newer-generation UV filters that are far less likely to cause staining.</div>
@@ -1289,7 +1335,7 @@
         <div class="stain-steps">
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off as much crayon as possible</strong> with a dull knife or spoon. Get the bulk of the wax off before you introduce anything wet.</p></div>
           <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">liquid dish soap</a> and work it into the stain.</strong> Let it stand a few minutes, then rub the fabric under warm water to lift the stain.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Machine wash on the heavy soil setting</strong> with the hottest water the fabric will allow, plus oxygen bleach (OxiClean, BIZ, sodium percarbonate). Air dry, and repeat as needed.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Machine wash on the heavy soil setting</strong> with the hottest water the fabric will allow, plus oxygen bleach (OxiClean, BIZ, 365 Oxygen Whitener, sodium percarbonate). Air dry, and repeat as needed.</p></div>
           <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Alternate method:</strong> <a href="https://amzn.to/3RZg8FS" target="_blank" rel="noopener">Amodex Ink &amp; Stain Remover</a> is Crayola's officially recommended product for tougher crayon stains. Use it per the manufacturer's directions.</p></div>
         </div>
         <div class="stain-note">💡 PSA: if you know your kid has been anywhere near crayons, check. their. pockets. Every time. Restaurant crayons, classroom crayons, the rogue one living in the car — they end up in pockets and then in your wash. Sneaky little bastards (that we love so, so much).</div>
@@ -1302,7 +1348,7 @@
         <div class="stain-steps">
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Don't throw it out yet.</strong> The dryer makes stains harder to remove, not always impossible. A lot of the time you can still save it.</p></div>
           <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Treat it by type.</strong> The dryer doesn't change what the stain <em>is</em> — grease still needs Dawn, protein still needs cold water and protease, tannin still needs OxiClean. Find your stain in the rest of Stain School and follow it, but pretreat generously and let it sit much longer (hours, not minutes).</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash, then check before drying.</strong> If it's gone, you saved it. If it persists, do a hot soak with oxygen bleach (OxiClean, BIZ, sodium percarbonate) — dissolve fully, soak overnight, wash again. Repeat until it's gone, and never put it back in the dryer between attempts. Air dry while you work.</p></div>
+          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash, then check before drying.</strong> If it's gone, you saved it. If it persists, do a hot soak with oxygen bleach (OxiClean, BIZ, 365 Oxygen Whitener, sodium percarbonate) — dissolve fully, soak overnight, wash again. Repeat until it's gone, and never put it back in the dryer between attempts. Air dry while you work.</p></div>
         </div>
         <div class="stain-note">💡 This is exactly why "check before you dry" is the rule I repeat constantly. The dryer is where a fixable stain becomes a maybe-fixable one. Build the habit of checking every item and you'll end up here a lot less.</div>
       </div>
@@ -1324,140 +1370,11 @@
         <span class="stain-urgency urgent">⚡ Turmeric especially — do not let this dry if you can help it</span>
         <div class="stain-steps">
           <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off any solid residue immediately.</strong> Turmeric and spice stains are pigment-based — the longer they sit in the fiber, the deeper they bond. Speed matters more here than almost any other stain.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply OxiClean Max Force or your pretreater of choice</strong> and let it sit for as long as possible — at least a few hours, overnight if you can. Then wash as normal with a booster.</p></div>
+          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Apply OxiClean Max Force or your pretreater of choice</strong> and let it sit for as long as possible — at least a few hours, overnight if you can. Then wash as normal with a full enzyme detergent and booster.</p></div>
           <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Check before drying.</strong> If the stain is gone — amazing, you're done. If it's still there, do not put it in the dryer. Heat will bond turmeric pigment permanently. Repeat the treatment and wash again.</p></div>
           <div class="stain-step"><div class="stain-step-num">4</div><p><strong>If the stain persists after washing — lay it in the sun.</strong> Yes. The sun. Direct sunlight is a natural bleaching agent that specifically targets turmeric pigment in a way that detergent simply cannot. Leave the damp garment outside until dry. It works. It's annoying, but it works.</p></div>
         </div>
         <div class="stain-note">💡 So maybe try not to use turmeric in the winter, ok? ☀️ And when you do lay it in the sun — make sure it's been fully washed first. Wet is good. Pretreater still on it is not. The sun interacting with pretreater ingredients can cause extra yellowing. Wash, then sun.</div>
-      </div>
-    </div>
-
-    <div id="stain-paint" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency urgent">⚡ Washable paint = easy. Acrylic = race the clock — once it dries, it's plastic</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>First, read the paint bottle.</strong> "Washable" tempera or washable kids' paint → flush from the back with cold water, pretreat, wash. Done. That word on the label is doing exactly what it promised.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Acrylic or craft paint, still WET? Move now.</strong> Keep it wet — do not let it dry. Flush from the back with cold water, work in <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">blue Dawn</a> with your fingers, rinse, repeat until the water runs clear.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Already dried?</strong> It's plastic now — literally. Scrape or pick off everything you can, then work rubbing alcohol into what's left with an old toothbrush. It softens the acrylic so you can lift it in layers. Slow, but it's the move.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Pretreat what remains and wash on warm.</strong> Check before drying — repeat the alcohol round if you need to.</p></div>
-        </div>
-        <div class="stain-note">💡 Oil-based paint is its own beast: it needs the solvent listed on the can (usually mineral spirits), outside, before any washing. And honestly? Sometimes craft night just costs you a shirt. That's why paint clothes exist.</div>
-      </div>
-    </div>
-
-    <div id="stain-vomit" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency urgent">⚡ Protein + stomach acid — treat it like blood's gross cousin</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off everything you can</strong> with a spoon or paper towel, then rinse from the back with <strong>cold</strong> water. It's a protein stain — warm water now will set it.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Pretreat with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">OxiClean Max Force</a></strong> and let it sit at least 30 minutes. Protease handles the protein; the enzymes also start on the smell.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash on warm</strong> with a booster.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Sniff test before the dryer.</strong> If there's any smell left, run it again with a cup of white vinegar in the rinse. Odor gone = actually clean.</p></div>
-        </div>
-        <div class="stain-note">💡 For the 2am stomach-bug load: strip the bed, scrape, and everything goes in together on warm with booster. You don't need perfect technique at 2am — you need the washer running and everyone back in bed.</div>
-      </div>
-    </div>
-
-    <div id="stain-urine" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency normal">🕐 Fresh is a non-event. Set-in smell is the real fight</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Rinse or soak in cold water as soon as you can.</strong> Fresh accidents mostly rinse right out — it's the sitting that creates the situation.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Pretreat or soak with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">Max Force</a></strong> — enzymes break down the urine compounds that cause both the yellow and the smell.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash on warm</strong> with a booster — and <strong>skip the fabric softener.</strong> Softener coats the fibers and seals odor in. That's how you end up with sheets that smell fine until they hit warm little bodies.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Lingering smell?</strong> Rewash with a cup of white vinegar in the rinse. For the potty-training era: keep a wet bag or lidded bucket by the machine so accidents never marinate in the hamper.</p></div>
-        </div>
-        <div class="stain-note">💡 This is a season, mama. The washer can handle it, and so can you.</div>
-      </div>
-    </div>
-
-    <div id="stain-reddye" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency urgent">⚡ That red isn't juice — it's DYE. Act while it's wet</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Blot and flush from the back with cold water</strong> immediately. Red 40 starts bonding to fibers fast, and it does not negotiate.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Pretreat with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">Max Force</a></strong> — the enzymes clear the sugar and fruit base so you can get at the dye underneath.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Soak in oxygen bleach dissolved in hot water</strong> — hours, overnight if it's bad. Oxidizing is what actually breaks the dye's color.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash and check before drying.</strong> Still pink? Soak again. It usually takes stubbornness, not a miracle. On whites, damp + direct sun after washing helps finish it.</p></div>
-        </div>
-        <div class="stain-note">💡 Red popsicle on a white shirt at a birthday party is a rite of passage. You were never going to stop it. You can only avenge it.</div>
-      </div>
-    </div>
-
-    <div id="stain-gum" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency patient">✋ Do not pick at warm gum. Cold is your weapon</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Gum: freezer, 1 hour.</strong> Bag the garment, freeze, then snap the brittle gum off in pieces. An ice cube pressed on it works if the freezer's full of chicken nuggets.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Play-Doh: let it DRY completely.</strong> Same rule as mud — touch nothing while it's soft. Once dry, it crumbles and brushes right off.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Treat what's left behind:</strong> a little <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">Dawn</a> worked into any waxy gum residue or Play-Doh color, then pretreat.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash as normal.</strong> Check before drying.</p></div>
-        </div>
-        <div class="stain-note">💡 Gum in HAIR is a different tutorial (and a different kind of day). Peanut butter works there — which is ironic, because peanut butter has its own tab now.</div>
-      </div>
-    </div>
-
-    <div id="stain-peanut" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency normal">🕐 It's a grease stain wearing a lunchbox disguise</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off the blob with a spoon — never rub.</strong> Rubbing drives the oil deeper, and peanut butter is basically flavored oil.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Work in <a href="https://amzn.to/4vGa97g" target="_blank" rel="noopener">Dawn Powerwash</a> or <a href="https://amzn.to/4uw8JeC" target="_blank" rel="noopener">blue Dawn</a></strong>, or use a lipase pretreater like <a href="https://amzn.to/4oi4lhM" target="_blank" rel="noopener">Puracy</a> — lipase is the enzyme that eats fats.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Layer <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">Max Force</a> on top</strong> and let it all sit. Give it hours — oil stains reward patience.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Wash on warm or hot.</strong> Check before drying — a leftover oil shadow will darken in the dryer.</p></div>
-        </div>
-        <div class="stain-note">💡 Jelly hitched a ride too? Enzymes in your pretreater handle the fruit half. PB&J is a combo stain — treat the grease first, the jelly comes out in the wash.</div>
-      </div>
-    </div>
-
-    <div id="stain-banana" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency urgent">⚡ The sneakiest stain in baby-land — it looks fine, then browns LATER</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Rinse from the back with cold water</strong> even if you can barely see anything. Banana and avocado look clear when fresh — that's the trap.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Pretreat with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">Max Force</a> and let it dwell.</strong> The enzymes clear the fruit before its pigments get a chance to oxidize.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash on warm.</strong> Check carefully in good light before drying.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Brown ghost showed up anyway?</strong> That's oxidized pigment now — treat it as a bleachable: hot oxygen-bleach soak until it lifts.</p></div>
-        </div>
-        <div class="stain-note">💡 This is why "but it washed out!" onesies come out of the drawer with brown spots a week later. The stain was always there — it just hadn't developed yet. Like a Polaroid. A gross little Polaroid.</div>
-      </div>
-    </div>
-
-    <div id="stain-syrup" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency normal">🕐 Sugar rinses easy — but what's left behind loves the dryer</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Scrape off the sticky bulk</strong> and rinse with warm water — sugar dissolves, so most of it goes straight down the drain.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Pretreat with <a href="https://amzn.to/3RZhikA" target="_blank" rel="noopener">Max Force</a></strong> — amylase is the enzyme that handles sugars and starches, and syrup is its whole job description.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Wash on warm.</strong></p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Check before drying — same trap as watermelon.</strong> Invisible sugar residue caramelizes into a brown mark in a hot dryer. If the spot feels even slightly stiff, wash again first.</p></div>
-        </div>
-        <div class="stain-note">💡 Pancake Saturday casualties: rinse the sleeve when it happens, not after it's been balled up in the hamper gluing itself to a sock for three days.</div>
-      </div>
-    </div>
-
-    <div id="stain-polish" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency urgent">⚡ Blot and lift — one wipe and you've doubled the stain</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Lift, don't wipe.</strong> Scoop wet polish off the surface with the edge of a card or spoon. Wiping smears it into clean fabric.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Test acetone on a hidden seam first.</strong> And know your fabric: <strong>never acetone on acetate, triacetate, or modacrylic</strong> — it will dissolve the fabric itself, not just the polish.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Work from the back:</strong> clean rag under the stain, acetone on a cotton swab, small dabs pushing the polish out into the rag. Move to fresh rag sections as the color transfers.</p></div>
-          <div class="stain-step"><div class="stain-step-num">4</div><p><strong>Dawn on the spot, then wash.</strong> Color ghost left? Oxygen-bleach soak. Check before drying.</p></div>
-        </div>
-        <div class="stain-note">💡 Glitter polish adds a plastic layer that acetone has to fight through — go slower and expect more rounds. And manage expectations: polish is pigment in a film-former. Sometimes the couch cushion flips over for a reason.</div>
-      </div>
-    </div>
-
-    <div id="stain-deodorant" class="stain-panel">
-      <div class="stain-panel-inner">
-        <span class="stain-urgency normal">🕐 The white streak from getting dressed — 10-second fix</span>
-        <div class="stain-steps">
-          <div class="stain-step"><div class="stain-step-num">1</div><p><strong>Rub the streak with a dry piece of nylon</strong> (tights, a sock), a microfiber cloth, or even a dryer sheet. The marks lift off dry fabric like magic — no water needed.</p></div>
-          <div class="stain-step"><div class="stain-step-num">2</div><p><strong>Stubborn streak?</strong> A damp cloth with a drop of Dawn, then blot dry. Done.</p></div>
-          <div class="stain-step"><div class="stain-step-num">3</div><p><strong>Know which problem you have:</strong> a white STREAK is today's deodorant sitting on the surface. Yellow, stiff pit build-up is deodorant + sweat bonded into the fabric — that's a different fight, and it lives in the <strong>Sweat tab</strong>.</p></div>
-        </div>
-        <div class="stain-note">💡 Dressing hack: shirt first, then deodorant — or hold the hem away from your body on the way down. Ask me how many black shirts taught me that.</div>
       </div>
     </div>
 
@@ -1682,7 +1599,7 @@
       <div class="spa-step"><div class="spa-step-num">4</div><p><strong>Wait 8–12 hours.</strong> Overnight works great. Set a reminder alarm so you don't forget about your laundry soup.</p></div>
       <div class="spa-step"><div class="spa-step-num">5</div><p><strong>Rinse each item under warm water.</strong> Pull pieces from the laundry soup one at a time and rinse them individually — you can squeeze them gently to help the water run through. This differs from the original Spa Day, but I find that when I skip this step I get an unbelievable amount of suds in my wash. Hey — laundry is all about experimentation. Rinse.</p></div>
       <div class="spa-step"><div class="spa-step-num">6</div><p><strong>Prep your washing machine before you transfer.</strong> Pre-select all your settings and add your detergent — liquid to the drawer, or powder to the drum. You don't need a lot here: <strong>1 tablespoon of powder or 2 tablespoons of liquid</strong> is plenty.</p></div>
-      <div class="spa-step"><div class="spa-step-num">7</div><p><strong>Optional — add one or two scoops of oxygen bleach to the drum.</strong> This step is best for whites and colors; if you're soaking darks, you can skip it (a brightening oxygen bleach can fade them over time). My personal pick is <a href="https://amzn.to/4v2QjDl" target="_blank" rel="noopener">pure sodium percarbonate</a> or your oxygen bleach of choice. Try not to let it touch the wet clothes directly; contact with wet clothes activates the oxygen bleach early and can cause spotting.</p></div>
+      <div class="spa-step"><div class="spa-step-num">7</div><p><strong>Optional — add one or two scoops of oxygen bleach to the drum.</strong> This step is best for whites and colors; if you're soaking darks, you can skip it (a brightening oxygen bleach can fade them over time). My personal favorite is <a href="https://amzn.to/4ut9NQi" target="_blank" rel="noopener">365 Oxygen Whitener</a>. Try not to let it touch the wet clothes directly; contact with wet clothes activates the oxygen bleach early and can cause spotting.</p></div>
       <div class="spa-step"><div class="spa-step-num">8</div><p><strong>Transfer clothes to the machine.</strong> If using ammonia, pour 1 cup directly onto the soaked clothes, then immediately close the door and press start. Speed matters here — ammonia should be your very last step.</p></div>
       <div class="spa-step"><div class="spa-step-num">9</div><p><strong>Wash on warm or hot, heavy soil, with an extra rinse.</strong> Normal cycles are fine for most fabrics.</p></div>
       <div class="spa-step"><div class="spa-step-num">10</div><p><strong>Dry as normal</strong> — delicates hang to dry, everything else on low/delicate heat. <em>Don't dry on hot if you're still working on a stain.</em></p></div>
@@ -1743,7 +1660,7 @@
       <p style="font-size:13.5px;color:var(--ink);line-height:1.6;margin-bottom:1.1rem">Deep breath. You do not need a cabinet full of products. If you're staring down your laundry room wondering where to even begin, these are the <em>only</em> things you actually need:</p>
       <ol style="margin:0;padding-left:1.3rem;font-size:13.5px;color:var(--ink);line-height:1.7">
         <li style="margin-bottom:0.6rem"><strong>A good detergent</strong> — powder or liquid, whatever works for your family. No wrong answer here.</li>
-        <li style="margin-bottom:0.6rem"><strong>Oxygen bleach powder</strong> — OxiClean or anything with sodium percarbonate in it.</li>
+        <li style="margin-bottom:0.6rem"><strong>Oxygen bleach powder</strong> — OxiClean, 365 Oxygen Whitener, anything with sodium percarbonate in it.</li>
         <li style="margin-bottom:0.6rem"><strong>An enzymatic pretreater</strong> — for when a stain needs backup before the wash.</li>
         <li style="margin-bottom:0.6rem"><strong>A citric acid–based rinse aid</strong> — straight citric acid or a ready-made bottle, your call.</li>
         <li style="margin-bottom:0.6rem"><strong>A laundry booster</strong> — BIZ, FEBU, or DadMode. This is the upgrade that does the heavy lifting.</li>
@@ -1803,8 +1720,6 @@
         <div class="product-link-item"><a href="https://amzn.to/43rHqam" target="_blank" rel="noopener">Tide Liquid Original</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4fD6IJY" target="_blank" rel="noopener">Dreft</a></div>
         <div class="product-link-item"><a href="https://www.walmart.com/ip/Cheer-Liquid-Laundry-Detergent-HE-Compatible-92-fl-oz-64-Loads/910870212" target="_blank" rel="noopener">Cheer (darks only)</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/3TZnppZ" target="_blank" rel="noopener">Mrs. Meyer's</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4gu05tc" target="_blank" rel="noopener">Seventh Generation</a></div>
       </div>
     </div>
 
@@ -1818,7 +1733,10 @@
         <div class="product-link-item"><a href="https://amzn.to/3PQBW5S" target="_blank" rel="noopener">Ariel 2x</a></div>
         <div class="product-link-item"><a href="https://www.walmart.com/ip/ARIEL-PWD-REG-BAG-2-5-8KG-129LD/17146066978" target="_blank" rel="noopener">Ariel Original Powder</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4gu0UCW" target="_blank" rel="noopener">Gain Powder</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/440VwQ4" target="_blank" rel="noopener">365 Unscented Powder</a></div>      </div>
+        <div class="product-link-item"><a href="https://amzn.to/440VwQ4" target="_blank" rel="noopener">365 Unscented Powder</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4fxpXEC" target="_blank" rel="noopener">Country Save Powder</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4uyYO85" target="_blank" rel="noopener">Essembly Washing Powder</a></div>
+      </div>
     </div>
 
     <div class="product-category">
@@ -1851,15 +1769,19 @@
         <div class="product-link-item"><a href="https://amzn.to/4v2QjDl" target="_blank" rel="noopener">Pure Sodium Percarbonate</a></div>
         <div class="product-link-item"><a href="https://amzn.to/3QuywWy" target="_blank" rel="noopener">OxiClean Versatile</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4v4SRkp" target="_blank" rel="noopener">OxiClean White Revive</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4wvxkRU" target="_blank" rel="noopener">OxiClean Odor Blasters</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4ut9NQi" target="_blank" rel="noopener">365 Oxygen Booster</a></div>
         <div class="product-link-item"><a href="https://amzn.to/3QyGON9" target="_blank" rel="noopener">Truly Free OxyBoost</a></div>
         <div class="product-link-item"><a href="https://www.target.com/p/powder-stain-remover-56oz-up-38-up-8482/-/A-81069446" target="_blank" rel="noopener">Up &amp; Up Powder Stain Remover (Target)</a></div>
         <div class="product-link-item"><a href="https://www.target.com/p/oxiclean-maxforce-vsr-detergent-boosters-3lbs/-/A-94877091" target="_blank" rel="noopener">OxiClean Max Force Booster (Target)</a></div>
         <div class="product-link-item"><a href="https://www.costco.com/p/-/kirkland-signature-oxi-powder-328-loads-11-lbs/4000305727" target="_blank" rel="noopener">Kirkland Oxi Powder (Costco)</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4p60g0J" target="_blank" rel="noopener">Heritage Park Oxygen Bleach</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4eNC53w" target="_blank" rel="noopener">Charlie's Soap Oxygen Bleach</a></div>
         <div class="product-link-item"><a href="https://amzn.to/44U6K9m" target="_blank" rel="noopener">Molly's Suds Oxygen Bleach</a></div>
         <div class="product-link-item"><a href="https://amzn.to/4wyRafu" target="_blank" rel="noopener">Pronounce Oxygen Bleach</a></div>
-        <div class="product-link-item"><a href="https://amzn.to/4wmoIgs" target="_blank" rel="noopener">Nellie's Oxygen Brightener</a></div>      </div>
+        <div class="product-link-item"><a href="https://amzn.to/44gM0bS" target="_blank" rel="noopener">Blueland Oxygen Bleach</a></div>
+        <div class="product-link-item"><a href="https://amzn.to/4wmoIgs" target="_blank" rel="noopener">Nellie's Oxygen Brightener</a></div>
+        <div class="product-link-item"><a href="https://www.getcleanpeople.com/product/oxygen-brightener/" target="_blank" rel="noopener">Clean People Oxygen Brightener</a></div>
+      </div>
     </div>
 
     <div class="product-category">
@@ -1975,5 +1897,67 @@ function showSport(id, btn) {
 }
 </script>
 <script src="https://gumroad.com/js/gumroad.js"></script>
+
+<script>
+(function(){
+  var ppm = document.getElementById('wsc-ppm');
+  if (!ppm) return;
+  var ppmOut=document.getElementById('wsc-ppm-out'), bandEl=document.getElementById('wsc-band'),
+      lead=document.getElementById('wsc-lead'), dose=document.getElementById('wsc-dose'),
+      grams=document.getElementById('wsc-grams'), copy=document.getElementById('wsc-copy'),
+      note=document.getElementById('wsc-note'), note2=document.getElementById('wsc-note2');
+
+  var LITERS={front:20,top:80};
+  var CREDIT_G={conv:1.5,plant:0.5};
+  var BORAX={front:'\u00bc cup',top:'\u00bd cup'};
+  var PRODUCT={
+    citrate:{coef:2.9,name:'Sodium citrate',copy:'the powder, not the liquid. It locks up the calcium and magnesium and keeps them dissolved, so nothing gets left behind on your clothes. Priciest of the three.'},
+    soda:{coef:1.06,name:'Washing soda',copy:'plain sodium carbonate. It turns the minerals into a chalky solid that rinses away, which is why it takes so much less powder than citrate. Cheapest by a mile. Skip it on wool and silk.'},
+    borax:{coef:null,name:'Borax',copy:'a helper, not a heavy lifter. It buffers your wash water and gives your detergent a boost, but it does not pull minerals out of solution the way the other two do.'}
+  };
+  var FR=['','\u00bc','\u00bd','\u00be'];
+
+  function fmt(n,u){var q=Math.max(1,Math.round(n*4)),w=Math.floor(q/4),f=FR[q%4];
+    return w===0?f+' '+u:w+f+' '+u+(q===4?'':'s');}
+  function measure(g){var t=g/5; if(t<3.5) return fmt(t,'teaspoon');
+    var tb=t/3; return tb<=8?fmt(tb,'tablespoon'):(Math.round(tb*2)/2)+' tablespoons';}
+  function band(v){return v<60?'Soft':v<120?'Moderately hard':v<180?'Hard':'Very hard';}
+  function val(n){return document.querySelector('input[name="'+n+'"]:checked').value;}
+
+  function update(){
+    var v=parseInt(ppm.value,10);
+    ppmOut.textContent=v; bandEl.textContent=band(v);
+    var washer=val('wsc-washer'), key=val('wsc-prod'), p=PRODUCT[key];
+    var excess=Math.max(0,(v*LITERS[washer]/1000)-CREDIT_G[val('wsc-det')]);
+    note.textContent=''; note2.textContent='';
+    copy.innerHTML='<strong>'+p.name+'</strong> \u2014 '+p.copy;
+
+    if(excess===0){
+      lead.textContent='Good news:';
+      dose.textContent='Nothing needed';
+      grams.textContent='Your detergent can handle this water on its own.';
+      copy.innerHTML='Save your money. If your whites still look dingy at this hardness, that is a detergent or dosing problem, not a mineral problem.';
+      return;
+    }
+    lead.textContent='Add to the drum, before the clothes go in:';
+    if(p.coef===null){
+      dose.textContent=BORAX[washer];
+      grams.textContent='the standard scoop, not a number I calculated';
+      if(v>=180) note.textContent='Borax will not keep up on its own at this hardness. Run it alongside sodium citrate or washing soda, or switch to one of those instead.';
+    } else {
+      var g=excess*p.coef;
+      if(g<1.2){dose.textContent='A pinch';grams.textContent='about a gram \u2014 not worth measuring';}
+      else{dose.textContent=measure(g);grams.textContent='about '+(g<10?Math.round(g*2)/2:Math.round(g))+' grams';}
+      if(key==='soda'&&excess>15) note.textContent='Washing soda works by turning minerals into chalk, and at this hardness that is a lot of chalk per load. If your towels start feeling stiff or gritty, switch to sodium citrate.';
+    }
+    if(excess>25) note2.textContent='That is a serious scoop, every single load, forever. Price a plumbed-in softener against a year of powder \u2014 hard water is also quietly wearing on your washer, dishwasher and water heater.';
+    else if(v>=250) note2.textContent='Water this hard is worth solving at the tap instead of the drum. A plumbed-in softener handles every load, plus your dishwasher and water heater, and you stop measuring powder entirely.';
+  }
+  ppm.addEventListener('input',update);
+  Array.prototype.forEach.call(document.querySelectorAll('input[name^="wsc-"]'),function(r){r.addEventListener('change',update);});
+  update();
+})();
+</script>
+
 </body>
 </html>
