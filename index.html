@@ -381,6 +381,10 @@
 .wsc-lead{font-size:.88rem;font-weight:600;color:var(--ink-light);margin:0 0 .15rem}
 .wsc-dose{font-family:'Playfair Display',serif;font-size:2.1rem;line-height:1.15;color:var(--rose-dark);margin:.1rem 0 .2rem}
 .wsc-grams{font-size:.92rem;font-weight:600;color:var(--ink-muted);margin:0}
+.wsc-split{display:flex;flex-direction:column;gap:.3rem;margin:.75rem 0 0;padding:.7rem .85rem;background:var(--cream);border-radius:10px}
+.wsc-split span{font-size:.85rem;line-height:1.4;color:var(--ink-light)}
+.wsc-split b{color:var(--ink);font-weight:700}
+.wsc-split:empty{display:none}
 .wsc-copy{font-size:.92rem;line-height:1.55;color:var(--ink-light);margin:.85rem 0 0;max-width:48ch}
 .wsc-note{font-size:.9rem;line-height:1.5;color:var(--ink);margin:.9rem 0 0;padding:.75rem .9rem;background:var(--butter-light);border-left:4px solid var(--butter);border-radius:0 10px 10px 0}
 .wsc-note-alt{background:var(--blush-light);border-left-color:var(--rose)}
@@ -686,6 +690,7 @@
         <p class="wsc-lead" id="wsc-lead">Add to the drum, before the clothes go in:</p>
         <p class="wsc-dose" id="wsc-dose">1&#189; teaspoons</p>
         <p class="wsc-grams" id="wsc-grams">about 7 grams</p>
+        <div class="wsc-split" id="wsc-split"></div>
         <p class="wsc-copy" id="wsc-copy"></p>
         <p class="wsc-note" id="wsc-note"></p>
         <p class="wsc-note wsc-note-alt" id="wsc-note2"></p>
@@ -697,7 +702,7 @@
           <li>Your hardness number is milligrams of mineral per liter. Multiply by how much water your machine actually uses in the wash step and you get the mineral load sitting in the drum.</li>
           <li>I&#8217;m figuring about 20 liters for a front loader and 80 for a deep-fill top loader. This is the whole reason machine type matters &#8212; the same water gives a top loader four times the mineral to deal with.</li>
           <li>Your detergent handles some of it on its own, and conventional formulas handle more than plant-based ones. That assumes 2&#8211;3 tablespoons per load, the way I tell you to dose.</li>
-          <li>Sodium citrate grabs calcium one-to-one, which works out to about 2.9 grams per gram of leftover mineral. Washing soda gets there at about 1.06 grams because it converts the mineral instead of holding it.</li>
+          <li>Sodium citrate grabs calcium one-to-one, which works out to about 2.9 grams per gram of leftover mineral. Washing soda gets there at about 1.06 grams because it converts the mineral instead of holding it. That part is straight chemistry.</li><li>Washing soda also does a second job: it nudges your wash alkaline, which is where detergents and enzymes actually perform. That part I cannot calculate honestly — it depends on your water&#8217;s carbonate alkalinity, which is a different test from hardness. So I anchored it on a dose I run and trust (a tablespoon at 180 ppm in a front loader) and scaled it by water volume from there. Treat it as an estimate, not chemistry.</li><li>Hard water quietly eats into that second job too. Your detergent&#8217;s own builders get spent grabbing calcium instead of holding pH up, so the harder your water, the more of the alkaline work falls to what you add.</li>
           <li>Borax is the exception &#8212; it helps, but not in a way that scales cleanly with a hardness number, so you get the standard scoop instead of a calculated one.</li>
           <li>Spoon conversions assume 5 grams per teaspoon, 15 per tablespoon. Grinds vary, so a cheap kitchen scale beats a measuring spoon here.</li>
         </ul>
@@ -1904,51 +1909,67 @@ function showSport(id, btn) {
   var ppmOut=document.getElementById('wsc-ppm-out'), bandEl=document.getElementById('wsc-band'),
       lead=document.getElementById('wsc-lead'), dose=document.getElementById('wsc-dose'),
       grams=document.getElementById('wsc-grams'), copy=document.getElementById('wsc-copy'),
+      split=document.getElementById('wsc-split'),
       note=document.getElementById('wsc-note'), note2=document.getElementById('wsc-note2');
 
   var LITERS={front:20,top:80};
   var CREDIT_G={conv:1.5,plant:0.5};
+  var DET_ALK={conv:0.9,plant:1.15};   // conventional formulas bring more alkali of their own
+  var ALK_RATE=0.5;                    // g/L, tuned to Caroline's tested 1 tbsp @ 180ppm front loader
   var BORAX={front:'\u00bc cup',top:'\u00bd cup'};
   var PRODUCT={
-    citrate:{coef:2.9,name:'Sodium citrate',copy:'the powder, not the liquid. It locks up the calcium and magnesium and keeps them dissolved, so nothing gets left behind on your clothes. Priciest of the three.'},
-    soda:{coef:1.06,name:'Washing soda',copy:'plain sodium carbonate. It turns the minerals into a chalky solid that rinses away, which is why it takes so much less powder than citrate. Cheapest by a mile. Skip it on wool and silk.'},
-    borax:{coef:null,name:'Borax',copy:'a helper, not a heavy lifter. It buffers your wash water and gives your detergent a boost, but it does not pull minerals out of solution the way the other two do.'}
+    citrate:{coef:2.9,name:'Sodium citrate',copy:'the powder, not the liquid. It locks up the calcium and magnesium and keeps them dissolved, so nothing gets left behind on your clothes. Priciest of the three, and the only one that does nothing for your wash pH.'},
+    soda:{coef:1.06,name:'Washing soda',copy:'plain sodium carbonate, and it pulls double duty \u2014 it converts the minerals into a chalky solid that rinses away, and it nudges your wash alkaline, which is where detergents and enzymes do their best work. Cheapest by a mile. Skip it on wool and silk.'},
+    borax:{coef:null,name:'Borax',copy:'a helper, not a heavy lifter. It buffers your wash water around a mild alkaline and gives your detergent a boost, but it does not pull minerals out of solution the way the other two do.'}
   };
   var FR=['','\u00bc','\u00bd','\u00be'];
 
   function fmt(n,u){var q=Math.max(1,Math.round(n*4)),w=Math.floor(q/4),f=FR[q%4];
     return w===0?f+' '+u:w+f+' '+u+(q===4?'':'s');}
-  function measure(g){var t=g/5; if(t<3.5) return fmt(t,'teaspoon');
+  function measure(g){var t=g/5; if(t<3) return fmt(t,'teaspoon');
     var tb=t/3; return tb<=8?fmt(tb,'tablespoon'):(Math.round(tb*2)/2)+' tablespoons';}
+  function rnd(g){return g<10?Math.round(g*2)/2:Math.round(g);}
   function band(v){return v<60?'Soft':v<120?'Moderately hard':v<180?'Hard':'Very hard';}
   function val(n){return document.querySelector('input[name="'+n+'"]:checked').value;}
 
   function update(){
     var v=parseInt(ppm.value,10);
     ppmOut.textContent=v; bandEl.textContent=band(v);
-    var washer=val('wsc-washer'), key=val('wsc-prod'), p=PRODUCT[key];
-    var excess=Math.max(0,(v*LITERS[washer]/1000)-CREDIT_G[val('wsc-det')]);
-    note.textContent=''; note2.textContent='';
-    copy.innerHTML='<strong>'+p.name+'</strong> \u2014 '+p.copy;
+    var washer=val('wsc-washer'), det=val('wsc-det'), key=val('wsc-prod'), p=PRODUCT[key];
+    var L=LITERS[washer];
+    var excess=Math.max(0,(v*L/1000)-CREDIT_G[det]);
+    var alk=L*ALK_RATE*(1+v/400)*DET_ALK[det];
 
-    if(excess===0){
-      lead.textContent='Good news:';
-      dose.textContent='Nothing needed';
-      grams.textContent='Your detergent can handle this water on its own.';
-      copy.innerHTML='Save your money. If your whites still look dingy at this hardness, that is a detergent or dosing problem, not a mineral problem.';
-      return;
-    }
+    note.textContent=''; note2.textContent=''; split.innerHTML='';
+    copy.innerHTML='<strong>'+p.name+'</strong> \u2014 '+p.copy;
     lead.textContent='Add to the drum, before the clothes go in:';
-    if(p.coef===null){
+
+    if(key==='borax'){
       dose.textContent=BORAX[washer];
       grams.textContent='the standard scoop, not a number I calculated';
       if(v>=180) note.textContent='Borax will not keep up on its own at this hardness. Run it alongside sodium citrate or washing soda, or switch to one of those instead.';
-    } else {
-      var g=excess*p.coef;
-      if(g<1.2){dose.textContent='A pinch';grams.textContent='about a gram \u2014 not worth measuring';}
-      else{dose.textContent=measure(g);grams.textContent='about '+(g<10?Math.round(g*2)/2:Math.round(g))+' grams';}
-      if(key==='soda'&&excess>15) note.textContent='Washing soda works by turning minerals into chalk, and at this hardness that is a lot of chalk per load. If your towels start feeling stiff or gritty, switch to sodium citrate.';
     }
+    else if(key==='soda'){
+      var soften=excess*p.coef, total=soften+alk;
+      dose.textContent=measure(total);
+      grams.textContent='about '+rnd(total)+' grams';
+      split.innerHTML='<span><b>'+rnd(soften)+' g</b> to handle your minerals</span>'+
+                      '<span><b>'+rnd(alk)+' g</b> to keep the wash alkaline \u2014 optional, but it is where the cleaning power is</span>';
+      if(v<60) note.textContent='Your water is soft, so almost none of this is softening \u2014 it is nearly all the pH boost. If your detergent is already doing well, you can skip it or halve it.';
+    }
+    else {
+      if(excess===0){
+        dose.textContent='Nothing needed';
+        grams.textContent='Your detergent can handle this water on its own.';
+        lead.textContent='Good news:';
+      } else {
+        var g=excess*p.coef;
+        dose.textContent = g<1.2 ? 'A pinch' : measure(g);
+        grams.textContent = g<1.2 ? 'about a gram \u2014 not worth measuring' : 'about '+rnd(g)+' grams';
+      }
+      note.textContent='Sodium citrate grabs minerals but does not touch your pH. If you want the alkaline boost too, add about '+rnd(alk)+' g of washing soda \u2014 roughly '+measure(alk)+' \u2014 alongside it.';
+    }
+
     if(excess>25) note2.textContent='That is a serious scoop, every single load, forever. Price a plumbed-in softener against a year of powder \u2014 hard water is also quietly wearing on your washer, dishwasher and water heater.';
     else if(v>=250) note2.textContent='Water this hard is worth solving at the tap instead of the drum. A plumbed-in softener handles every load, plus your dishwasher and water heater, and you stop measuring powder entirely.';
   }
